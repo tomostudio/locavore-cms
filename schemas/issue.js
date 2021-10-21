@@ -97,15 +97,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-        title: "Dark",
-        name: "dark",
-        type: "boolean"
-    },
-    {
         title: "Background Color",
         name: "bgColor",
         type: "string",
-        validation: (Rule) => Rule.required(),
     },
     {
         title: 'Date',
