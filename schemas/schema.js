@@ -6,6 +6,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import issue from './issue'
 import blockContent from './blockContent'
 import settings from './settings'
+import editorial from './editorial'
+import family from './family'
+import social from './social'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -16,6 +19,9 @@ export default createSchema({
   types: schemaTypes.concat([
     issue,
     settings,
+    editorial,
+    family,
+    social,
     blockContent
   ]),
 })

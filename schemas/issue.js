@@ -1,6 +1,6 @@
 export default {
   name: 'issue',
-  title: 'Issue',
+  title: 'Issue List',
   type: 'document',
   fields: [
     {
