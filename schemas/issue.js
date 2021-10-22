@@ -30,7 +30,7 @@ export default {
         }),
     },
     {
-      title: 'Image',
+      title: 'Image 1',
       name: 'image',
       type: 'image',
       description: 'JPEG / PNG / WEBP',
@@ -45,7 +45,7 @@ export default {
       ],
     },
     {
-      title: 'Background 2',
+      title: 'Image 2',
       name: 'background2',
       type: 'image',
       description: 'JPEG / PNG / WEBP',
