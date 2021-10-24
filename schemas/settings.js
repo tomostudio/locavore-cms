@@ -13,6 +13,12 @@ export default {
           validation: Rule => Rule.required()
         },
         {
+          name: 'logo',
+          title: 'Logo',
+          type: 'image',
+          validation: Rule => Rule.required()
+        },
+        {
           title: "SEO",
           name: "seo",
           type: "object",
