@@ -5,7 +5,7 @@ export default () =>
     .title('Content')
     .items([
       ...S.documentTypeListItems().filter(
-        (listItem) => !['settings', 'editorial', 'family', 'social'].includes(listItem.getId()),
+        (listItem) => !['settings', 'editorial', 'family', 'social', 'search'].includes(listItem.getId()),
       ),
       S.listItem()
         .title('Pages')
@@ -27,6 +27,11 @@ export default () =>
                 .title('Social')
                 .child(
                   S.document().schemaType('social').documentId('social'),
+                ),
+              S.listItem()
+                .title('Search')
+                .child(
+                  S.document().schemaType('search').documentId('search'),
                 ),
             ]),
         ),

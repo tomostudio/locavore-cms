@@ -102,11 +102,11 @@ export default {
         type: "string",
     },
     {
-        title: 'Date',
+        title: 'Date Publish',
         name: 'date',
         type: 'date',
         options: {
-            dateFormat: 'YYYY-MM',
+            dateFormat: 'YYYY-MM-DD',
             calendarTodayLabel: 'Today'
         }
     },

@@ -9,6 +9,7 @@ import settings from './settings'
 import editorial from './editorial'
 import family from './family'
 import social from './social'
+import search from './search'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,6 +23,7 @@ export default createSchema({
     editorial,
     family,
     social,
+    search,
     blockContent
   ]),
 })
