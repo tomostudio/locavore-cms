@@ -5,7 +5,14 @@ export default () =>
     .title('Content')
     .items([
       ...S.documentTypeListItems().filter(
-        (listItem) => !['settings', 'editorial', 'family', 'social', 'search'].includes(listItem.getId()),
+        (listItem) =>
+          ![
+            'settings',
+            'editorial',
+            'family',
+            'social',
+            'search',
+          ].includes(listItem.getId()),
       ),
       S.listItem()
         .title('Pages')
@@ -20,19 +27,13 @@ export default () =>
                 ),
               S.listItem()
                 .title('Family')
-                .child(
-                  S.document().schemaType('family').documentId('family'),
-                ),
+                .child(S.document().schemaType('family').documentId('family')),
               S.listItem()
                 .title('Social')
-                .child(
-                  S.document().schemaType('social').documentId('social'),
-                ),
+                .child(S.document().schemaType('social').documentId('social')),
               S.listItem()
                 .title('Search')
-                .child(
-                  S.document().schemaType('search').documentId('search'),
-                ),
+                .child(S.document().schemaType('search').documentId('search')),
             ]),
         ),
       S.listItem()

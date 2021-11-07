@@ -10,6 +10,7 @@ import editorial from './editorial'
 import family from './family'
 import social from './social'
 import search from './search'
+import family_list from './family_list'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,6 +25,7 @@ export default createSchema({
     family,
     social,
     search,
+    family_list,
     blockContent
   ]),
 })
