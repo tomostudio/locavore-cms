@@ -13,17 +13,32 @@ export default () =>
             'social',
             'search',
             'blog',
-            'caroussel'
+            'caroussel',
+            'gallery',
+            'video',
+            'category',
+            'home',
           ].includes(listItem.getId()),
       ),
       S.listItem()
-        .title('Article List')
+        .title('Article')
         .child(
           S.list()
-            .title('Article List')
+            .title('Article')
             .items([
-              S.documentTypeListItem('blog'),
-              S.documentTypeListItem('caroussel')
+              S.listItem()
+                .title('List')
+                .child(
+                  S.list()
+                    .title('List')
+                    .items([
+                      S.documentTypeListItem('blog'),
+                      S.documentTypeListItem('caroussel'),
+                      S.documentTypeListItem('gallery'),
+                      S.documentTypeListItem('video'),
+                    ]),
+                ),
+              S.documentTypeListItem('category'),
             ]),
         ),
       S.listItem()
@@ -33,18 +48,21 @@ export default () =>
             .title('Pages')
             .items([
               S.listItem()
-                .title('Editorial')
+                .title('Home')
+                .child(S.document().schemaType('home').documentId('home')),
+              S.listItem()
+                .title('Editorial Landing')
                 .child(
                   S.document().schemaType('editorial').documentId('editorial'),
                 ),
               S.listItem()
-                .title('Family')
+                .title('Family Landing')
                 .child(S.document().schemaType('family').documentId('family')),
               S.listItem()
-                .title('Social')
+                .title('Social Landing')
                 .child(S.document().schemaType('social').documentId('social')),
               S.listItem()
-                .title('Search')
+                .title('Search Landing')
                 .child(S.document().schemaType('search').documentId('search')),
             ]),
         ),

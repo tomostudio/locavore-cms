@@ -1,6 +1,6 @@
 export default {
-  name: 'blog',
-  title: 'Blog',
+  name: 'video',
+  title: 'Video',
   type: 'document',
   fields: [
     {
@@ -92,62 +92,15 @@ export default {
       ],
     },
     {
-      name: 'component',
-      title: 'Component',
-      type: 'array',
-      of: [
+      name: 'video',
+      title: 'Video',
+      type: 'object',
+      fields: [
         {
-          name: 'orange',
-          title: 'Orange',
-          type: 'object',
-          fields: [
-            {
-              name: 'title',
-              title: 'Title',
-              type: 'string',
-            },
-            {
-              name: 'content',
-              title: 'Content',
-              type: 'blockOrange',
-            },
-          ],
-          preview: {
-            prepare() {
-              return {
-                title: 'Orange',
-              }
-            },
-          },
-        },
-        {
-          name: 'white',
-          title: 'White',
-          type: 'object',
-          fields: [
-            {
-              name: 'title',
-              title: 'Title',
-              type: 'string',
-            },
-            {
-              name: 'content',
-              title: 'Content',
-              type: 'blockWhite',
-            },
-          ],
-          preview: {
-            prepare() {
-              return {
-                title: 'White',
-              }
-            },
-          },
-        },
-        {
-          name: 'image',
-          title: 'Image',
+          name: 'thumbnail',
+          title: 'Video Thumbnail',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -155,32 +108,12 @@ export default {
               type: 'string',
             },
           ],
-          preview: {
-            prepare() {
-              return {
-                title: 'Image',
-              }
-            },
-          },
         },
         {
-          name: 'imageFull',
-          title: 'Image Full',
-          type: 'image',
-          fields: [
-            {
-              title: 'Edit Alt Text',
-              name: 'name',
-              type: 'string',
-            },
-          ],
-          preview: {
-            prepare() {
-              return {
-                title: 'Image Full',
-              }
-            },
-          },
+          name: 'link',
+          title: 'Link',
+          type: 'url',
+          validation: (Rule) => Rule.required(),
         },
       ],
     },

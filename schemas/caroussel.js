@@ -63,6 +63,23 @@ export default {
       ],
     },
     {
+      title: "Issue",
+      name: "issue",
+      type: "reference",
+      to: [{ type: "issue" }],
+    },
+    {
+      title: "Category",
+      name: "category",
+      type: "reference",
+      to: [{ type: "category" }],
+    },
+    {
+      title: 'Description',
+      name: 'description',
+      type: 'blockContent',
+    },
+    {
       name: 'thumbnail',
       title: 'Thumbnail',
       type: 'image',
@@ -97,8 +114,8 @@ export default {
       ]
     },
     {
-      title: 'Background Color',
-      name: 'bgColor',
+      title: 'Card Color',
+      name: 'cardColor',
       type: 'string',
     },
     {

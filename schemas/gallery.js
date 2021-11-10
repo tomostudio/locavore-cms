@@ -1,6 +1,6 @@
 export default {
-  name: 'blog',
-  title: 'Blog',
+  name: 'gallery',
+  title: 'Gallery',
   type: 'document',
   fields: [
     {
@@ -97,56 +97,60 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'orange',
-          title: 'Orange',
+          name: 'twoImage',
+          title: 'Two Image',
           type: 'object',
           fields: [
             {
-              name: 'title',
-              title: 'Title',
-              type: 'string',
+              name: 'firstImage',
+              title: 'First Image',
+              type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                },
+              ],
+              preview: {
+                prepare() {
+                  return {
+                    title: 'First Image',
+                  }
+                },
+              },
             },
             {
-              name: 'content',
-              title: 'Content',
-              type: 'blockOrange',
+              name: 'secondImage',
+              title: 'Second Image',
+              type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                },
+              ],
+              preview: {
+                prepare() {
+                  return {
+                    title: 'Second Image',
+                  }
+                },
+              },
             },
           ],
           preview: {
             prepare() {
               return {
-                title: 'Orange',
+                title: 'Two Image',
               }
             },
           },
         },
         {
-          name: 'white',
-          title: 'White',
-          type: 'object',
-          fields: [
-            {
-              name: 'title',
-              title: 'Title',
-              type: 'string',
-            },
-            {
-              name: 'content',
-              title: 'Content',
-              type: 'blockWhite',
-            },
-          ],
-          preview: {
-            prepare() {
-              return {
-                title: 'White',
-              }
-            },
-          },
-        },
-        {
-          name: 'image',
-          title: 'Image',
+          name: 'singleImage',
+          title: 'Single Image',
           type: 'image',
           fields: [
             {
@@ -158,29 +162,34 @@ export default {
           preview: {
             prepare() {
               return {
-                title: 'Image',
+                title: 'Image Single',
               }
             },
           },
         },
         {
-          name: 'imageFull',
-          title: 'Image Full',
-          type: 'image',
+          name: 'video',
+          title: 'Video',
+          type: 'object',
           fields: [
             {
-              title: 'Edit Alt Text',
-              name: 'name',
-              type: 'string',
+              name: 'thumbnail',
+              title: 'Thumbnail',
+              type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                },
+              ],
+            },
+            {
+              name: 'link',
+              title: 'Link',
+              type: 'url',
             },
           ],
-          preview: {
-            prepare() {
-              return {
-                title: 'Image Full',
-              }
-            },
-          },
         },
       ],
     },

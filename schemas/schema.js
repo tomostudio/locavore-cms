@@ -15,6 +15,10 @@ import search from './search'
 import family_list from './family_list'
 import blog from './blog'
 import caroussel from './caroussel'
+import gallery from './gallery'
+import video from './video'
+import category from './category'
+import home from './home'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,6 +36,10 @@ export default createSchema({
     family_list,
     blog,
     caroussel,
+    gallery,
+    video,
+    category,
+    home,
     blockContent,
     blockOrange,
     blockWhite
