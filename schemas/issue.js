@@ -102,6 +102,12 @@ export default {
         type: "string",
     },
     {
+      name: "under_construction",
+      title: "Under Construction",
+      type: "boolean",
+      validation: (Rule) => Rule.required(),
+    },
+    {
         title: 'Date Publish',
         name: 'date',
         type: 'date',
@@ -117,6 +123,9 @@ export default {
       hidden: true,
     },
   ],
+  initialValue: {
+    under_construction: false
+  },
 
   preview: {
     select: {
