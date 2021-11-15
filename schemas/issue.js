@@ -99,13 +99,7 @@ export default {
     {
         title: "Background Color",
         name: "bgColor",
-        type: "string",
-    },
-    {
-      name: "under_construction",
-      title: "Under Construction",
-      type: "boolean",
-      validation: (Rule) => Rule.required(),
+        type: "color",
     },
     {
         title: 'Date Publish',

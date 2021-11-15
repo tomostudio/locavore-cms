@@ -149,32 +149,6 @@ export default {
       ],
     },
     {
-      name: 'image_socmed',
-      title: 'Image Instagram',
-      type: 'array',
-      of: [
-        {
-          name: 'image',
-          title: 'Image',
-          type: 'image',
-          fields: [
-            {
-              title: 'Name',
-              name: 'name',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-              validation: (Rule) => Rule.required(),
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: 'logo',
       title: 'Logo',
       type: 'image',
@@ -250,9 +224,9 @@ export default {
       ],
     },
     {
-      title: 'Background Color',
+      title: 'Color',
       name: 'bgColor',
-      type: 'string',
+      type: 'color',
     },
     {
       name: 'order',

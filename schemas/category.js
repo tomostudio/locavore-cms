@@ -8,6 +8,12 @@ export default {
       name: 'title',
       type: 'string',
     },
+    {
+      title: 'Color',
+      name: 'color',
+      type: 'color',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {

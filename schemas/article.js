@@ -1,6 +1,6 @@
 export default {
-  name: 'caroussel',
-  title: 'Caroussel',
+  name: 'article',
+  title: 'List',
   type: 'document',
   fields: [
     {
@@ -63,16 +63,25 @@ export default {
       ],
     },
     {
-      title: "Issue",
-      name: "issue",
-      type: "reference",
-      to: [{ type: "issue" }],
+      title: 'Issue',
+      name: 'issue',
+      type: 'reference',
+      to: [{ type: 'issue' }],
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Category",
-      name: "category",
-      type: "reference",
-      to: [{ type: "category" }],
+      title: 'Category',
+      name: 'category',
+      type: 'array',
+      validation: (Rule) => Rule.required(),
+      of: [
+        {
+          title: 'Category',
+          name: 'category',
+          type: 'reference',
+          to: [{ type: 'category' }],
+        },
+      ],
     },
     {
       title: 'Description',
@@ -92,31 +101,58 @@ export default {
       ],
     },
     {
-      name: "image_caroussel",
-      title: "Image Caroussel",
-      type: "array",
+      name: 'layout',
+      title: 'Layout',
+      type: 'string',
       options: {
-        layout: 'grid'
+        list: [
+          { title: 'Blog', value: 'blog' },
+          { title: 'Caroussel', value: 'caroussel' },
+          { title: 'Video', value: 'video' },
+          { title: 'Gallery', value: 'gallery' },
+        ],
       },
-      of: [
-        {
-          name: 'image',
-          title: 'Image',
-          type: 'image',
-          fields: [
-            {
-              title: 'Edit Alt Text',
-              name: 'name',
-              type: 'string',
-            },
-          ],
-        },
-      ]
     },
     {
-      title: 'Card Color',
-      name: 'cardColor',
-      type: 'string',
+      name: 'blog',
+      type: 'blogComponent',
+      title: 'Blog Component',
+      hidden: ({ document }) =>
+        !document?.layout ? true : document.layout === 'blog' ? false : true,
+    },
+    {
+      name: 'caroussel',
+      type: 'carousselComponent',
+      title: 'Caroussel Component',
+      hidden: ({ document }) =>
+        !document?.layout
+          ? true
+          : document.layout === 'caroussel'
+          ? false
+          : true,
+    },
+    {
+      name: 'video',
+      type: 'videoComponent',
+      title: 'Video Component',
+      hidden: ({ document }) =>
+        !document?.layout ? true : document.layout === 'video' ? false : true,
+    },
+    {
+      name: 'gallery',
+      type: 'galleryComponent',
+      title: 'Gallery Component',
+      hidden: ({ document }) =>
+        !document?.layout ? true : document.layout === 'gallery' ? false : true,
+    },
+    {
+      title: 'Date Publish',
+      name: 'date',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        calendarTodayLabel: 'Today',
+      },
     },
     {
       name: 'order',

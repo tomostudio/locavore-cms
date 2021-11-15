@@ -12,10 +12,7 @@ export default () =>
             'family',
             'social',
             'search',
-            'blog',
-            'caroussel',
-            'gallery',
-            'video',
+            'article',
             'category',
             'home',
           ].includes(listItem.getId()),
@@ -26,18 +23,7 @@ export default () =>
           S.list()
             .title('Article')
             .items([
-              S.listItem()
-                .title('List')
-                .child(
-                  S.list()
-                    .title('List')
-                    .items([
-                      S.documentTypeListItem('blog'),
-                      S.documentTypeListItem('caroussel'),
-                      S.documentTypeListItem('gallery'),
-                      S.documentTypeListItem('video'),
-                    ]),
-                ),
+              S.documentTypeListItem('article'),
               S.documentTypeListItem('category'),
             ]),
         ),

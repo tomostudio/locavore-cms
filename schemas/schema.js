@@ -13,12 +13,13 @@ import family from './family'
 import social from './social'
 import search from './search'
 import family_list from './family_list'
-import blog from './blog'
-import caroussel from './caroussel'
-import gallery from './gallery'
-import video from './video'
 import category from './category'
 import home from './home'
+import blogComponent from './blogComponent'
+import carousselComponent from './carousselComponent'
+import videoComponent from './videoComponent'
+import galleryComponent from './galleryComponent'
+import article from './article'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,12 +35,13 @@ export default createSchema({
     social,
     search,
     family_list,
-    blog,
-    caroussel,
-    gallery,
-    video,
     category,
     home,
+    blogComponent,
+    carousselComponent,
+    videoComponent,
+    galleryComponent,
+    article,
     blockContent,
     blockOrange,
     blockWhite
