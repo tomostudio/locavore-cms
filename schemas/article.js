@@ -72,16 +72,8 @@ export default {
     {
       title: 'Category',
       name: 'category',
-      type: 'array',
-      validation: (Rule) => Rule.required(),
-      of: [
-        {
-          title: 'Category',
-          name: 'category',
-          type: 'reference',
-          to: [{ type: 'category' }],
-        },
-      ],
+      type: 'reference',
+      to: [{ type: 'category' }],
     },
     {
       title: 'Description',
