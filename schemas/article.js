@@ -1,6 +1,6 @@
 export default {
   name: 'article',
-  title: 'List',
+  title: 'Article List',
   type: 'document',
   fields: [
     {
@@ -74,6 +74,7 @@ export default {
       name: 'category',
       type: 'reference',
       to: [{ type: 'category' }],
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Description',
