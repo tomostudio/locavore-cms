@@ -109,33 +109,25 @@ export default {
       name: 'blog',
       type: 'blogComponent',
       title: 'Blog Component',
-      hidden: ({ document }) =>
-        !document?.layout ? true : document.layout === 'blog' ? false : true,
+      hidden: ({ parent }) => !(parent?.layout === 'blog'),
     },
     {
       name: 'caroussel',
       type: 'carousselComponent',
       title: 'Caroussel Component',
-      hidden: ({ document }) =>
-        !document?.layout
-          ? true
-          : document.layout === 'caroussel'
-          ? false
-          : true,
+      hidden: ({ parent }) => !(parent?.layout === 'caroussel'),
     },
     {
       name: 'video',
       type: 'videoComponent',
       title: 'Video Component',
-      hidden: ({ document }) =>
-        !document?.layout ? true : document.layout === 'video' ? false : true,
+      hidden: ({ parent }) => !(parent?.layout === 'video'),
     },
     {
       name: 'gallery',
       type: 'galleryComponent',
       title: 'Gallery Component',
-      hidden: ({ document }) =>
-        !document?.layout ? true : document.layout === 'gallery' ? false : true,
+      hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
       title: 'Date Publish',
