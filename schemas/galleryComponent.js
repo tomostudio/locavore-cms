@@ -12,6 +12,7 @@ export default {
           name: 'firstImage',
           title: 'First Image',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -31,6 +32,7 @@ export default {
           name: 'secondImage',
           title: 'Second Image',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -58,10 +60,15 @@ export default {
     {
       name: 'singleImage',
       title: 'Single Image',
-      type: 'image',
+      type: 'object',
       fields: [
         {
-          title: 'Edit Alt Text',
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+        },
+        {
+          title: 'Name',
           name: 'name',
           type: 'string',
         },
@@ -69,7 +76,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Image Single',
+            title: 'Single Image',
           }
         },
       },
@@ -97,6 +104,13 @@ export default {
           type: 'url',
         },
       ],
+      preview: {
+        prepare() {
+          return {
+            title: 'Video',
+          }
+        },
+      },
     },
   ],
 }
