@@ -19,7 +19,8 @@
   "env": {
     "development": {
       "plugins": [
-        "@sanity/vision"
+        "@sanity/vision",
+        "order-documents"
       ]
     }
   },
