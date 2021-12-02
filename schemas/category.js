@@ -20,6 +20,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
+  initialValue: {
+    border: false,
+  },
   preview: {
     select: {
       title: 'title',

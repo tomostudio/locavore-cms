@@ -34,13 +34,11 @@ export default {
       name: 'thumbnail',
       type: 'image',
       description: 'JPEG / PNG / WEBP',
-      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-          validation: (Rule) => Rule.required(),
         }
       ],
     },
@@ -55,7 +53,6 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-          validation: (Rule) => Rule.required(),
         }
       ],
     },
@@ -115,6 +112,7 @@ export default {
         title: "Background Color",
         name: "bgColor",
         type: "color",
+        validation: (Rule) => Rule.required(),
     },
     {
       title: "Dark",
@@ -143,7 +141,8 @@ export default {
     },
   ],
   initialValue: {
-    under_construction: false
+    dark: false,
+    comingSoon: false,
   },
 
   preview: {
