@@ -128,6 +128,7 @@ export default {
       title: 'Date Publish',
       name: 'date',
       type: 'date',
+      validation: (Rule) => Rule.required(),
       options: {
           dateFormat: 'YYYY-MM-DD',
           calendarTodayLabel: 'Today'
