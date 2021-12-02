@@ -88,36 +88,6 @@ export default {
       ],
     },
     {
-      name: 'member',
-      title: 'Member',
-      type: 'array',
-      of: [
-        {
-          name: 'memberImage',
-          title: 'Image',
-          type: 'object',
-          fields: [
-            {
-              title: 'Image',
-              name: 'image',
-              type: 'image',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              title: 'Name',
-              name: 'name',
-              type: 'string',
-            },
-            {
-              title: 'Position',
-              name: 'position',
-              type: 'string',
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: 'logo',
       title: 'Logo',
       type: 'image',

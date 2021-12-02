@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      title: "Border",
+      name: "border",
+      type: "boolean",
+    },
+    {
       title: 'Color',
       name: 'color',
       type: 'color',

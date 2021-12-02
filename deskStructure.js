@@ -10,13 +10,36 @@ export default () =>
             'settings',
             'editorial',
             'family',
-            'social',
             'search',
             'article',
             'category',
             'home',
+            'issue',
+            'family_list',
+            'member_list'
           ].includes(listItem.getId()),
       ),
+      S.listItem()
+        .title('Editorial')
+        .child(
+          S.list()
+            .title('Editorial')
+            .items([
+              S.documentTypeListItem('issue'),
+              S.documentTypeListItem('article'),
+              S.documentTypeListItem('category'),
+            ]),
+        ),
+      S.listItem()
+        .title('Family')
+        .child(
+          S.list()
+            .title('Family')
+            .items([
+              S.documentTypeListItem('family_list'),
+              S.documentTypeListItem('member_list'),
+            ]),
+        ),
       S.listItem()
         .title('Article')
         .child(
@@ -37,19 +60,24 @@ export default () =>
                 .title('Home')
                 .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
-                .title('Editorial Landing')
+                .title('Editorial')
                 .child(
-                  S.document().schemaType('editorial').documentId('editorial'),
+                  S.list()
+                    .title('Editorial')
+                    .items([
+                      S.listItem()
+                        .title('Landing Page')
+                        .child(
+                          S.document().schemaType('editorial').documentId('editorial'),
+                        ),
+                      S.listItem()
+                        .title('Search')
+                        .child(S.document().schemaType('search').documentId('search')),
+                    ]),
                 ),
               S.listItem()
                 .title('Family Landing')
                 .child(S.document().schemaType('family').documentId('family')),
-              S.listItem()
-                .title('Social Landing')
-                .child(S.document().schemaType('social').documentId('social')),
-              S.listItem()
-                .title('Search Landing')
-                .child(S.document().schemaType('search').documentId('search')),
             ]),
         ),
       S.listItem()

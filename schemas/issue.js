@@ -30,6 +30,21 @@ export default {
         }),
     },
     {
+      title: 'Thumbnail',
+      name: 'thumbnail',
+      type: 'image',
+      description: 'JPEG / PNG / WEBP',
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'Edit Alt Text',
+          name: 'name',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        }
+      ],
+    },
+    {
       title: 'Image 1',
       name: 'image',
       type: 'image',
@@ -102,13 +117,23 @@ export default {
         type: "color",
     },
     {
-        title: 'Date Publish',
-        name: 'date',
-        type: 'date',
-        options: {
-            dateFormat: 'YYYY-MM-DD',
-            calendarTodayLabel: 'Today'
-        }
+      title: "Dark",
+      name: "dark",
+      type: "boolean",
+    },
+    {
+      title: "Coming Soon",
+      name: "comingSoon",
+      type: "boolean",
+    },
+    {
+      title: 'Date Publish',
+      name: 'date',
+      type: 'date',
+      options: {
+          dateFormat: 'YYYY-MM-DD',
+          calendarTodayLabel: 'Today'
+      }
     },
     {
       name: 'order',

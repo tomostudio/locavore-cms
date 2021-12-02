@@ -10,7 +10,7 @@ import blockWhite from './blockWhite'
 import settings from './settings'
 import editorial from './editorial'
 import family from './family'
-import social from './social'
+// import social from './social'
 import search from './search'
 import family_list from './family_list'
 import category from './category'
@@ -20,6 +20,7 @@ import carousselComponent from './carousselComponent'
 import videoComponent from './videoComponent'
 import galleryComponent from './galleryComponent'
 import article from './article'
+import member_list from './member_list'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,7 +33,7 @@ export default createSchema({
     settings,
     editorial,
     family,
-    social,
+    // social,
     search,
     family_list,
     category,
@@ -42,6 +43,7 @@ export default createSchema({
     videoComponent,
     galleryComponent,
     article,
+    member_list,
     blockContent,
     blockOrange,
     blockWhite
