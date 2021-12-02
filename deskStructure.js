@@ -28,6 +28,18 @@ export default () =>
               S.documentTypeListItem('issue'),
               S.documentTypeListItem('article'),
               S.documentTypeListItem('category'),
+              S.listItem()
+                .title('Article By Issue')
+                .child(
+                  S.documentTypeList('issue')
+                    .title('Article By Issue')
+                    .child(authorId =>
+                      S.documentList()
+                        .title('Article')
+                        .filter('_type == "article" && $authorId == issue._ref')
+                        .params({ authorId })
+                    )
+                ),
             ]),
         ),
       S.listItem()
