@@ -53,16 +53,6 @@ export default () =>
             ]),
         ),
       S.listItem()
-        .title('Article')
-        .child(
-          S.list()
-            .title('Article')
-            .items([
-              S.documentTypeListItem('article'),
-              S.documentTypeListItem('category'),
-            ]),
-        ),
-      S.listItem()
         .title('Pages')
         .child(
           S.list()

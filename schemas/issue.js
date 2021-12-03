@@ -38,40 +38,78 @@ export default {
     {
       title: 'Thumbnail',
       name: 'thumbnail',
-      type: 'image',
-      description: 'JPEG / PNG / WEBP',
+      type: 'object',
       fields: [
         {
-          title: 'Edit Alt Text',
-          name: 'name',
-          type: 'string',
+          title: 'Placeholder',
+          name: 'placeholder',
+          type: 'image',
+          description: 'JPEG / PNG / WEBP',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          title: 'Name Color',
+          name: 'color',
+          type: 'color',
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
     {
-      name: 'layout',
-      title: 'Layout',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Blog', value: 'blog' },
-          { title: 'Caroussel', value: 'caroussel' },
-          { title: 'Video', value: 'video' },
-          { title: 'Gallery', value: 'gallery' },
-        ],
-      },
-    },
-    {
       title: 'Image 1',
-      name: 'image',
-      type: 'image',
-      description: 'JPEG / PNG / WEBP',
-      validation: (Rule) => Rule.required(),
+      name: 'image1',
+      type: 'object',
       fields: [
         {
-          title: 'Edit Alt Text',
-          name: 'name',
-          type: 'string',
+          title: 'Placeholder',
+          name: 'placeholder',
+          type: 'image',
+          description: 'JPEG / PNG / WEBP',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          title: 'Name Color',
+          name: 'color',
+          type: 'color',
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      title: 'Image 2',
+      name: 'image2',
+      type: 'object',
+      fields: [
+        {
+          title: 'Placeholder',
+          name: 'placeholder',
+          type: 'image',
+          description: 'JPEG / PNG / WEBP',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          title: 'Name Color',
+          name: 'color',
+          type: 'color',
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
@@ -128,12 +166,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Background Color',
-      name: 'bgColor',
-      type: 'color',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'headerOption',
       title: 'Header Option',
       type: 'string',
@@ -184,15 +216,15 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'image',
-      issueNumber: "issueNumber"
+      media: 'thumbnail.placeholder',
+      issueNumber: 'issueNumber',
     },
     prepare(selection) {
-      const {title, media, issueNumber} = selection
+      const { title, media, issueNumber } = selection
       return {
-        title: `${issueNumber ? issueNumber+"." : ""} ${title}`,
-        media: media
+        title: `${issueNumber ? issueNumber + '.' : ''} ${title}`,
+        media: media,
       }
-    }
+    },
   },
 }
