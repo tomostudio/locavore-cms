@@ -115,6 +115,28 @@ export default {
         validation: (Rule) => Rule.required(),
     },
     {
+      name: 'issueNumber',
+      title: 'Issue Number',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'headerOption',
+      title: 'Header Option',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Hidden', value: 'hidden' },
+          { title: 'White', value: 'white' },
+          { title: 'Black', value: 'black' },
+          { title: 'Blur Black', value: 'blur-black' },
+          { title: 'Blur White', value: 'blur-white' },
+          { title: 'Transparent Black', value: 'transparent-black' },
+          { title: 'Transparent White', value: 'transparent-white' },
+        ],
+      },
+    },
+    {
       title: "Dark",
       name: "dark",
       type: "boolean",

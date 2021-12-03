@@ -131,6 +131,12 @@ export default {
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
+      name: 'articleNumber',
+      title: 'Article Number',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Date Publish',
       name: 'date',
       type: 'date',
