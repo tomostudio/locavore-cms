@@ -114,19 +114,6 @@ export default {
       ],
     },
     {
-      title: 'Image 2',
-      name: 'background2',
-      type: 'image',
-      description: 'JPEG / PNG / WEBP',
-      fields: [
-        {
-          title: 'Edit Alt Text',
-          name: 'name',
-          type: 'string',
-        },
-      ],
-    },
-    {
       title: 'SEO',
       name: 'seo',
       type: 'object',
