@@ -4,6 +4,12 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'articleNumber',
+      title: 'Article Number',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -131,12 +137,6 @@ export default {
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
-      name: 'articleNumber',
-      title: 'Article Number',
-      type: 'number',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Date Publish',
       name: 'date',
       type: 'date',
@@ -158,6 +158,20 @@ export default {
     select: {
       title: 'title',
       media: 'thumbnail',
+    },
+  },
+  preview: {
+    select: {
+      title: 'title',
+      media: 'thumbnail',
+      articleNumber: 'articleNumber',
+    },
+    prepare(selection) {
+      const { title, media, articleNumber } = selection
+      return {
+        title: `${articleNumber ? articleNumber + '.' : ''} ${title}`,
+        media: media,
+      }
     },
   },
 }

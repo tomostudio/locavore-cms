@@ -4,6 +4,12 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'issueNumber',
+      title: 'Issue Number',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -39,8 +45,21 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-        }
+        },
       ],
+    },
+    {
+      name: 'layout',
+      title: 'Layout',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Blog', value: 'blog' },
+          { title: 'Caroussel', value: 'caroussel' },
+          { title: 'Video', value: 'video' },
+          { title: 'Gallery', value: 'gallery' },
+        ],
+      },
     },
     {
       title: 'Image 1',
@@ -53,7 +72,7 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-        }
+        },
       ],
     },
     {
@@ -66,7 +85,7 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-        }
+        },
       ],
     },
     {
@@ -109,15 +128,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-        title: "Background Color",
-        name: "bgColor",
-        type: "color",
-        validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'issueNumber',
-      title: 'Issue Number',
-      type: 'number',
+      title: 'Background Color',
+      name: 'bgColor',
+      type: 'color',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -137,14 +150,14 @@ export default {
       },
     },
     {
-      title: "Dark",
-      name: "dark",
-      type: "boolean",
+      title: 'Dark',
+      name: 'dark',
+      type: 'boolean',
     },
     {
-      title: "Coming Soon",
-      name: "comingSoon",
-      type: "boolean",
+      title: 'Coming Soon',
+      name: 'comingSoon',
+      type: 'boolean',
     },
     {
       title: 'Date Publish',
@@ -152,9 +165,9 @@ export default {
       type: 'date',
       validation: (Rule) => Rule.required(),
       options: {
-          dateFormat: 'YYYY-MM-DD',
-          calendarTodayLabel: 'Today'
-      }
+        dateFormat: 'YYYY-MM-DD',
+        calendarTodayLabel: 'Today',
+      },
     },
     {
       name: 'order',
@@ -172,6 +185,14 @@ export default {
     select: {
       title: 'title',
       media: 'image',
+      issueNumber: "issueNumber"
     },
+    prepare(selection) {
+      const {title, media, issueNumber} = selection
+      return {
+        title: `${issueNumber ? issueNumber+"." : ""} ${title}`,
+        media: media
+      }
+    }
   },
 }
