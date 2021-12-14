@@ -22,5 +22,11 @@ export default {
       type: 'url',
       validation: (Rule) => Rule.required(),
     },
+    {
+      title: 'Dark',
+      name: 'dark',
+      type: 'boolean',
+      initialValue: false
+    },
   ],
 }

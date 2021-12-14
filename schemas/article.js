@@ -137,6 +137,11 @@ export default {
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
+      name: "readTime",
+      title: "Read Time",
+      type: "number",
+    },
+    {
       title: 'Date Publish',
       name: 'date',
       type: 'date',
@@ -153,13 +158,6 @@ export default {
       hidden: true,
     },
   ],
-
-  preview: {
-    select: {
-      title: 'title',
-      media: 'thumbnail',
-    },
-  },
   preview: {
     select: {
       title: 'title',

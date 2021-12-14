@@ -54,7 +54,7 @@ export default {
           ],
         },
         {
-          title: 'Name Color',
+          title: 'Fallback Color',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -62,7 +62,7 @@ export default {
       ],
     },
     {
-      title: 'Image 1',
+      title: 'Landing Image 1',
       name: 'image1',
       type: 'object',
       fields: [
@@ -80,7 +80,7 @@ export default {
           ],
         },
         {
-          title: 'Name Color',
+          title: 'Fallback Color',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -88,7 +88,7 @@ export default {
       ],
     },
     {
-      title: 'Image 2',
+      title: 'Landing Image 2',
       name: 'image2',
       type: 'object',
       fields: [
@@ -106,7 +106,7 @@ export default {
           ],
         },
         {
-          title: 'Name Color',
+          title: 'Fallback Color',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -159,19 +159,27 @@ export default {
       options: {
         list: [
           { title: 'Hidden', value: 'hidden' },
-          { title: 'White', value: 'white' },
-          { title: 'Black', value: 'black' },
+          { title: 'Solid White', value: 'solid-white' },
+          { title: 'Solid Black', value: 'solid-black' },
           { title: 'Blur Black', value: 'blur-black' },
           { title: 'Blur White', value: 'blur-white' },
           { title: 'Transparent Black', value: 'transparent-black' },
           { title: 'Transparent White', value: 'transparent-white' },
         ],
       },
+      initialValue: 'black',
     },
     {
-      title: 'Dark',
       name: 'dark',
-      type: 'boolean',
+      title: 'Dark',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Black Text', value: 'black-text' },
+          { title: 'White Text', value: 'white-text' }
+        ],
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Coming Soon',

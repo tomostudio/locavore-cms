@@ -36,8 +36,16 @@ export default {
 
   preview: {
     select: {
-      title: 'name',
+      title: "family.title",
+      name: 'name',
       media: 'image',
-    }
+    },
+    prepare(selection) {
+      const { title, name, media } = selection
+      return {
+        title: `${name ? name : '0'} & ${title}`,
+        media: media,
+      }
+    },
   },
 }
