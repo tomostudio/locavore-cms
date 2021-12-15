@@ -1,3 +1,5 @@
+import client from 'part:@sanity/base/client'
+
 export default {
   name: 'article',
   title: 'Article List',
@@ -158,6 +160,12 @@ export default {
       hidden: true,
     },
   ],
+  initialValue: async () => ({
+    articleNumber:
+      (await client.fetch(`
+       count(*[_type == "article"])
+    `)) + 1,
+  }),
   preview: {
     select: {
       title: 'title',

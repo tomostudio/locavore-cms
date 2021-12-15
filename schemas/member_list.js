@@ -1,3 +1,5 @@
+import client from 'part:@sanity/base/client'
+
 export default {
   name: 'member_list',
   title: 'Member List',
@@ -27,23 +29,35 @@ export default {
       type: 'string',
     },
     {
+      name: 'docnum',
+      title: 'Document Number',
+      type: 'number',
+      hidden: true,
+    },
+    {
       name: 'order',
       title: 'Order',
       type: 'number',
       hidden: true,
     },
   ],
-
+  initialValue: async () => ({
+    docnum:
+      (await client.fetch(`
+       count(*[_type == "member_list"])
+    `)) + 1,
+  }),
   preview: {
     select: {
-      title: "family.title",
+      title: 'family.title',
       name: 'name',
       media: 'image',
+      docnum: "docnum",
     },
     prepare(selection) {
-      const { title, name, media } = selection
+      const { title, name, media, docnum } = selection
       return {
-        title: `${name ? name : '0'} & ${title}`,
+        title: `${name ? name : `Family Member ${docnum}`} & ${title}`,
         media: media,
       }
     },
