@@ -159,8 +159,8 @@ export default {
       options: {
         list: [
           { title: 'Hidden', value: 'hidden' },
-          { title: 'Solid White', value: 'solid-white' },
-          { title: 'Solid Black', value: 'solid-black' },
+          { title: 'Solid White', value: 'white' },
+          { title: 'Solid Black', value: 'black' },
           { title: 'Blur Black', value: 'blur-black' },
           { title: 'Blur White', value: 'blur-white' },
           { title: 'Transparent Black', value: 'transparent-black' },
