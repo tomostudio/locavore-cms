@@ -9,7 +9,12 @@ export default {
       name: 'articleNumber',
       title: 'Article Number',
       type: 'number',
-      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'turnOffArticleNumber',
+      title: 'Turn Off Article Number',
+      type: 'boolean',
+      initialValue: false,
     },
     {
       name: 'title',
@@ -139,9 +144,9 @@ export default {
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
-      name: "readTime",
-      title: "Read Time",
-      type: "number",
+      name: 'readTime',
+      title: 'Read Time',
+      type: 'number',
     },
     {
       title: 'Date Publish',
@@ -171,11 +176,14 @@ export default {
       title: 'title',
       media: 'thumbnail',
       articleNumber: 'articleNumber',
+      turnOffArticleNumber: 'turnOffArticleNumber',
     },
     prepare(selection) {
-      const { title, media, articleNumber } = selection
+      const { title, media, articleNumber, turnOffArticleNumber } = selection
       return {
-        title: `${articleNumber ? articleNumber + '.' : ''} ${title}`,
+        title: `${
+          !turnOffArticleNumber && articleNumber ? articleNumber + '.' : ''
+        } ${title}`,
         media: media,
       }
     },
