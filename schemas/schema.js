@@ -21,6 +21,8 @@ import videoComponent from './videoComponent'
 import galleryComponent from './galleryComponent'
 import article from './article'
 import member_list from './member_list'
+import header from './header'
+import footer from './footer'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -44,6 +46,8 @@ export default createSchema({
     galleryComponent,
     article,
     member_list,
+    header,
+    footer,
     blockContent,
     blockOrange,
     blockWhite

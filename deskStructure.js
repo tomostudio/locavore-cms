@@ -16,7 +16,9 @@ export default () =>
             'home',
             'issue',
             'family_list',
-            'member_list'
+            'member_list',
+            'header',
+            'footer'
           ].includes(listItem.getId()),
       ),
       S.listItem()
@@ -84,5 +86,19 @@ export default () =>
         ),
       S.listItem()
         .title('Settings')
-        .child(S.document().schemaType('settings').documentId('settings')),
+        .child(
+          S.list()
+            .title('Settings')
+            .items([
+              S.listItem()
+                .title('General')
+                .child(S.document().schemaType('settings').documentId('settings')),
+              S.listItem()
+                .title('Header')
+                .child(S.document().schemaType('header').documentId('header')),
+              S.listItem()
+                .title('Footer')
+                .child(S.document().schemaType('footer').documentId('footer')),
+            ]),
+        ),
     ])

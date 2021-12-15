@@ -13,12 +13,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'logo',
-      title: 'Logo',
-      type: 'image',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'SEO',
       name: 'seo',
       type: 'object',
@@ -50,85 +44,6 @@ export default {
               name: 'name',
               type: 'string',
               validation: (Rule) => Rule.required(),
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Header Link',
-      name: 'headerLink',
-      type: 'array',
-      of: [
-        {
-          title: 'Link',
-          name: 'link',
-          type: 'object',
-          fields: [
-            {
-              title: 'Title',
-              name: 'title',
-              type: 'string',
-            },
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'string',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Social Media Footer',
-      name: 'footerLink',
-      type: 'object',
-      fields: [
-        {
-          title: 'Instagram',
-          name: 'instagram',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
-        },
-        {
-          title: 'Facebook',
-          name: 'facebook',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
-        },
-        {
-          title: 'Youtube',
-          name: 'youtube',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
-        },
-        {
-          title: 'Linkedin',
-          name: 'linkedin',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
             },
           ],
         },
