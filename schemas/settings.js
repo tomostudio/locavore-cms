@@ -1,6 +1,6 @@
 export default {
   name: 'settings',
-  title: 'Settings',
+  title: 'General',
   type: 'document',
   initialValue: () => ({
     webTitle: 'Locavore',
@@ -49,11 +49,26 @@ export default {
         },
       ],
     },
+    {
+      name: 'googleID',
+      title: 'Google Analytics ID',
+      type: 'string',
+    },
+    {
+      name: 'facebookID',
+      title: 'Facebook Pixel ID',
+      type: 'string',
+    },
+    {
+      name: 'mailchimpID',
+      title: 'Mailchimp ID',
+      type: 'string',
+    },
   ],
   preview: {
     prepare() {
       return {
-        title: 'Settings',
+        title: 'General',
       }
     },
   },

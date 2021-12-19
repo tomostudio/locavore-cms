@@ -33,6 +33,11 @@ export default {
         },
       ],
     },
+    {
+      title: 'Booking',
+      name: 'booking',
+      type: 'url',
+    },
   ],
   preview: {
     prepare() {
