@@ -182,6 +182,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'turnOffArticleNumber',
+      title: 'Turn Off Article Number',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       title: 'Coming Soon',
       name: 'comingSoon',
       type: 'boolean',

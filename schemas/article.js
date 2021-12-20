@@ -11,12 +11,6 @@ export default {
       type: 'number',
     },
     {
-      name: 'turnOffArticleNumber',
-      title: 'Turn Off Article Number',
-      type: 'boolean',
-      initialValue: false,
-    },
-    {
       name: 'title',
       title: 'Title',
       type: 'string',

@@ -163,6 +163,11 @@ export default {
       ],
     },
     {
+      title: 'Booking',
+      name: 'booking',
+      type: 'url',
+    },
+    {
       title: 'Color',
       name: 'bgColor',
       type: 'color',
