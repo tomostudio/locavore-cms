@@ -50,6 +50,23 @@ export default {
       ],
     },
     {
+      name: "Share",
+      title: "Share",
+      type: "object",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "message",
+          title: "Message",
+          type: "string",
+        }
+      ]
+    },
+    {
       name: 'googleID',
       title: 'Google Analytics ID',
       type: 'string',

@@ -5,7 +5,7 @@ export default {
   of: [
     {
       name: 'orange',
-      title: 'Orange',
+      title: 'Content with Orange Frame',
       type: 'object',
       fields: [
         {
@@ -29,7 +29,7 @@ export default {
     },
     {
       name: 'white',
-      title: 'White',
+      title: 'Content with White Frame',
       type: 'object',
       fields: [
         {

@@ -6,8 +6,21 @@ export default {
     {
       name: 'logo',
       title: 'Logo',
-      type: 'image',
-      validation: (Rule) => Rule.required(),
+      type: 'object',
+      fields: [
+        {
+          name: "white",
+          title: "White",
+          type: "image",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: "black",
+          title: "Black",
+          type: "image",
+          validation: (Rule) => Rule.required(),
+        }
+      ]
     },
     {
       title: 'Header Options',

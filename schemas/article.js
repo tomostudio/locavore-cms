@@ -112,6 +112,8 @@ export default {
           { title: 'Gallery', value: 'gallery' },
         ],
       },
+      validation: (Rule) => Rule.required(),
+      initialValue: "blog"
     },
     {
       name: 'blog',

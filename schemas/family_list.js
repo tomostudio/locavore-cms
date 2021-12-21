@@ -113,6 +113,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "mapLink",
+      title: "Map Link",
+      type: "url",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'phone_number',
       title: 'Phone Number',
       type: 'string',
