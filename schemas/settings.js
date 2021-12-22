@@ -50,7 +50,7 @@ export default {
       ],
     },
     {
-      name: "Share",
+      name: "share",
       title: "Share",
       type: "object",
       fields: [
@@ -58,11 +58,13 @@ export default {
           name: "title",
           title: "Title",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "message",
           title: "Message",
           type: "string",
+          validation: (Rule) => Rule.required(),
         }
       ]
     },

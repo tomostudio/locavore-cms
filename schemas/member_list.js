@@ -16,6 +16,7 @@ export default {
       name: "hideNamePosition",
       title: "Hide Name & Position",
       type: "boolean",
+      initialValue: false,
     },
     {
       title: 'Image',

@@ -223,7 +223,7 @@ export default {
     prepare(selection) {
       const { title, media, issueNumber } = selection
       return {
-        title: `${issueNumber ? issueNumber + '.' : ''} ${title}`,
+        title: `${issueNumber + '.'} ${title}`,
         media: media,
       }
     },
