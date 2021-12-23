@@ -7,7 +7,13 @@ export default {
       name: 'thumbnail',
       title: 'Video Thumbnail',
       type: 'image',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.custom((field, context) => {
+        if(context.document.layout === 'video') {
+          return !field ? "Required" : true
+        }else {
+          return true
+        }
+      }),
       fields: [
         {
           title: 'Edit Alt Text',
@@ -20,7 +26,13 @@ export default {
       name: 'link',
       title: 'Link',
       type: 'url',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.custom((field, context) => {
+        if(context.document.layout === 'video') {
+          return !field ? "Required" : true
+        }else {
+          return true
+        }
+      }),
     },
     {
       title: 'Dark',

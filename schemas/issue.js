@@ -210,7 +210,6 @@ export default {
     },
   ],
   initialValue: {
-    dark: false,
     comingSoon: false,
   },
 
