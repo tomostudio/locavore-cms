@@ -35,6 +35,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "hideNamePosition",
+      title: "Hide Name & Position",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
