@@ -28,10 +28,14 @@ export default {
       validation: (Rule) =>
         Rule.custom((slug) => {
           const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
-          if (slug.current.match(regex) !== null) {
-            return true
-          } else {
-            return 'Not a valid slug'
+          if(slug) {
+            if (slug.current.match(regex) !== null) {
+              return true
+            } else {
+              return 'Not a valid slug'
+            }
+          }else {
+            return 'Required'
           }
         }),
     },
