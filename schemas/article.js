@@ -170,6 +170,7 @@ export default {
       (await client.fetch(`
        count(*[_type == "article"])
     `)) + 1,
+    date: new Date(),
   }),
   preview: {
     select: {
