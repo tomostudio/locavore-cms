@@ -5,7 +5,7 @@ export default {
   of: [
     {
       name: 'orange',
-      title: 'Content with Orange Frame',
+      title: 'Edit Content to Color Frame',
       type: 'object',
       fields: [
         {
@@ -40,6 +40,11 @@ export default {
             }),
         },
         {
+          title: 'Color',
+          name: 'color',
+          type: 'color',
+        },
+        {
           name: 'content',
           title: 'Content',
           type: 'blockOrange',
@@ -48,7 +53,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Orange',
+            title: 'Color',
           }
         },
       },

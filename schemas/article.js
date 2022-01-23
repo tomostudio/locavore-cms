@@ -96,6 +96,7 @@ export default {
       name: 'thumbnail',
       title: 'Thumbnail',
       type: 'image',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',
@@ -170,7 +171,7 @@ export default {
       (await client.fetch(`
        count(*[_type == "article"])
     `)) + 1,
-    date: new Date(),
+    date: new Date().toISOString().slice(0, 10),
   }),
   preview: {
     select: {
