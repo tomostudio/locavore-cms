@@ -41,4 +41,11 @@ export default {
       initialValue: false
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: "Video"
+      }
+    }
+  }
 }

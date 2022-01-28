@@ -59,6 +59,16 @@ export default {
       },
     },
     {
+      name: 'video',
+      type: 'videoComponent',
+      title: 'Video',
+    },
+    {
+      name: 'gallery',
+      type: 'galleryComponent',
+      title: 'Gallery',
+    },
+    {
       name: 'white',
       title: 'Content with White Frame',
       type: 'object',
@@ -109,39 +119,24 @@ export default {
       },
     },
     {
-      name: 'image',
+      name: 'images',
       title: 'Image',
-      type: 'image',
+      type: 'object',
       fields: [
         {
-          title: 'Edit Alt Text',
-          name: 'name',
-          type: 'string',
+          name: "image",
+          type: 'image',
         },
+        {
+          title: "Small / Full",
+          name: "option",
+          type: "boolean",
+        }
       ],
       preview: {
         prepare() {
           return {
             title: 'Image',
-          }
-        },
-      },
-    },
-    {
-      name: 'imageFull',
-      title: 'Image Full',
-      type: 'image',
-      fields: [
-        {
-          title: 'Edit Alt Text',
-          name: 'name',
-          type: 'string',
-        },
-      ],
-      preview: {
-        prepare() {
-          return {
-            title: 'Image Full',
           }
         },
       },

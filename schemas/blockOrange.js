@@ -112,6 +112,11 @@ export default {
           name: 'name',
           type: 'string',
         },
+        {
+          title: "Small / Full",
+          name: "option",
+          type: "boolean",
+        }
       ],
     },
   ],

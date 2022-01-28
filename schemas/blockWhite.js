@@ -96,23 +96,28 @@ export default {
         }
       }
     },
-    // {
-    //   title: 'Image',
-    //   name: 'img',
-    //   type: 'object',
-    //   fields: [
-    //     {
-    //       title: 'Image',
-    //       name: 'image',
-    //       type: 'image',
-    //       validation: (Rule) => Rule.required(),
-    //     },
-    //     {
-    //       title: 'Description',
-    //       name: 'name',
-    //       type: 'string',
-    //     },
-    //   ],
-    // },
+    {
+      title: 'Image',
+      name: 'img',
+      type: 'object',
+      fields: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'image',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: 'Description',
+          name: 'name',
+          type: 'string',
+        },
+        {
+          title: "Small / Full",
+          name: "option",
+          type: "boolean",
+        }
+      ],
+    },
   ],
 }
