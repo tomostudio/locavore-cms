@@ -150,6 +150,17 @@ export default {
       type: 'number',
     },
     {
+      title: 'Color',
+      name: 'color',
+      type: 'color',
+    },
+    {
+      name: "categoryColor",
+      title: "Article Color as Category Color",
+      type: "boolean",
+      initialValue: false
+    },
+    {
       title: 'Date Publish',
       name: 'date',
       type: 'date',

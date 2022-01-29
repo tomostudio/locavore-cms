@@ -12,6 +12,7 @@ export default {
       title: "Border",
       name: "border",
       type: "boolean",
+      initialValue: false
     },
     {
       title: 'Color',

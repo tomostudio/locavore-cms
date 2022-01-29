@@ -131,6 +131,7 @@ export default {
           title: "Small / Full",
           name: "option",
           type: "boolean",
+          initialValue: false
         }
       ],
       preview: {
