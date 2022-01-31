@@ -134,9 +134,14 @@ export default {
       type: 'string',
     },
     {
+      name: 'waLink',
+      title: 'WhatsApp Link',
+      type: 'url',
+    },
+    {
       name: 'email',
       title: 'Email',
-      type: 'string',
+      type: 'email',
       validation: (Rule) => Rule.required(),
     },
     {

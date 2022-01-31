@@ -12,30 +12,20 @@ export default {
           name: 'title',
           title: 'Title',
           type: 'string',
-        },
-        {
-          title: 'Slug',
-          name: 'slug',
-          type: 'slug',
-          options: {
-            source: (doc, options) => options.parent.title,
-            maxLength: 96,
-          },
           validation: (Rule) =>
-            Rule.custom((slug, context) => {
-              const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
-              if(slug) {
-                if (slug.current.match(regex) !== null) {
-                  if (context.document.blog.filter((item) => item.slug && item.slug.current === slug.current).length > 1) {
-                    return 'Slug is already in use'
-                  }else {
-                    return true
-                  }
-                } else {
-                  return 'Not a valid slug'
-                }
-              }else {
-                return 'Required'
+            Rule.custom((field, context) => {
+              if (
+                context.document.blog
+                  .filter((item) => item._type === 'orange')
+                  .filter(
+                    (data) =>
+                      data.title.split(' ').join('-') ===
+                      field.split(' ').join('-'),
+                  ).length > 1
+              ) {
+                return 'Title must be unique'
+              } else {
+                return true
               }
             }),
         },
@@ -77,30 +67,20 @@ export default {
           name: 'title',
           title: 'Title',
           type: 'string',
-        },
-        {
-          title: 'Slug',
-          name: 'slug',
-          type: 'slug',
-          options: {
-            source: (doc, options) => options.parent.title,
-            maxLength: 96,
-          },
           validation: (Rule) =>
-            Rule.custom((slug, context) => {
-              const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
-              if(slug) {
-                if (slug.current.match(regex) !== null) {
-                  if (context.document.blog.filter((item) => item.slug && item.slug.current === slug.current).length > 1) {
-                    return 'Slug is already in use'
-                  }else {
-                    return true
-                  }
-                } else {
-                  return 'Not a valid slug'
-                }
-              }else {
-                return 'Required'
+            Rule.custom((field, context) => {
+              if (
+                context.document.blog
+                  .filter((item) => item._type === 'white')
+                  .filter(
+                    (data) =>
+                      data.title.split(' ').join('-') ===
+                      field.split(' ').join('-'),
+                  ).length > 1
+              ) {
+                return 'Title must be unique'
+              } else {
+                return true
               }
             }),
         },
@@ -124,15 +104,15 @@ export default {
       type: 'object',
       fields: [
         {
-          name: "image",
+          name: 'image',
           type: 'image',
         },
         {
-          title: "Small / Full",
-          name: "option",
-          type: "boolean",
-          initialValue: false
-        }
+          title: 'Small / Full',
+          name: 'option',
+          type: 'boolean',
+          initialValue: false,
+        },
       ],
       preview: {
         prepare() {
