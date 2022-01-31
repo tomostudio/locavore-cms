@@ -19,8 +19,16 @@ export default {
                   .filter((item) => item._type === 'orange')
                   .filter(
                     (data) =>
-                      data.title.split(' ').join('-') ===
-                      field.split(' ').join('-'),
+                      data.title
+                        .toLowerCase()
+                        .replace(/ /g, '-')
+                        .replace(/[-]+/g, '-')
+                        .replace(/[^\w-]+/g, '') ===
+                      field
+                        .toLowerCase()
+                        .replace(/ /g, '-')
+                        .replace(/[-]+/g, '-')
+                        .replace(/[^\w-]+/g, ''),
                   ).length > 1
               ) {
                 return 'Title must be unique'
