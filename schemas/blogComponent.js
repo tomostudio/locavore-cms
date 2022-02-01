@@ -14,24 +14,29 @@ export default {
           type: 'string',
           validation: (Rule) =>
             Rule.custom((field, context) => {
-              if (
-                context.document.blog
-                  .filter((item) => item._type === 'orange')
-                  .filter(
-                    (data) =>
-                      data.title
-                        .toLowerCase()
-                        .replace(/ /g, '-')
-                        .replace(/[-]+/g, '-')
-                        .replace(/[^\w-]+/g, '') ===
-                      field
-                        .toLowerCase()
-                        .replace(/ /g, '-')
-                        .replace(/[-]+/g, '-')
-                        .replace(/[^\w-]+/g, ''),
-                  ).length > 1
-              ) {
-                return 'Title must be unique'
+              if (field) {
+                if (
+                  context.document.blog
+                    .filter((item) => item._type === 'orange')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/ /g, '-')
+                          .replace(/[-]+/g, '-')
+                          .replace(/[^\w-]+/g, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/ /g, '-')
+                            .replace(/[-]+/g, '-')
+                            .replace(/[^\w-]+/g, ''),
+                    ).length > 1
+                ) {
+                  return 'Title must be unique'
+                } else {
+                  return true
+                }
               } else {
                 return true
               }
@@ -63,8 +68,22 @@ export default {
     },
     {
       name: 'gallery',
-      type: 'galleryComponent',
       title: 'Gallery',
+      type: 'object',
+      fields: [
+        {
+          name: 'gallery',
+          type: 'galleryComponent',
+          title: 'Gallery Component',
+        },
+      ],
+      preview: {
+        prepare() {
+          return {
+            title: 'Gallery',
+          }
+        },
+      },
     },
     {
       name: 'white',
@@ -77,16 +96,29 @@ export default {
           type: 'string',
           validation: (Rule) =>
             Rule.custom((field, context) => {
-              if (
-                context.document.blog
-                  .filter((item) => item._type === 'white')
-                  .filter(
-                    (data) =>
-                      data.title.split(' ').join('-') ===
-                      field.split(' ').join('-'),
-                  ).length > 1
-              ) {
-                return 'Title must be unique'
+              if (field) {
+                if (
+                  context.document.blog
+                    .filter((item) => item._type === 'white')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/ /g, '-')
+                          .replace(/[-]+/g, '-')
+                          .replace(/[^\w-]+/g, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/ /g, '-')
+                            .replace(/[-]+/g, '-')
+                            .replace(/[^\w-]+/g, ''),
+                    ).length > 1
+                ) {
+                  return 'Title must be unique'
+                } else {
+                  return true
+                }
               } else {
                 return true
               }
