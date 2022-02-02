@@ -72,7 +72,7 @@ export default {
       type: 'object',
       fields: [
         {
-          name: 'galleryComponent',
+          name: 'gallery',
           title: 'Gallery Component',
           type: 'array',
           of: [

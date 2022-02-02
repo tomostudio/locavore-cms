@@ -66,11 +66,13 @@ export default {
           name: 'image',
           title: 'Image',
           type: 'image',
-        },
-        {
-          title: 'Name',
-          name: 'name',
-          type: 'string',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+            },
+          ],
         },
       ],
       preview: {
