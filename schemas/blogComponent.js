@@ -72,9 +72,97 @@ export default {
       type: 'object',
       fields: [
         {
-          name: 'gallery',
-          type: 'galleryComponent',
+          name: 'galleryComponent',
           title: 'Gallery Component',
+          type: 'array',
+          of: [
+            {
+              name: 'twoImage',
+              title: 'Two Image',
+              type: 'object',
+              fields: [
+                {
+                  name: 'firstImage',
+                  title: 'First Image',
+                  type: 'image',
+                  validation: (Rule) => Rule.required(),
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'name',
+                      type: 'string',
+                    },
+                  ],
+                  preview: {
+                    prepare() {
+                      return {
+                        title: 'First Image',
+                      }
+                    },
+                  },
+                },
+                {
+                  name: 'secondImage',
+                  title: 'Second Image',
+                  type: 'image',
+                  validation: (Rule) => Rule.required(),
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'name',
+                      type: 'string',
+                    },
+                  ],
+                  preview: {
+                    prepare() {
+                      return {
+                        title: 'Second Image',
+                      }
+                    },
+                  },
+                },
+              ],
+              preview: {
+                prepare() {
+                  return {
+                    title: 'Two Image',
+                  }
+                },
+              },
+            },
+            {
+              name: 'singleImage',
+              title: 'Single Image',
+              type: 'object',
+              fields: [
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  fields: [
+                    {
+                      title: 'Edit Alt Text',
+                      name: 'name',
+                      type: 'string',
+                    },
+                  ],
+                },
+                {
+                  title: 'Small / Full',
+                  name: 'option',
+                  type: 'boolean',
+                  initialValue: false,
+                },
+              ],
+              preview: {
+                prepare() {
+                  return {
+                    title: 'Single Image',
+                  }
+                },
+              },
+            },
+          ],
         },
       ],
       preview: {
@@ -134,30 +222,6 @@ export default {
         prepare() {
           return {
             title: 'White',
-          }
-        },
-      },
-    },
-    {
-      name: 'images',
-      title: 'Image',
-      type: 'object',
-      fields: [
-        {
-          name: 'image',
-          type: 'image',
-        },
-        {
-          title: 'Small / Full',
-          name: 'option',
-          type: 'boolean',
-          initialValue: false,
-        },
-      ],
-      preview: {
-        prepare() {
-          return {
-            title: 'Image',
           }
         },
       },

@@ -103,6 +103,12 @@ export default {
           title: 'Link',
           type: 'url',
         },
+        {
+          title: 'Dark',
+          name: 'dark',
+          type: 'boolean',
+          initialValue: false,
+        },
       ],
       preview: {
         prepare() {
