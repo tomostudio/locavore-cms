@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Important items to allow form fields to work properly and patch the dataset.
-import {PatchEvent, set} from 'part:@sanity/form-builder/patch-event'
+import { PatchEvent, set } from 'part:@sanity/form-builder/patch-event'
 import FormField from 'part:@sanity/components/formfields/default'
 
 // Import the TextArea from UI
@@ -9,18 +9,19 @@ import { TextArea } from '@sanity/ui'
 
 const inputWithHeight = React.forwardRef((props, ref) => {
   const { type, onChange } = props
-  return(
+  return (
     <FormField label={type.title} description={type.description}>
       <TextArea
         ref={ref}
         placeholder={type.placeholder}
         value={props.value}
-        onChange={event => {onChange(PatchEvent.from(set(event.target.value)))}}
-        style={{ height: "60px" }}
-      /> 
+        onChange={(event) => {
+          onChange(PatchEvent.from(set(event.target.value)))
+        }}
+        style={{ height: '60px' }}
+      />
     </FormField>
   )
-
 })
 
 export default {
@@ -35,9 +36,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "hideNamePosition",
-      title: "Hide Name & Position",
-      type: "boolean",
+      name: 'hideNamePosition',
+      title: 'Hide Name & Position',
+      type: 'boolean',
       initialValue: false,
     },
     {
@@ -53,13 +54,13 @@ export default {
       validation: (Rule) =>
         Rule.custom((slug) => {
           const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
-          if(slug) {
+          if (slug) {
             if (slug.current.match(regex) !== null) {
               return true
             } else {
               return 'Not a valid slug'
             }
-          }else {
+          } else {
             return 'Required'
           }
         }),
@@ -123,9 +124,9 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "mapLink",
-      title: "Map Link",
-      type: "url",
+      name: 'mapLink',
+      title: 'Map Link',
+      type: 'url',
       validation: (Rule) => Rule.required(),
     },
     {
