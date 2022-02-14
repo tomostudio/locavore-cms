@@ -29,13 +29,13 @@ export default {
       validation: (Rule) =>
         Rule.custom((slug) => {
           const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
-          if(slug) {
+          if (slug) {
             if (slug.current.match(regex) !== null) {
               return true
             } else {
               return 'Not a valid slug'
             }
-          }else {
+          } else {
             return 'Required'
           }
         }),
@@ -118,7 +118,7 @@ export default {
         ],
       },
       validation: (Rule) => Rule.required(),
-      initialValue: "blog"
+      initialValue: 'blog',
     },
     {
       name: 'blog',
@@ -155,10 +155,10 @@ export default {
       type: 'color',
     },
     {
-      name: "categoryColor",
-      title: "Article Color as Category Color",
-      type: "boolean",
-      initialValue: false
+      name: 'categoryColor',
+      title: 'Article Color as Category Color',
+      type: 'boolean',
+      initialValue: false,
     },
     {
       title: 'Date Publish',
@@ -180,7 +180,7 @@ export default {
   initialValue: async () => ({
     articleNumber:
       (await client.fetch(`
-       count(*[_type == "article"])
+        count(*[_type == "article" && !(_id in path("drafts.**"))])
     `)) + 1,
     date: new Date().toISOString().slice(0, 10),
   }),

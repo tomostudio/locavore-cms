@@ -44,7 +44,7 @@ export default {
   initialValue: async () => ({
     docnum:
       (await client.fetch(`
-       count(*[_type == "member_list"])
+       count(*[_type == "member_list" && !(_id in path("drafts.**"))])
     `)) + 1,
   }),
   preview: {
