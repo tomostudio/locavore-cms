@@ -5,7 +5,7 @@ export default {
   of: [
     {
       name: 'orange',
-      title: 'Edit Content to Color Frame',
+      title: 'Content Color Frame Module',
       type: 'object',
       fields: [
         {
@@ -30,15 +30,15 @@ export default {
                             .toLowerCase()
                             .replace(/ /g, '-')
                             .replace(/[-]+/g, '-')
-                            .replace(/[^\w-]+/g, ''),
+                            .replace(/[^\w-]+/g, '')
                     ).length > 1
                 ) {
-                  return 'Title must be unique'
+                  return 'Title must be unique';
                 } else {
-                  return true
+                  return true;
                 }
               } else {
-                return true
+                return true;
               }
             }),
         },
@@ -57,18 +57,71 @@ export default {
         prepare() {
           return {
             title: 'Color',
-          }
+          };
+        },
+      },
+    },
+    {
+      name: 'white',
+      title: 'Content No Frame Module',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) =>
+            Rule.custom((field, context) => {
+              if (field) {
+                if (
+                  context.document.blog
+                    .filter((item) => item._type === 'white')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/ /g, '-')
+                          .replace(/[-]+/g, '-')
+                          .replace(/[^\w-]+/g, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/ /g, '-')
+                            .replace(/[-]+/g, '-')
+                            .replace(/[^\w-]+/g, '')
+                    ).length > 1
+                ) {
+                  return 'Title must be unique';
+                } else {
+                  return true;
+                }
+              } else {
+                return true;
+              }
+            }),
+        },
+        {
+          name: 'content',
+          title: 'Content',
+          type: 'blockWhite',
+        },
+      ],
+      preview: {
+        prepare() {
+          return {
+            title: 'White',
+          };
         },
       },
     },
     {
       name: 'video',
       type: 'videoComponent',
-      title: 'Video',
+      title: 'Video Module',
     },
     {
       name: 'gallery',
-      title: 'Gallery',
+      title: 'Gallery Module',
       type: 'object',
       fields: [
         {
@@ -97,7 +150,7 @@ export default {
                     prepare() {
                       return {
                         title: 'First Image',
-                      }
+                      };
                     },
                   },
                 },
@@ -117,7 +170,7 @@ export default {
                     prepare() {
                       return {
                         title: 'Second Image',
-                      }
+                      };
                     },
                   },
                 },
@@ -126,7 +179,7 @@ export default {
                 prepare() {
                   return {
                     title: 'Two Image',
-                  }
+                  };
                 },
               },
             },
@@ -163,7 +216,7 @@ export default {
                 prepare() {
                   return {
                     title: 'Single Image',
-                  }
+                  };
                 },
               },
             },
@@ -174,62 +227,9 @@ export default {
         prepare() {
           return {
             title: 'Gallery',
-          }
-        },
-      },
-    },
-    {
-      name: 'white',
-      title: 'Content with White Frame',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-          validation: (Rule) =>
-            Rule.custom((field, context) => {
-              if (field) {
-                if (
-                  context.document.blog
-                    .filter((item) => item._type === 'white')
-                    .filter(
-                      (data) =>
-                        data.title &&
-                        data.title
-                          .toLowerCase()
-                          .replace(/ /g, '-')
-                          .replace(/[-]+/g, '-')
-                          .replace(/[^\w-]+/g, '') ===
-                          field
-                            .toLowerCase()
-                            .replace(/ /g, '-')
-                            .replace(/[-]+/g, '-')
-                            .replace(/[^\w-]+/g, ''),
-                    ).length > 1
-                ) {
-                  return 'Title must be unique'
-                } else {
-                  return true
-                }
-              } else {
-                return true
-              }
-            }),
-        },
-        {
-          name: 'content',
-          title: 'Content',
-          type: 'blockWhite',
-        },
-      ],
-      preview: {
-        prepare() {
-          return {
-            title: 'White',
-          }
+          };
         },
       },
     },
   ],
-}
+};
