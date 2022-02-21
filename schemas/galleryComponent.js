@@ -1,6 +1,6 @@
 export default {
   name: 'galleryComponent',
-  title: 'Gallery Component',
+  title: 'Gallery Module',
   type: 'array',
   of: [
     {
@@ -115,7 +115,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Video',
+            title: 'Gallery Module',
           }
         },
       },

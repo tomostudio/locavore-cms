@@ -1,4 +1,4 @@
-import client from 'part:@sanity/base/client'
+import client from 'part:@sanity/base/client';
 
 export default {
   name: 'article',
@@ -28,15 +28,15 @@ export default {
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
           if (slug) {
             if (slug.current.match(regex) !== null) {
-              return true
+              return true;
             } else {
-              return 'Not a valid slug'
+              return 'Not a valid slug';
             }
           } else {
-            return 'Required'
+            return 'Required';
           }
         }),
     },
@@ -150,15 +150,16 @@ export default {
       type: 'number',
     },
     {
-      title: 'Color',
+      title: 'Set Article Color',
       name: 'color',
       type: 'color',
     },
     {
       name: 'categoryColor',
-      title: 'Article Color as Category Color',
+      title: 'Overwrite Article Color as Category Color',
       type: 'boolean',
       initialValue: false,
+      hidden: true, // hide
     },
     {
       title: 'Date Publish',
@@ -192,13 +193,13 @@ export default {
       turnOffArticleNumber: 'turnOffArticleNumber',
     },
     prepare(selection) {
-      const { title, media, articleNumber, turnOffArticleNumber } = selection
+      const { title, media, articleNumber, turnOffArticleNumber } = selection;
       return {
         title: `${
           !turnOffArticleNumber && articleNumber ? articleNumber + '.' : ''
         } ${title}`,
         media: media,
-      }
+      };
     },
   },
-}
+};

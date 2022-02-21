@@ -44,7 +44,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: "Video"
+        title: "Video Module"
       }
     }
   }

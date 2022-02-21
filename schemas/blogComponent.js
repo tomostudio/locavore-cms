@@ -5,7 +5,7 @@ export default {
   of: [
     {
       name: 'orange',
-      title: 'Content Color Frame Module',
+      title: 'Color Editor Frame Module',
       type: 'object',
       fields: [
         {
@@ -43,7 +43,7 @@ export default {
             }),
         },
         {
-          title: 'Color',
+          title: 'Customize Editor Color',
           name: 'color',
           type: 'color',
         },
@@ -56,14 +56,14 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Color',
+            title: 'Color Editor Frame',
           };
         },
       },
     },
     {
       name: 'white',
-      title: 'Content No Frame Module',
+      title: 'White Editor Frame Module',
       type: 'object',
       fields: [
         {
@@ -109,7 +109,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'White',
+            title: 'White Editor Frame',
           };
         },
       },
@@ -226,7 +226,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Gallery',
+            title: 'Gallery Module',
           };
         },
       },
