@@ -23,6 +23,11 @@ export default {
       ],
     },
     {
+      title: 'Caption',
+      name: 'caption',
+      type: 'string',
+    },
+    {
       name: 'link',
       title: 'Link',
       type: 'url',

@@ -185,6 +185,12 @@ export default {
       ],
     },
     {
+      title: "Elfsight Code",
+      name: 'elfsightCode',
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Booking',
       name: 'booking',
       type: 'url',

@@ -82,6 +82,12 @@ export default {
       type: 'object',
       fields: [
         {
+          name: "border",
+          title: "Border",
+          type: "boolean",
+          initialValue: false,
+        },
+        {
           name: 'content',
           title: 'Content',
           type: 'string',

@@ -9,6 +9,7 @@ export default {
       name: 'articleNumber',
       title: 'Article Number',
       type: 'number',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'title',
@@ -159,7 +160,6 @@ export default {
       title: 'Overwrite Article Color as Category Color',
       type: 'boolean',
       initialValue: false,
-      hidden: true, // hide
     },
     {
       title: 'Date Publish',

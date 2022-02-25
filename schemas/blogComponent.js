@@ -9,6 +9,12 @@ export default {
       type: 'object',
       fields: [
         {
+          name: 'showTitle',
+          title: 'Show Title',
+          type: 'boolean',
+          initialValue: true,
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string',
@@ -30,15 +36,15 @@ export default {
                             .toLowerCase()
                             .replace(/ /g, '-')
                             .replace(/[-]+/g, '-')
-                            .replace(/[^\w-]+/g, '')
+                            .replace(/[^\w-]+/g, ''),
                     ).length > 1
                 ) {
-                  return 'Title must be unique';
+                  return 'Title must be unique'
                 } else {
-                  return true;
+                  return true
                 }
               } else {
-                return true;
+                return true
               }
             }),
         },
@@ -57,7 +63,7 @@ export default {
         prepare() {
           return {
             title: 'Color Editor Frame',
-          };
+          }
         },
       },
     },
@@ -88,15 +94,15 @@ export default {
                             .toLowerCase()
                             .replace(/ /g, '-')
                             .replace(/[-]+/g, '-')
-                            .replace(/[^\w-]+/g, '')
+                            .replace(/[^\w-]+/g, ''),
                     ).length > 1
                 ) {
-                  return 'Title must be unique';
+                  return 'Title must be unique'
                 } else {
-                  return true;
+                  return true
                 }
               } else {
-                return true;
+                return true
               }
             }),
         },
@@ -110,7 +116,7 @@ export default {
         prepare() {
           return {
             title: 'White Editor Frame',
-          };
+          }
         },
       },
     },
@@ -150,7 +156,7 @@ export default {
                     prepare() {
                       return {
                         title: 'First Image',
-                      };
+                      }
                     },
                   },
                 },
@@ -170,7 +176,7 @@ export default {
                     prepare() {
                       return {
                         title: 'Second Image',
-                      };
+                      }
                     },
                   },
                 },
@@ -179,7 +185,7 @@ export default {
                 prepare() {
                   return {
                     title: 'Two Image',
-                  };
+                  }
                 },
               },
             },
@@ -216,7 +222,7 @@ export default {
                 prepare() {
                   return {
                     title: 'Single Image',
-                  };
+                  }
                 },
               },
             },
@@ -227,9 +233,9 @@ export default {
         prepare() {
           return {
             title: 'Gallery Module',
-          };
+          }
         },
       },
     },
   ],
-};
+}
