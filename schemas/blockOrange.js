@@ -166,6 +166,7 @@ export default {
               {
                 name: 'color',
                 type: 'color',
+                validation: (Rule) => Rule.required(),
               },
             ],
           },
@@ -180,6 +181,7 @@ export default {
               {
                 name: 'color',
                 type: 'color',
+                validation: (Rule) => Rule.required(),
               },
             ],
           },
@@ -194,6 +196,7 @@ export default {
               {
                 name: 'size',
                 type: 'number',
+                validation: (Rule) => Rule.required(),
               },
             ],
           },
@@ -211,11 +214,11 @@ export default {
                 validation: (Rule) => Rule.required(),
                 options: {
                   list: [
-                    { title: 'Serif', value: 'serif' },
-                    { title: 'Sans', value: 'sans' },
+                    { title: 'Serif', value: 'font-serif' },
+                    { title: 'Sans', value: 'font-sans' },
                   ],
                 },
-                initialValue: 'serif',
+                initialValue: 'font-serif',
               },
             ],
           },
@@ -227,6 +230,7 @@ export default {
               {
                 name: 'url',
                 type: 'url',
+                validation: (Rule) => Rule.required(),
               },
             ],
           },
@@ -254,7 +258,7 @@ export default {
     // as a block type.
     {
       title: 'Line Spacer',
-      name: 'Line Spacer',
+      name: 'lineSpacer',
       type: 'object',
       fields: [
         {
@@ -293,10 +297,16 @@ export default {
       },
     },
     {
-      title: 'Column Padding',
-      name: 'Cpadding',
+      title: 'Column Block',
+      name: 'columnBlock',
       type: 'object',
       fields: [
+        {
+          name: 'padding',
+          title: 'Padding',
+          type: "boolean",
+          initialValue: true,
+        },
         {
           title: 'Left',
           name: 'left',
@@ -325,6 +335,13 @@ export default {
               title: 'Image Left',
               name: 'imageLeft',
               type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                },
+              ],
               hidden: ({ parent }) => !(parent?.columnLeft === 'image'),
             },
           ],
@@ -357,6 +374,13 @@ export default {
               title: 'Image Right',
               name: 'imageRight',
               type: 'image',
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                },
+              ],
               hidden: ({ parent }) => !(parent?.columnRight === 'image'),
             },
           ],
@@ -365,7 +389,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Column Padding',
+            title: 'Column Block',
           }
         },
       },
