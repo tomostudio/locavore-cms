@@ -5,8 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import issue from './issue'
 import blockContent from './blockContent'
-import blockOrange from './blockOrange'
-import blockWhite from './blockWhite'
+import blockArticle from './blockArticle'
 import settings from './settings'
 import editorial from './editorial'
 import family from './family'
@@ -50,8 +49,7 @@ export default createSchema({
     header,
     footer,
     blockContent,
-    blockOrange,
-    blockWhite,
+    blockArticle,
     blockIssue
   ]),
 })

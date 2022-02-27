@@ -4,8 +4,8 @@ export default {
   type: 'array',
   of: [
     {
-      name: 'orange',
-      title: 'Color Editor Frame Module',
+      name: 'editor',
+      title: 'Editor Frame Module',
       type: 'object',
       fields: [
         {
@@ -25,11 +25,11 @@ export default {
           title: 'Title',
           type: 'string',
           validation: (Rule) =>
-            Rule.custom((field, context) => {
+            Rule.required().custom((field, context) => {
               if (field) {
                 if (
                   context.document.blog
-                    .filter((item) => item._type === 'orange')
+                    .filter((item) => item._type === 'editor')
                     .filter(
                       (data) =>
                         data.title &&
@@ -63,7 +63,7 @@ export default {
         {
           name: 'content',
           title: 'Content',
-          type: 'blockOrange',
+          type: 'blockArticle',
         },
         {
           name: 'video',
@@ -74,60 +74,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Color Editor Frame',
-          }
-        },
-      },
-    },
-    {
-      name: 'white',
-      title: 'White Editor Frame Module',
-      type: 'object',
-      fields: [
-        {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
-          validation: (Rule) =>
-            Rule.custom((field, context) => {
-              if (field) {
-                if (
-                  context.document.blog
-                    .filter((item) => item._type === 'white')
-                    .filter(
-                      (data) =>
-                        data.title &&
-                        data.title
-                          .toLowerCase()
-                          .replace(/ /g, '-')
-                          .replace(/[-]+/g, '-')
-                          .replace(/[^\w-]+/g, '') ===
-                          field
-                            .toLowerCase()
-                            .replace(/ /g, '-')
-                            .replace(/[-]+/g, '-')
-                            .replace(/[^\w-]+/g, ''),
-                    ).length > 1
-                ) {
-                  return 'Title must be unique'
-                } else {
-                  return true
-                }
-              } else {
-                return true
-              }
-            }),
-        },
-        {
-          name: 'content',
-          title: 'Content',
-          type: 'blockWhite',
-        },
-      ],
-      preview: {
-        prepare() {
-          return {
-            title: 'White Editor Frame',
+            title: 'Editor Frame',
           }
         },
       },

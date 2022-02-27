@@ -91,8 +91,8 @@ const rightRender = (props) => (
 )
 
 export default {
-  title: 'Block Content Orange',
-  name: 'blockOrange',
+  title: 'Block Content Article',
+  name: 'blockArticle',
   type: 'array',
   of: [
     {
