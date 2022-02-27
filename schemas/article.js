@@ -1,4 +1,4 @@
-import client from 'part:@sanity/base/client';
+import client from 'part:@sanity/base/client'
 
 export default {
   name: 'article',
@@ -29,15 +29,15 @@ export default {
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
           if (slug) {
             if (slug.current.match(regex) !== null) {
-              return true;
+              return true
             } else {
-              return 'Not a valid slug';
+              return 'Not a valid slug'
             }
           } else {
-            return 'Required';
+            return 'Required'
           }
         }),
     },
@@ -141,8 +141,20 @@ export default {
     },
     {
       name: 'gallery',
-      type: 'galleryComponent',
+      type: 'object',
       title: 'Gallery Component',
+      fields: [
+        {
+          name: 'gallery',
+          type: 'galleryComponent',
+          title: 'Gallery Component',
+        },
+        {
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+        },
+      ],
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
@@ -157,7 +169,10 @@ export default {
       options: {
         list: [
           { title: 'Article Color', value: 'articleColor' },
-          { title: 'Overwrite Article Color as Category Color', value: 'categoryColor' },
+          {
+            title: 'Overwrite Article Color as Category Color',
+            value: 'categoryColor',
+          },
         ],
       },
     },
@@ -207,13 +222,13 @@ export default {
       turnOffArticleNumber: 'turnOffArticleNumber',
     },
     prepare(selection) {
-      const { title, media, articleNumber, turnOffArticleNumber } = selection;
+      const { title, media, articleNumber, turnOffArticleNumber } = selection
       return {
         title: `${
           !turnOffArticleNumber && articleNumber ? articleNumber + '.' : ''
         } ${title}`,
         media: media,
-      };
+      }
     },
   },
-};
+}

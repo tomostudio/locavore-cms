@@ -153,8 +153,8 @@ export default {
     {
       name: 'coverText',
       title: 'Cover Text',
-      type: 'text',
-      validation: (Rule) => Rule.required().max(250)
+      type: 'blockIssue',
+      validation: (Rule) => Rule.required()
     },
     {
       name: 'description',
