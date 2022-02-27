@@ -151,15 +151,29 @@ export default {
       type: 'number',
     },
     {
+      name: 'setColor',
+      title: 'Set Color',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Article Color', value: 'articleColor' },
+          { title: 'Overwrite Article Color as Category Color', value: 'categoryColor' },
+        ],
+      },
+    },
+    {
       title: 'Set Article Color',
       name: 'color',
       type: 'color',
+      hidden: ({ parent }) => !(parent?.setColor === 'articleColor'),
     },
     {
       name: 'categoryColor',
       title: 'Overwrite Article Color as Category Color',
       type: 'boolean',
-      initialValue: false,
+      initialValue: true,
+      readOnly: true,
+      hidden: ({ parent }) => !(parent?.setColor === 'categoryColor'),
     },
     {
       title: 'Date Publish',

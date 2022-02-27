@@ -153,14 +153,13 @@ export default {
     {
       name: 'coverText',
       title: 'Cover Text',
-      type: 'array',
-      of: [{type: 'block'}],
+      type: 'text',
       validation: (Rule) => Rule.required().max(250)
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'blockContent',
+      type: 'blockIssue',
       validation: (Rule) => Rule.required(),
     },
     {

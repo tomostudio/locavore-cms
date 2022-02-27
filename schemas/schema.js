@@ -23,6 +23,7 @@ import article from './article'
 import member_list from './member_list'
 import header from './header'
 import footer from './footer'
+import blockIssue from './blockIssue'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -50,6 +51,7 @@ export default createSchema({
     footer,
     blockContent,
     blockOrange,
-    blockWhite
+    blockWhite,
+    blockIssue
   ]),
 })

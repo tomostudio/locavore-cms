@@ -104,7 +104,6 @@ export default {
           { title: 'Emphasis', value: 'em' },
           { title: 'Strike', value: 'strike-through' },
           { title: 'Underline', value: 'underline' },
-          { title: 'Code', value: 'code' },
           {
             title: 'Subscript',
             value: 'sub',
@@ -265,6 +264,7 @@ export default {
           title: 'Spacer',
           name: 'spacer',
           type: 'boolean',
+          readOnly: true,
           initialValue: true,
         },
       ],
@@ -277,15 +277,20 @@ export default {
       },
     },
     {
-      name: 'blockquote',
+      name: 'quote',
       title: 'Quote',
       type: 'object',
       fields: [
         {
+          name: 'option',
+          title: '1 / 2',
+          type: 'boolean',
+          initialValue: false,
+        },
+        {
           name: 'content',
           title: 'Content',
-          type: 'string',
-          inputComponent: inputWithHeight,
+          type: 'blockContent',
         },
       ],
       preview: {
@@ -303,9 +308,9 @@ export default {
       fields: [
         {
           name: 'padding',
-          title: 'Padding',
-          type: "boolean",
-          initialValue: true,
+          title: 'Small / Full',
+          type: 'boolean',
+          initialValue: false,
         },
         {
           title: 'Left',

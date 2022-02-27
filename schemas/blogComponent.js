@@ -15,6 +15,12 @@ export default {
           initialValue: true,
         },
         {
+          name: 'border',
+          title: 'Border',
+          type: 'boolean',
+          initialValue: true,
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'string',
@@ -52,11 +58,17 @@ export default {
           title: 'Customize Editor Color',
           name: 'color',
           type: 'color',
+          hidden: ({ parent }) => !(parent?.border === true),
         },
         {
           name: 'content',
           title: 'Content',
           type: 'blockOrange',
+        },
+        {
+          name: 'video',
+          type: 'videoComponent',
+          title: 'Video Module',
         },
       ],
       preview: {
@@ -124,6 +136,43 @@ export default {
       name: 'video',
       type: 'videoComponent',
       title: 'Video Module',
+    },
+    {
+      name: 'imageComponent',
+      title: 'Image Module',
+      type: 'object',
+      fields: [
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          title: 'Description',
+          name: 'description',
+          type: 'string',
+        },
+        {
+          title: 'Small / Full',
+          name: 'option',
+          type: 'boolean',
+          initialValue: false,
+        },
+      ],
+      preview: {
+        prepare() {
+          return {
+            title: 'Image Module',
+          }
+        },
+      },
     },
     {
       name: 'gallery',
@@ -206,17 +255,6 @@ export default {
                     },
                   ],
                 },
-                {
-                  title: 'Description',
-                  name: 'description',
-                  type: 'string',
-                },
-                {
-                  title: 'Small / Full',
-                  name: 'option',
-                  type: 'boolean',
-                  initialValue: false,
-                },
               ],
               preview: {
                 prepare() {
@@ -227,6 +265,11 @@ export default {
               },
             },
           ],
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'string',
         },
       ],
       preview: {
