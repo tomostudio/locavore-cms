@@ -115,7 +115,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Gallery Module',
+            title: 'Video Module',
           }
         },
       },
