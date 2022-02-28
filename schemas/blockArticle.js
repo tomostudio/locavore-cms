@@ -411,5 +411,10 @@ export default {
         },
       ],
     },
+    {
+      name: 'video',
+      type: 'videoComponent',
+      title: 'Video Module',
+    },
   ],
 }

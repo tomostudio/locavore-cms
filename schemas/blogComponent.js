@@ -65,11 +65,6 @@ export default {
           title: 'Content',
           type: 'blockArticle',
         },
-        {
-          name: 'video',
-          type: 'videoComponent',
-          title: 'Video Module',
-        },
       ],
       preview: {
         prepare() {
