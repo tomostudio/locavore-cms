@@ -88,6 +88,7 @@ export default {
           name: 'image',
           title: 'Image',
           type: 'image',
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -109,9 +110,14 @@ export default {
         },
       ],
       preview: {
-        prepare() {
+        select: {
+          media: 'image',
+        },
+        prepare(selection) {
+          const { media } = selection
           return {
             title: 'Image Module',
+            media: media,
           }
         },
       },

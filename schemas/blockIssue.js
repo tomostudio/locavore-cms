@@ -10,13 +10,29 @@
  */
 import React from 'react'
 
- const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
+const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
 
- const subRender = (props) => <sub>{props.children}</sub>
- 
- const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
- 
- const supRender = (props) => <sup>{props.children}</sup>
+const subRender = (props) => <sub>{props.children}</sub>
+
+const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
+
+const supRender = (props) => <sup>{props.children}</sup>
+
+const normalRender = (props) => (
+  <p style={{ textAlign: 'center' }}>{props.children}</p>
+)
+
+const leftIcon = () => <span style={{ fontWeight: 'bold' }}>Left</span>
+
+const leftRender = (props) => (
+  <p style={{ textAlign: 'left' }}>{props.children}</p>
+)
+
+const rightIcon = () => <span style={{ fontWeight: 'bold' }}>Right</span>
+
+const rightRender = (props) => (
+  <p style={{ textAlign: 'right' }}>{props.children}</p>
+)
 
 export default {
   title: 'Block Issue',
@@ -48,10 +64,64 @@ export default {
               render: supRender,
             },
           },
+          {
+            title: 'Left',
+            value: 'left',
+            blockEditor: {
+              icon: leftIcon,
+              render: leftRender,
+            },
+          },
+          {
+            title: 'Right',
+            value: 'right',
+            blockEditor: {
+              icon: rightIcon,
+              render: rightRender,
+            },
+          },
+        ],
+        annotations: [
+          {
+            title: 'Change Color',
+            name: 'changeColor',
+            type: 'object',
+            blockEditor: {
+              icon: () => 'Color',
+            },
+            fields: [
+              {
+                name: 'color',
+                type: 'color',
+                validation: (Rule) => Rule.required(),
+              },
+            ],
+          },
+          {
+            title: 'Change Font Size',
+            name: 'fontSize',
+            type: 'object',
+            blockEditor: {
+              icon: () => 'FSize',
+            },
+            fields: [
+              {
+                name: 'size',
+                type: 'number',
+                validation: (Rule) => Rule.required(),
+              },
+            ],
+          },
         ],
       },
       styles: [
-        { title: 'Normal', value: 'normal' },
+        {
+          title: 'Normal',
+          value: 'normal',
+          blockEditor: {
+            render: normalRender,
+          },
+        },
       ],
       lists: [],
     },

@@ -7,13 +7,14 @@ export default {
       name: 'thumbnail',
       title: 'Video Thumbnail',
       type: 'image',
-      validation: (Rule) => Rule.custom((field, context) => {
-        if(context.document.layout === 'video') {
-          return !field ? "Required" : true
-        }else {
-          return true
-        }
-      }),
+      validation: (Rule) =>
+        Rule.custom((field, context) => {
+          if (context.document.layout === 'video') {
+            return !field ? 'Required' : true
+          } else {
+            return true
+          }
+        }),
       fields: [
         {
           title: 'Edit Alt Text',
@@ -31,26 +32,32 @@ export default {
       name: 'link',
       title: 'Link',
       type: 'url',
-      validation: (Rule) => Rule.custom((field, context) => {
-        if(context.document.layout === 'video') {
-          return !field ? "Required" : true
-        }else {
-          return true
-        }
-      }),
+      validation: (Rule) =>
+        Rule.custom((field, context) => {
+          if (context.document.layout === 'video') {
+            return !field ? 'Required' : true
+          } else {
+            return true
+          }
+        }),
     },
     {
       title: 'Dark',
       name: 'dark',
       type: 'boolean',
-      initialValue: false
+      initialValue: false,
     },
   ],
   preview: {
-    prepare() {
+    select: {
+      media: 'thumbnail',
+    },
+    prepare(selection) {
+      const { media } = selection
       return {
-        title: "Video Module"
+        title: 'Video Module',
+        media: media,
       }
-    }
-  }
+    },
+  },
 }

@@ -153,7 +153,7 @@ export default {
     {
       name: 'coverText',
       title: 'Cover Text',
-      type: 'blockIssue',
+      type: 'blockCover',
       validation: (Rule) => Rule.required()
     },
     {
