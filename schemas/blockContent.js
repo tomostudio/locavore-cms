@@ -173,18 +173,6 @@ export default {
               },
             ],
           },
-          {
-            name: 'link',
-            type: 'object',
-            title: 'link',
-            fields: [
-              {
-                name: 'url',
-                type: 'url',
-                validation: (Rule) => Rule.required(),
-              },
-            ],
-          },
         ],
       },
       styles: [

@@ -150,8 +150,8 @@ export default {
           title: 'Gallery Component',
         },
         {
-          name: 'caption',
-          title: 'Caption',
+          name: 'description',
+          title: 'Description',
           type: 'string',
         },
       ],
@@ -224,9 +224,7 @@ export default {
     prepare(selection) {
       const { title, media, articleNumber, turnOffArticleNumber } = selection
       return {
-        title: `${
-          !turnOffArticleNumber && articleNumber ? articleNumber + '.' : ''
-        } ${title}`,
+        title: `${!turnOffArticleNumber ? articleNumber + '.' : ''} ${title}`,
         media: media,
       }
     },
