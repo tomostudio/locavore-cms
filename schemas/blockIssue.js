@@ -64,22 +64,6 @@ export default {
               render: supRender,
             },
           },
-          {
-            title: 'Left',
-            value: 'left',
-            blockEditor: {
-              icon: leftIcon,
-              render: leftRender,
-            },
-          },
-          {
-            title: 'Right',
-            value: 'right',
-            blockEditor: {
-              icon: rightIcon,
-              render: rightRender,
-            },
-          },
         ],
         annotations: [
           {
@@ -120,6 +104,22 @@ export default {
           value: 'normal',
           blockEditor: {
             render: normalRender,
+          },
+        },
+        {
+          title: 'Left',
+          value: 'left',
+          blockEditor: {
+            icon: leftIcon,
+            render: leftRender,
+          },
+        },
+        {
+          title: 'Right',
+          value: 'right',
+          blockEditor: {
+            icon: rightIcon,
+            render: rightRender,
           },
         },
       ],
