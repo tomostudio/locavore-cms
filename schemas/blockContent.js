@@ -10,37 +10,31 @@
  */
 import React from 'react'
 
- const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
+const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
 
- const subRender = (props) => <sub>{props.children}</sub>
- 
- const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
- 
- const supRender = (props) => <sup>{props.children}</sup>
- 
- const largeIcon = () => <span style={{ fontWeight: 'bold' }}>Size+</span>
- 
- const largeRender = (props) => (
-   <span style={{ fontSize: '22px' }}>{props.children}</span>
- )
- 
- const centerIcon = () => <span style={{ fontWeight: 'bold' }}>Center</span>
- 
- const centerRender = (props) => (
-   <p style={{ textAlign: 'center' }}>{props.children}</p>
- )
- 
- const leftIcon = () => <span style={{ fontWeight: 'bold' }}>Left</span>
- 
- const leftRender = (props) => (
-   <p style={{ textAlign: 'left' }}>{props.children}</p>
- )
- 
- const rightIcon = () => <span style={{ fontWeight: 'bold' }}>Right</span>
- 
- const rightRender = (props) => (
-   <p style={{ textAlign: 'right' }}>{props.children}</p>
- )
+const subRender = (props) => <sub>{props.children}</sub>
+
+const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
+
+const supRender = (props) => <sup>{props.children}</sup>
+
+const largeIcon = () => <span style={{ fontWeight: 'bold' }}>Size+</span>
+
+const largeRender = (props) => (
+  <span style={{ fontSize: '22px' }}>{props.children}</span>
+)
+
+const centerRender = (props) => (
+  <p style={{ textAlign: 'center' }}>{props.children}</p>
+)
+
+const leftRender = (props) => (
+  <p style={{ textAlign: 'left' }}>{props.children}</p>
+)
+
+const rightRender = (props) => (
+  <p style={{ textAlign: 'right' }}>{props.children}</p>
+)
 
 export default {
   title: 'Block Content',
@@ -78,30 +72,6 @@ export default {
             blockEditor: {
               icon: largeIcon,
               render: largeRender,
-            },
-          },
-          {
-            title: 'Center',
-            value: 'center',
-            blockEditor: {
-              icon: centerIcon,
-              render: centerRender,
-            },
-          },
-          {
-            title: 'Left',
-            value: 'left',
-            blockEditor: {
-              icon: leftIcon,
-              render: leftRender,
-            },
-          },
-          {
-            title: 'Right',
-            value: 'right',
-            blockEditor: {
-              icon: rightIcon,
-              render: rightRender,
             },
           },
         ],
@@ -182,6 +152,28 @@ export default {
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
         { title: 'H5', value: 'h5' },
+
+        {
+          title: 'Center',
+          value: 'center',
+          blockEditor: {
+            render: centerRender,
+          },
+        },
+        {
+          title: 'Left',
+          value: 'left',
+          blockEditor: {
+            render: leftRender,
+          },
+        },
+        {
+          title: 'Right',
+          value: 'right',
+          blockEditor: {
+            render: rightRender,
+          },
+        },
       ],
       lists: [{ title: 'Numbered', value: 'number' }],
     },
