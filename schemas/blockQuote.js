@@ -49,14 +49,14 @@
  const colorRender = (props) => (
    <span>
      {props.children}
-     <AiOutlineFontSize />
+     <BiColorFill />
    </span>
  )
  
  const fsizeRender = (props) => (
    <span>
      {props.children}
-     <AiOutlineBgColors />
+     <AiOutlineFontSize />
    </span>
  )
  

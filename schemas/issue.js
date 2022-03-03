@@ -168,7 +168,7 @@ export default {
     },
     {
       name: 'headerOption',
-      title: 'Header Option',
+      title: 'Additional Header Menu',
       type: 'string',
       options: {
         list: [
@@ -185,7 +185,7 @@ export default {
     },
     {
       name: 'dark',
-      title: 'Dark',
+      title: 'Text Color',
       type: 'string',
       options: {
         list: [
@@ -215,12 +215,6 @@ export default {
         dateFormat: 'YYYY-MM-DD',
         calendarTodayLabel: 'Today',
       },
-    },
-    {
-      name: 'order',
-      title: 'Order',
-      type: 'number',
-      hidden: true,
     },
   ],
   initialValue: {

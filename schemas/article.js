@@ -144,12 +144,12 @@ export default {
     {
       name: 'gallery',
       type: 'object',
-      title: 'Gallery Component',
+      title: 'Gallery Layout',
       fields: [
         {
           name: 'gallery',
           type: 'galleryComponent',
-          title: 'Gallery Component',
+          title: 'Component',
         },
         {
           name: 'description',
@@ -177,6 +177,7 @@ export default {
           },
         ],
       },
+      initialValue: 'articleColor',
     },
     {
       title: 'Set Article Color',
@@ -201,12 +202,6 @@ export default {
         dateFormat: 'YYYY-MM-DD',
         calendarTodayLabel: 'Today',
       },
-    },
-    {
-      name: 'order',
-      title: 'Order',
-      type: 'number',
-      hidden: true,
     },
   ],
   initialValue: async () => ({

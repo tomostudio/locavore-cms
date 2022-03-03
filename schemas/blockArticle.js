@@ -54,7 +54,7 @@ const linkRender = (props) => (
 const colorRender = (props) => (
   <span>
     {props.children}
-    <AiOutlineFontSize />
+    <BiColorFill />
   </span>
 )
 
@@ -68,7 +68,7 @@ const bgRender = (props) => (
 const fsizeRender = (props) => (
   <span>
     {props.children}
-    <AiOutlineBgColors />
+    <AiOutlineFontSize />
   </span>
 )
 
@@ -209,7 +209,27 @@ export default {
         ],
       },
       styles: [
-        { title: 'Normal', value: 'normal' },
+        {
+          title: 'Paragraph Left',
+          value: 'normal',
+          blockEditor: {
+            render: leftRender,
+          },
+        },
+        {
+          title: 'Paragraph Center',
+          value: 'center',
+          blockEditor: {
+            render: centerRender,
+          },
+        },
+        {
+          title: 'Paragraph Right',
+          value: 'right',
+          blockEditor: {
+            render: rightRender,
+          },
+        },
         { title: 'H1', value: 'h1' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
@@ -250,27 +270,6 @@ export default {
             render: h5Render,
           },
         },
-        {
-          title: 'Paragraph Center',
-          value: 'center',
-          blockEditor: {
-            render: centerRender,
-          },
-        },
-        {
-          title: 'Paragraph Left',
-          value: 'left',
-          blockEditor: {
-            render: leftRender,
-          },
-        },
-        {
-          title: 'Paragraph Right',
-          value: 'right',
-          blockEditor: {
-            render: rightRender,
-          },
-        },
       ],
       lists: [{ title: 'Numbered', value: 'number' }],
     },
@@ -285,7 +284,7 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      title: 'Line Spacer',
+      title: 'Line',
       name: 'lineSpacer',
       type: 'object',
       fields: [
@@ -300,7 +299,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Line Spacer',
+            title: 'Line',
           }
         },
       },

@@ -87,7 +87,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -102,7 +102,7 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-          initialValue: "Locavore NXT"
+          initialValue: 'Locavore NXT',
         },
       ],
     },
@@ -181,9 +181,9 @@ export default {
       ],
     },
     {
-      title: "Elfsight Code",
+      title: 'Instagram Embed Code (Elfsight)',
       name: 'elfsightCode',
-      type: "string",
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -202,6 +202,13 @@ export default {
       title: 'Order',
       type: 'number',
       hidden: true,
+    },
+  ],
+  orderings: [
+    {
+      title: 'Order',
+      name: 'orderAsc',
+      by: [{ field: 'order', direction: 'asc' }],
     },
   ],
 

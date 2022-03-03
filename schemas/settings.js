@@ -80,8 +80,9 @@ export default {
     },
     {
       name: 'mailchimpID',
-      title: 'Mailchimp ID',
+      title: 'Mailchimp Embed URL',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

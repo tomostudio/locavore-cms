@@ -11,7 +11,7 @@
 import React from 'react'
 import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
 import { BiFontSize, BiFont, BiColorFill } from 'react-icons/bi'
-import { AiOutlineBgColors, AiOutlineFontSize } from 'react-icons/ai'
+import { AiOutlineFontSize } from 'react-icons/ai'
 
 const subRender = (props) => <sub>{props.children}</sub>
 
@@ -21,29 +21,10 @@ const largeRender = (props) => (
   <span style={{ fontSize: '1.5em' }}>{props.children}</span>
 )
 
-const centerRender = (props) => (
-  <p style={{ textAlign: 'center' }}>{props.children}</p>
-)
-
-const leftRender = (props) => (
-  <p style={{ textAlign: 'left' }}>{props.children}</p>
-)
-
-const rightRender = (props) => (
-  <p style={{ textAlign: 'right' }}>{props.children}</p>
-)
-
 const colorRender = (props) => (
   <span>
     {props.children}
     <BiColorFill />
-  </span>
-)
-
-const bgRender = (props) => (
-  <span>
-    {props.children}
-    <AiOutlineBgColors />
   </span>
 )
 

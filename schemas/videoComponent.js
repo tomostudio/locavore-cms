@@ -43,7 +43,7 @@ export default {
         }),
     },
     {
-      title: 'Dark',
+      title: 'White / Black Button',
       name: 'dark',
       type: 'boolean',
       initialValue: false,
