@@ -34,7 +34,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              validation: (Rule) => Rule.required(),
+              initialValue: "Locavore NXT"
             },
           ],
         },
@@ -61,6 +61,14 @@ export default {
               title: 'Image',
               type: 'image',
               validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: 'Edit Alt Text',
+                  name: 'name',
+                  type: 'string',
+                  initialValue: "Locavore NXT"
+                },
+              ],
             },
             {
               title: 'Link',

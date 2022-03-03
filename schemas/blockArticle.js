@@ -324,6 +324,7 @@ export default {
                   title: 'Edit Alt Text',
                   name: 'name',
                   type: 'string',
+                  initialValue: "Locavore NXT"
                 },
               ],
               hidden: ({ parent }) => !(parent?.columnLeft === 'image'),
@@ -363,6 +364,7 @@ export default {
                   title: 'Edit Alt Text',
                   name: 'name',
                   type: 'string',
+                  initialValue: "Locavore NXT"
                 },
               ],
               hidden: ({ parent }) => !(parent?.columnRight === 'image'),
@@ -388,6 +390,14 @@ export default {
           name: 'image',
           type: 'image',
           validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: "Locavore NXT"
+            },
+          ],
         },
         {
           title: 'Description',

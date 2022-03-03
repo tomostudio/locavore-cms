@@ -15,6 +15,7 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
+          initialValue: "Locavore NXT"
         },
       ],
     },

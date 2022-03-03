@@ -100,7 +100,7 @@ export default {
       },
       styles: [
         {
-          title: 'Normal',
+          title: 'Center',
           value: 'normal',
           blockEditor: {
             render: normalRender,
@@ -110,7 +110,7 @@ export default {
           title: 'Left',
           value: 'left',
           blockEditor: {
-            icon: leftIcon,
+            icon: () => "Left",
             render: leftRender,
           },
         },
@@ -118,7 +118,7 @@ export default {
           title: 'Right',
           value: 'right',
           blockEditor: {
-            icon: rightIcon,
+            icon: () => "Right",
             render: rightRender,
           },
         },

@@ -9,18 +9,34 @@ export default {
       type: 'object',
       fields: [
         {
-          name: "white",
-          title: "White",
-          type: "image",
+          name: 'white',
+          title: 'White',
+          type: 'image',
           validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Locavore NXT',
+            },
+          ],
         },
         {
-          name: "black",
-          title: "Black",
-          type: "image",
+          name: 'black',
+          title: 'Black',
+          type: 'image',
           validation: (Rule) => Rule.required(),
-        }
-      ]
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'name',
+              type: 'string',
+              initialValue: 'Locavore NXT',
+            },
+          ],
+        },
+      ],
     },
     {
       title: 'Header Options',

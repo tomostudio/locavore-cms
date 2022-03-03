@@ -17,6 +17,14 @@ export default {
       name: 'image',
       type: 'image',
       validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: 'Edit Alt Text',
+          name: 'name',
+          type: 'string',
+          initialValue: 'Locavore NXT',
+        },
+      ],
     },
     {
       title: 'Name',
@@ -52,7 +60,7 @@ export default {
       title: 'family.title',
       name: 'name',
       media: 'image',
-      docnum: "docnum",
+      docnum: 'docnum',
     },
     prepare(selection) {
       const { title, name, media, docnum } = selection

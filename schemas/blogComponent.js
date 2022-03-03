@@ -94,6 +94,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
+              initialValue: "Locavore NXT"
             },
           ],
         },
@@ -147,6 +148,7 @@ export default {
                       title: 'Edit Alt Text',
                       name: 'name',
                       type: 'string',
+                      initialValue: "Locavore NXT"
                     },
                   ],
                   preview: {
@@ -167,6 +169,7 @@ export default {
                       title: 'Edit Alt Text',
                       name: 'name',
                       type: 'string',
+                      initialValue: "Locavore NXT"
                     },
                   ],
                   preview: {
@@ -200,6 +203,7 @@ export default {
                       title: 'Edit Alt Text',
                       name: 'name',
                       type: 'string',
+                      initialValue: "Locavore NXT"
                     },
                   ],
                 },

@@ -43,7 +43,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              validation: (Rule) => Rule.required(),
+              initialValue: "Locavore NXT"
             },
           ],
         },
