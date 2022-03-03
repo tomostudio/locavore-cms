@@ -95,6 +95,7 @@ export default () =>
                     .items([
                       S.listItem()
                         .title('Landing Page')
+                        .icon(() => <FiStar />)
                         .child(
                           S.document()
                             .schemaType('editorial')
@@ -102,6 +103,7 @@ export default () =>
                         ),
                       S.listItem()
                         .title('Search')
+                        .icon(() => <FiStar />)
                         .child(
                           S.document()
                             .schemaType('search')

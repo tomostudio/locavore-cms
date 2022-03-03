@@ -362,7 +362,7 @@ export default {
             },
             {
               name: 'blockLeft',
-              type: 'blockContent',
+              type: 'blockIssue',
               title: 'Column Block Left',
               hidden: ({ parent }) => !(parent?.columnLeft === 'block'),
             },
@@ -402,7 +402,7 @@ export default {
             },
             {
               name: 'blockRight',
-              type: 'blockContent',
+              type: 'blockIssue',
               title: 'Column Block Right',
               hidden: ({ parent }) => !(parent?.columnRight === 'block'),
             },

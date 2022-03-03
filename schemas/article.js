@@ -92,7 +92,7 @@ export default {
     {
       title: 'Description',
       name: 'description',
-      type: 'blockContent',
+      type: 'blockCover',
     },
     {
       name: 'thumbnail',
