@@ -9,8 +9,10 @@
  *  }
  */
 import React from 'react'
-
-const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
+import { FiExternalLink } from 'react-icons/fi'
+import { BiColorFill, BiFont } from 'react-icons/bi'
+import { AiOutlineBgColors, AiOutlineFontSize } from 'react-icons/ai'
+import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
 
 const subRender = (props) => <sub>{props.children}</sub>
 
@@ -22,16 +24,40 @@ const normalRender = (props) => (
   <p style={{ textAlign: 'center' }}>{props.children}</p>
 )
 
-const leftIcon = () => <span style={{ fontWeight: 'bold' }}>Left</span>
-
 const leftRender = (props) => (
   <p style={{ textAlign: 'left' }}>{props.children}</p>
 )
 
-const rightIcon = () => <span style={{ fontWeight: 'bold' }}>Right</span>
-
 const rightRender = (props) => (
   <p style={{ textAlign: 'right' }}>{props.children}</p>
+)
+
+const linkRender = (props) => (
+  <span>
+    {props.children}
+    <FiExternalLink />
+  </span>
+)
+
+const fontRender = (props) => (
+  <span>
+    {props.children}
+    <BiFont />
+  </span>
+)
+
+const colorRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineFontSize />
+  </span>
+)
+
+const fsizeRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineBgColors />
+  </span>
 )
 
 export default {
@@ -52,7 +78,7 @@ export default {
             title: 'Subscript',
             value: 'sub',
             blockEditor: {
-              icon: subIcon,
+              icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
@@ -60,18 +86,58 @@ export default {
             title: 'Superscript',
             value: 'sup',
             blockEditor: {
-              icon: supIcon,
+              icon: () => <RiSuperscript2 />,
               render: supRender,
             },
           },
         ],
         annotations: [
           {
+            name: 'link',
+            type: 'object',
+            title: 'link',
+            blockEditor: {
+              icon: () => <FiExternalLink />,
+              render: linkRender,
+            },
+            fields: [
+              {
+                name: 'url',
+                type: 'url'
+              }
+            ]
+          },
+          {
+            title: 'Font',
+            name: 'font',
+            type: 'object',
+            blockEditor: {
+              icon: () => <BiFont />,
+              render: fontRender,
+            },
+            fields: [
+              {
+                name: 'type',
+                type: 'string',
+                validation: (Rule) => Rule.required(),
+                options: {
+                  list: [
+                    { title: 'Serif', value: 'font-serif' },
+                    { title: 'Sans', value: 'font-sans' },
+                    { title: 'Display', value: 'display' },
+                  ],
+                },
+                initialValue: 'font-serif',
+              },
+            ],
+          },
+          {
             title: 'Change Color',
             name: 'changeColor',
             type: 'object',
             blockEditor: {
-              icon: () => 'Color',
+              icon: () => <BiColorFill />,
+              render: colorRender,
             },
             fields: [
               {
@@ -86,7 +152,8 @@ export default {
             name: 'fontSize',
             type: 'object',
             blockEditor: {
-              icon: () => 'FSize',
+              icon: () => <AiOutlineFontSize />,
+              render: fsizeRender,
             },
             fields: [
               {

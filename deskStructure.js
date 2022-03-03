@@ -1,6 +1,20 @@
 import S from '@sanity/desk-tool/structure-builder'
-import React from 'react';
-import { FiSettings } from "react-icons/fi";
+import React from 'react'
+import {
+  FiSettings,
+  FiBook,
+  FiFile,
+  FiHome,
+  FiStar,
+  FiBookmark,
+  FiFileText,
+  FiFlag,
+  FiFilter,
+  FiAward,
+  FiUsers, 
+  FiSliders,
+
+} from 'react-icons/fi'
 
 export default () =>
   S.list()
@@ -20,53 +34,61 @@ export default () =>
             'family_list',
             'member_list',
             'header',
-            'footer'
+            'footer',
           ].includes(listItem.getId()),
       ),
       S.listItem()
         .title('Editorial')
+        .icon(() => <FiBook />)
         .child(
           S.list()
             .title('Editorial')
             .items([
-              S.documentTypeListItem('issue'),
-              S.documentTypeListItem('article'),
-              S.documentTypeListItem('category'),
+              S.documentTypeListItem('issue').icon(() => <FiBookmark />),
+              S.documentTypeListItem('article').icon(() => <FiFileText />),
+              S.documentTypeListItem('category').icon(() => <FiFlag />),
               S.listItem()
                 .title('Article By Issue')
+                .icon(() => <FiFilter />)
                 .child(
                   S.documentTypeList('issue')
                     .title('Article By Issue')
-                    .child(authorId =>
+                    .child((authorId) =>
                       S.documentList()
                         .title('Article')
                         .filter('_type == "article" && $authorId == issue._ref')
-                        .params({ authorId })
-                    )
+                        .params({ authorId }),
+                    ),
                 ),
             ]),
         ),
       S.listItem()
         .title('Family')
+        .icon(() => <FiHome />)
         .child(
           S.list()
             .title('Family')
             .items([
-              S.documentTypeListItem('family_list'),
-              S.documentTypeListItem('member_list'),
+              S.documentTypeListItem('family_list')
+              .icon(() => <FiAward />),
+              S.documentTypeListItem('member_list')
+              .icon(() => <FiUsers />),
             ]),
         ),
       S.listItem()
         .title('Pages')
+        .icon(() => <FiFile />)
         .child(
           S.list()
             .title('Pages')
             .items([
               S.listItem()
                 .title('Home')
+                .icon(() => <FiStar />)
                 .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
                 .title('Editorial')
+                .icon(() => <FiStar />)
                 .child(
                   S.list()
                     .title('Editorial')
@@ -74,15 +96,22 @@ export default () =>
                       S.listItem()
                         .title('Landing Page')
                         .child(
-                          S.document().schemaType('editorial').documentId('editorial'),
+                          S.document()
+                            .schemaType('editorial')
+                            .documentId('editorial'),
                         ),
                       S.listItem()
                         .title('Search')
-                        .child(S.document().schemaType('search').documentId('search')),
+                        .child(
+                          S.document()
+                            .schemaType('search')
+                            .documentId('search'),
+                        ),
                     ]),
                 ),
               S.listItem()
                 .title('Family Landing')
+                .icon(() => <FiStar />)
                 .child(S.document().schemaType('family').documentId('family')),
             ]),
         ),
@@ -95,12 +124,17 @@ export default () =>
             .items([
               S.listItem()
                 .title('General')
-                .child(S.document().schemaType('settings').documentId('settings')),
+                .icon(() => <FiSliders />)
+                .child(
+                  S.document().schemaType('settings').documentId('settings'),
+                ),
               S.listItem()
                 .title('Header')
+                .icon(() => <FiSliders />)
                 .child(S.document().schemaType('header').documentId('header')),
               S.listItem()
                 .title('Footer')
+                .icon(() => <FiSliders />)
                 .child(S.document().schemaType('footer').documentId('footer')),
             ]),
         ),

@@ -153,7 +153,7 @@ export default {
         },
         {
           name: 'description',
-          title: 'Description',
+          title: 'Caption',
           type: 'string',
         },
       ],

@@ -99,12 +99,12 @@ export default {
           ],
         },
         {
-          title: 'Description',
+          title: 'Caption',
           name: 'description',
           type: 'string',
         },
         {
-          title: 'Small / Full',
+          title: 'Normal / Wide',
           name: 'option',
           type: 'boolean',
           initialValue: false,
@@ -220,7 +220,7 @@ export default {
         },
         {
           name: 'description',
-          title: 'Description',
+          title: 'Caption',
           type: 'string',
         },
       ],

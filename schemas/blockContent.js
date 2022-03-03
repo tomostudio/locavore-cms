@@ -9,19 +9,16 @@
  *  }
  */
 import React from 'react'
-
-const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
+import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
+import { BiFontSize, BiFont, BiColorFill } from 'react-icons/bi'
+import { AiOutlineBgColors, AiOutlineFontSize } from 'react-icons/ai'
 
 const subRender = (props) => <sub>{props.children}</sub>
 
-const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
-
 const supRender = (props) => <sup>{props.children}</sup>
 
-const largeIcon = () => <span style={{ fontWeight: 'bold' }}>Size+</span>
-
 const largeRender = (props) => (
-  <span style={{ fontSize: '22px' }}>{props.children}</span>
+  <span style={{ fontSize: '1.5em' }}>{props.children}</span>
 )
 
 const centerRender = (props) => (
@@ -34,6 +31,34 @@ const leftRender = (props) => (
 
 const rightRender = (props) => (
   <p style={{ textAlign: 'right' }}>{props.children}</p>
+)
+
+const colorRender = (props) => (
+  <span>
+    {props.children}
+    <BiColorFill />
+  </span>
+)
+
+const bgRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineBgColors />
+  </span>
+)
+
+const fsizeRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineFontSize />
+  </span>
+)
+
+const fontRender = (props) => (
+  <span>
+    {props.children}
+    <BiFont />
+  </span>
 )
 
 export default {
@@ -54,7 +79,7 @@ export default {
             title: 'Subscript',
             value: 'sub',
             blockEditor: {
-              icon: subIcon,
+              icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
@@ -62,7 +87,7 @@ export default {
             title: 'Superscript',
             value: 'sup',
             blockEditor: {
-              icon: supIcon,
+              icon: () => <RiSuperscript2 />,
               render: supRender,
             },
           },
@@ -70,7 +95,7 @@ export default {
             title: 'Larger Size',
             value: 'largerSize',
             blockEditor: {
-              icon: largeIcon,
+              icon: () => <BiFontSize />,
               render: largeRender,
             },
           },
@@ -81,22 +106,8 @@ export default {
             name: 'changeColor',
             type: 'object',
             blockEditor: {
-              icon: () => 'Color',
-            },
-            fields: [
-              {
-                name: 'color',
-                type: 'color',
-                validation: (Rule) => Rule.required(),
-              },
-            ],
-          },
-          {
-            title: 'Background Color',
-            name: 'backgroundColor',
-            type: 'object',
-            blockEditor: {
-              icon: () => 'BColor',
+              icon: () => <BiColorFill />,
+              render: colorRender,
             },
             fields: [
               {
@@ -111,7 +122,8 @@ export default {
             name: 'fontSize',
             type: 'object',
             blockEditor: {
-              icon: () => 'FSize',
+              icon: () => <AiOutlineFontSize />,
+              render: fsizeRender,
             },
             fields: [
               {
@@ -126,7 +138,8 @@ export default {
             name: 'font',
             type: 'object',
             blockEditor: {
-              icon: () => 'Font',
+              icon: () => <BiFont />,
+              render: fontRender,
             },
             fields: [
               {
@@ -137,6 +150,7 @@ export default {
                   list: [
                     { title: 'Serif', value: 'font-serif' },
                     { title: 'Sans', value: 'font-sans' },
+                    { title: 'Display', value: 'display' },
                   ],
                 },
                 initialValue: 'font-serif',
@@ -147,35 +161,8 @@ export default {
       },
       styles: [
         { title: 'Normal', value: 'normal' },
-        { title: 'H1', value: 'h1' },
-        { title: 'H2', value: 'h2' },
-        { title: 'H3', value: 'h3' },
-        { title: 'H4', value: 'h4' },
-        { title: 'H5', value: 'h5' },
-
-        {
-          title: 'Center',
-          value: 'center',
-          blockEditor: {
-            render: centerRender,
-          },
-        },
-        {
-          title: 'Left',
-          value: 'left',
-          blockEditor: {
-            render: leftRender,
-          },
-        },
-        {
-          title: 'Right',
-          value: 'right',
-          blockEditor: {
-            render: rightRender,
-          },
-        },
       ],
-      lists: [{ title: 'Numbered', value: 'number' }],
+      lists: [],
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array

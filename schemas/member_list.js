@@ -13,6 +13,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'hideNamePosition',
+      title: 'Show Name & Position',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       title: 'Image',
       name: 'image',
       type: 'image',

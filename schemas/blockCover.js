@@ -9,14 +9,27 @@
  *  }
  */
 import React from 'react'
-
-const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
+import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
+import { AiOutlineFontSize } from 'react-icons/ai'
+import { BiColorFill } from 'react-icons/bi'
 
 const subRender = (props) => <sub>{props.children}</sub>
 
-const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
-
 const supRender = (props) => <sup>{props.children}</sup>
+
+const fsizeRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineFontSize />
+  </span>
+)
+
+const colorRender = (props) => (
+  <span>
+    {props.children}
+    <BiColorFill />
+  </span>
+)
 
 export default {
   title: 'Block Cover',
@@ -36,7 +49,7 @@ export default {
             title: 'Subscript',
             value: 'sub',
             blockEditor: {
-              icon: subIcon,
+              icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
@@ -44,7 +57,7 @@ export default {
             title: 'Superscript',
             value: 'sup',
             blockEditor: {
-              icon: supIcon,
+              icon: () => <RiSuperscript2 />,
               render: supRender,
             },
           },
@@ -55,7 +68,8 @@ export default {
             name: 'changeColor',
             type: 'object',
             blockEditor: {
-              icon: () => 'Color',
+              icon: () => <BiColorFill />,
+              render: colorRender,
             },
             fields: [
               {
@@ -70,7 +84,8 @@ export default {
             name: 'fontSize',
             type: 'object',
             blockEditor: {
-              icon: () => 'FSize',
+              icon: () => <AiOutlineFontSize />,
+              render: fsizeRender,
             },
             fields: [
               {

@@ -25,7 +25,7 @@ export default {
       ],
     },
     {
-      title: 'Description',
+      title: 'Caption',
       name: 'caption',
       type: 'string',
     },

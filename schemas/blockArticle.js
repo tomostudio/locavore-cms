@@ -1,75 +1,15 @@
 import React from 'react'
-
-import { FormField } from '@sanity/base/components'
-import { TextArea } from '@sanity/ui'
-
-import { useId } from '@reach/auto-id' // hook to generate unique IDs
-import PatchEvent, { set, unset } from '@sanity/form-builder/PatchEvent'
-
-const inputWithHeight = React.forwardRef((props, ref) => {
-  const {
-    type, // Schema information
-    value, // Current field value
-    readOnly, // Boolean if field is not editable
-    placeholder, // Placeholder text from the schema
-    markers, // Markers including validation rules
-    presence, // Presence information for collaborative avatars
-    compareValue, // Value to check for "edited" functionality
-    onFocus, // Method to handle focus state
-    onBlur, // Method to handle blur state
-    onChange, // Method to handle patch events
-  } = props
-
-  // Creates a unique ID for our input
-  const inputId = useId()
-
-  // Creates a change handler for patching data
-  const handleChange = React.useCallback(
-    // useCallback will help with performance
-    (event) => {
-      const inputValue = event.currentTarget.value // get current value
-      // if the value exists, set the data, if not, unset the data
-      onChange(PatchEvent.from(inputValue ? set(inputValue) : unset()))
-    },
-    [onChange],
-  )
-
-  return (
-    <FormField
-      description={type.description} // Creates description from schema
-      title={type.title} // Creates label from schema title
-      __unstable_markers={markers} // Handles all markers including validation
-      __unstable_presence={presence} // Handles presence avatars
-      compareValue={compareValue} // Handles "edited" status
-      inputId={inputId} // Allows the label to connect to the input field
-    >
-      <TextArea
-        id={inputId} // A unique ID for this input
-        onChange={handleChange} // A function to call when the input value changes
-        value={value} // Current field value
-        readOnly={readOnly} // If "readOnly" is defined make this field read only
-        placeholder={placeholder} // If placeholder is defined, display placeholder text
-        onFocus={onFocus} // Handles focus events
-        onBlur={onBlur} // Handles blur events
-        ref={ref}
-        style={{ height: '200px' }}
-      />
-    </FormField>
-  )
-})
-
-const subIcon = () => <span style={{ fontWeight: 'bold' }}>Sub</span>
+import { FiExternalLink } from 'react-icons/fi'
+import { BiColorFill, BiFont, BiFontSize } from 'react-icons/bi'
+import { AiOutlineBgColors, AiOutlineFontSize } from 'react-icons/ai'
+import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
 
 const subRender = (props) => <sub>{props.children}</sub>
 
-const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
-
 const supRender = (props) => <sup>{props.children}</sup>
 
-const largeIcon = () => <span style={{ fontWeight: 'bold' }}>Size+</span>
-
 const largeRender = (props) => (
-  <span style={{ fontSize: '22px' }}>{props.children}</span>
+  <span style={{ fontSize: '1.5em' }}>{props.children}</span>
 )
 
 const centerRender = (props) => (
@@ -82,6 +22,61 @@ const leftRender = (props) => (
 
 const rightRender = (props) => (
   <p style={{ textAlign: 'right' }}>{props.children}</p>
+)
+
+const h1Render = (props) => (
+  <h1 style={{ textAlign: 'center' }}>{props.children}</h1>
+)
+
+const h2Render = (props) => (
+  <h2 style={{ textAlign: 'center' }}>{props.children}</h2>
+)
+
+const h3Render = (props) => (
+  <h3 style={{ textAlign: 'center' }}>{props.children}</h3>
+)
+
+const h4Render = (props) => (
+  <h4 style={{ textAlign: 'center' }}>{props.children}</h4>
+)
+
+const h5Render = (props) => (
+  <h5 style={{ textAlign: 'center' }}>{props.children}</h5>
+)
+
+const linkRender = (props) => (
+  <span>
+    {props.children}
+    <FiExternalLink />
+  </span>
+)
+
+const colorRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineFontSize />
+  </span>
+)
+
+const bgRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineBgColors />
+  </span>
+)
+
+const fsizeRender = (props) => (
+  <span>
+    {props.children}
+    <AiOutlineBgColors />
+  </span>
+)
+
+const fontRender = (props) => (
+  <span>
+    {props.children}
+    <BiFont />
+  </span>
 )
 
 export default {
@@ -102,7 +97,7 @@ export default {
             title: 'Subscript',
             value: 'sub',
             blockEditor: {
-              icon: subIcon,
+              icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
@@ -110,7 +105,7 @@ export default {
             title: 'Superscript',
             value: 'sup',
             blockEditor: {
-              icon: supIcon,
+              icon: () => <RiSuperscript2 />,
               render: supRender,
             },
           },
@@ -118,18 +113,34 @@ export default {
             title: 'Larger Size',
             value: 'largerSize',
             blockEditor: {
-              icon: largeIcon,
+              icon: () => <BiFontSize />,
               render: largeRender,
             },
           },
         ],
         annotations: [
           {
+            name: 'link',
+            type: 'object',
+            title: 'link',
+            blockEditor: {
+              icon: () => <FiExternalLink />,
+              render: linkRender,
+            },
+            fields: [
+              {
+                name: 'url',
+                type: 'url',
+              },
+            ],
+          },
+          {
             title: 'Change Color',
             name: 'changeColor',
             type: 'object',
             blockEditor: {
-              icon: () => 'Color',
+              icon: () => <BiColorFill />,
+              render: colorRender,
             },
             fields: [
               {
@@ -144,7 +155,8 @@ export default {
             name: 'backgroundColor',
             type: 'object',
             blockEditor: {
-              icon: () => 'BColor',
+              icon: () => <AiOutlineBgColors />,
+              render: bgRender,
             },
             fields: [
               {
@@ -159,7 +171,8 @@ export default {
             name: 'fontSize',
             type: 'object',
             blockEditor: {
-              icon: () => 'FSize',
+              icon: () => <AiOutlineFontSize />,
+              render: fsizeRender,
             },
             fields: [
               {
@@ -174,7 +187,8 @@ export default {
             name: 'font',
             type: 'object',
             blockEditor: {
-              icon: () => 'Font',
+              icon: () => <BiFont />,
+              render: fontRender,
             },
             fields: [
               {
@@ -185,6 +199,7 @@ export default {
                   list: [
                     { title: 'Serif', value: 'font-serif' },
                     { title: 'Sans', value: 'font-sans' },
+                    { title: 'Display', value: 'display' },
                   ],
                 },
                 initialValue: 'font-serif',
@@ -201,21 +216,56 @@ export default {
         { title: 'H4', value: 'h4' },
         { title: 'H5', value: 'h5' },
         {
-          title: 'Center',
+          title: 'H1 - Center',
+          value: 'h1Center',
+          blockEditor: {
+            render: h1Render,
+          },
+        },
+        {
+          title: 'H2 - Center',
+          value: 'h2Center',
+          blockEditor: {
+            render: h2Render,
+          },
+        },
+        {
+          title: 'H3 - Center',
+          value: 'h3Center',
+          blockEditor: {
+            render: h3Render,
+          },
+        },
+        {
+          title: 'H4 - Center',
+          value: 'h4Center',
+          blockEditor: {
+            render: h4Render,
+          },
+        },
+        {
+          title: 'H5 - Center',
+          value: 'h5Center',
+          blockEditor: {
+            render: h5Render,
+          },
+        },
+        {
+          title: 'Paragraph Center',
           value: 'center',
           blockEditor: {
             render: centerRender,
           },
         },
         {
-          title: 'Left',
+          title: 'Paragraph Left',
           value: 'left',
           blockEditor: {
             render: leftRender,
           },
         },
         {
-          title: 'Right',
+          title: 'Paragraph Right',
           value: 'right',
           blockEditor: {
             render: rightRender,
@@ -287,7 +337,7 @@ export default {
       fields: [
         {
           name: 'padding',
-          title: 'Small / Full',
+          title: 'Normal / Wide',
           type: 'boolean',
           initialValue: false,
         },
@@ -302,6 +352,7 @@ export default {
               type: 'string',
               options: {
                 list: [
+                  { title: 'Blank', value: 'blank' },
                   { title: 'Block', value: 'block' },
                   { title: 'Image', value: 'image' },
                 ],
@@ -312,7 +363,7 @@ export default {
             {
               name: 'blockLeft',
               type: 'blockContent',
-              title: 'Block Left',
+              title: 'Column Block Left',
               hidden: ({ parent }) => !(parent?.columnLeft === 'block'),
             },
             {
@@ -324,7 +375,7 @@ export default {
                   title: 'Edit Alt Text',
                   name: 'name',
                   type: 'string',
-                  initialValue: "Locavore NXT"
+                  initialValue: 'Locavore NXT',
                 },
               ],
               hidden: ({ parent }) => !(parent?.columnLeft === 'image'),
@@ -352,7 +403,7 @@ export default {
             {
               name: 'blockRight',
               type: 'blockContent',
-              title: 'Block Right',
+              title: 'Column Block Right',
               hidden: ({ parent }) => !(parent?.columnRight === 'block'),
             },
             {
@@ -364,7 +415,7 @@ export default {
                   title: 'Edit Alt Text',
                   name: 'name',
                   type: 'string',
-                  initialValue: "Locavore NXT"
+                  initialValue: 'Locavore NXT',
                 },
               ],
               hidden: ({ parent }) => !(parent?.columnRight === 'image'),
@@ -395,17 +446,17 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
         {
-          title: 'Description',
+          title: 'Caption',
           name: 'name',
           type: 'string',
         },
         {
-          title: 'Small / Full',
+          title: 'Normal / Wide',
           name: 'option',
           type: 'boolean',
           initialValue: false,
