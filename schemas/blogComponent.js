@@ -139,46 +139,56 @@ export default {
               type: 'object',
               fields: [
                 {
-                  name: 'firstImage',
-                  title: 'First Image',
-                  type: 'image',
-                  validation: (Rule) => Rule.required(),
+                  name: "firstImage",
+                  title: "First Image",
+                  type: "object",
                   fields: [
                     {
-                      title: 'Edit Alt Text',
-                      name: 'name',
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
+                      validation: (Rule) => Rule.required(),
+                      fields: [
+                        {
+                          title: 'Edit Alt Text',
+                          name: 'name',
+                          type: 'string',
+                          initialValue: "Locavore NXT"
+                        },
+                      ],
+                    },
+                    {
+                      name: 'caption',
+                      title: 'Caption',
                       type: 'string',
-                      initialValue: "Locavore NXT"
                     },
-                  ],
-                  preview: {
-                    prepare() {
-                      return {
-                        title: 'First Image',
-                      }
-                    },
-                  },
+                  ]
                 },
                 {
-                  name: 'secondImage',
-                  title: 'Second Image',
-                  type: 'image',
-                  validation: (Rule) => Rule.required(),
+                  name: "secondImage",
+                  title: "Second Image",
+                  type: "object",
                   fields: [
                     {
-                      title: 'Edit Alt Text',
-                      name: 'name',
+                      name: 'image',
+                      title: 'Image',
+                      type: 'image',
+                      validation: (Rule) => Rule.required(),
+                      fields: [
+                        {
+                          title: 'Edit Alt Text',
+                          name: 'name',
+                          type: 'string',
+                          initialValue: "Locavore NXT"
+                        },
+                      ],
+                    },
+                    {
+                      name: 'caption',
+                      title: 'Caption',
                       type: 'string',
-                      initialValue: "Locavore NXT"
                     },
-                  ],
-                  preview: {
-                    prepare() {
-                      return {
-                        title: 'Second Image',
-                      }
-                    },
-                  },
+                  ]
                 },
               ],
               preview: {
@@ -207,6 +217,11 @@ export default {
                     },
                   ],
                 },
+                {
+                  name: 'caption',
+                  title: 'Caption',
+                  type: 'string',
+                },
               ],
               preview: {
                 prepare() {
@@ -217,11 +232,6 @@ export default {
               },
             },
           ],
-        },
-        {
-          name: 'description',
-          title: 'Caption',
-          type: 'string',
         },
       ],
       preview: {

@@ -69,7 +69,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -104,7 +104,7 @@ export default {
           title: 'Edit Alt Text',
           name: 'name',
           type: 'string',
-          initialValue: "Locavore NXT"
+          initialValue: 'Locavore NXT',
         },
       ],
     },
@@ -143,20 +143,8 @@ export default {
     },
     {
       name: 'gallery',
-      type: 'object',
-      title: 'Gallery Layout',
-      fields: [
-        {
-          name: 'gallery',
-          type: 'galleryComponent',
-          title: 'Component',
-        },
-        {
-          name: 'description',
-          title: 'Caption',
-          type: 'string',
-        },
-      ],
+      type: 'galleryComponent',
+      title: 'Gallery Component',
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
     },
     {
