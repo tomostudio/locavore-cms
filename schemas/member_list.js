@@ -65,7 +65,7 @@ export default {
     prepare(selection) {
       const { title, name, media, docnum } = selection
       return {
-        title: `${name ? name : `Family Member ${docnum}`} & ${title}`,
+        title: `${name ? name : `Member ${docnum}`} & ${title}`,
         media: media,
       }
     },
