@@ -28,13 +28,13 @@ export default {
       validation: (Rule) =>
         Rule.custom((slug) => {
           const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
-          if(slug) {
+          if (slug) {
             if (slug.current.match(regex) !== null) {
               return true
             } else {
               return 'Not a valid slug'
             }
-          }else {
+          } else {
             return 'Required'
           }
         }),
@@ -54,7 +54,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -81,7 +81,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -108,7 +108,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -148,7 +148,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -158,7 +158,7 @@ export default {
       name: 'coverText',
       title: 'Cover Text',
       type: 'blockCover',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
@@ -190,7 +190,7 @@ export default {
       options: {
         list: [
           { title: 'Black Text', value: 'black-text' },
-          { title: 'White Text', value: 'white-text' }
+          { title: 'White Text', value: 'white-text' },
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -215,6 +215,13 @@ export default {
         dateFormat: 'YYYY-MM-DD',
         calendarTodayLabel: 'Today',
       },
+    },
+  ],
+  orderings: [
+    {
+      title: 'Issue Number',
+      name: 'issueNumberAsc',
+      by: [{ field: 'issueNumber', direction: 'asc' }],
     },
   ],
   initialValue: {

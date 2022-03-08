@@ -192,6 +192,13 @@ export default {
       },
     },
   ],
+  orderings: [
+    {
+      title: 'Article Number',
+      name: 'articleNumberAsc',
+      by: [{ field: 'articleNumber', direction: 'asc' }],
+    },
+  ],
   initialValue: async () => ({
     articleNumber:
       (await client.fetch(`
