@@ -1,6 +1,6 @@
 export default {
   name: 'blogComponent',
-  title: 'Blog Component',
+  title: 'Blog Module',
   type: 'array',
   of: [
     {

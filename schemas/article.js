@@ -126,7 +126,7 @@ export default {
     {
       name: 'blog',
       type: 'blogComponent',
-      title: 'Blog Component',
+      title: 'Blog Module',
       hidden: ({ parent }) => !(parent?.layout === 'blog'),
     },
     {
@@ -202,7 +202,7 @@ export default {
   initialValue: async () => ({
     articleNumber:
       (await client.fetch(`
-        count(*[_type == "article" && !(_id in path("drafts.**"))])
+      *[_type == "article" && !(_id in path("drafts.**"))] | order(articleNumber desc)[0].articleNumber
     `)) + 1,
     date: new Date().toISOString().slice(0, 10),
   }),

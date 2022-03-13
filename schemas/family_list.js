@@ -142,10 +142,16 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'disableInstagram',
+      title: 'Disable Instagram',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'instagram',
       title: 'Instagram',
       type: 'object',
-      validation: (Rule) => Rule.required(),
+      hidden: ({ parent }) => !(parent?.disableInstagram === false),
       fields: [
         {
           name: 'title',
@@ -184,7 +190,38 @@ export default {
       title: 'Instagram Embed Code (Elfsight)',
       name: 'elfsightCode',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'disableButton',
+      title: 'Disable Button',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      name: 'ctaButton',
+      title: 'CTA Button',
+      type: 'object',
+      hidden: ({ parent }) => !(parent?.disableButton === false),
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) =>
+            Rule.custom((field, context) => {
+              if (context.document.disableButton === false) {
+                return !field ? 'Required' : true
+              } else {
+                return true
+              }
+            }),
+        },
+        {
+          name: 'link',
+          title: 'Link',
+          type: 'url',
+        },
+      ],
     },
     {
       title: 'Booking',
