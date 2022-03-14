@@ -190,6 +190,7 @@ export default {
       title: 'Instagram Embed Code (Elfsight)',
       name: 'elfsightCode',
       type: 'string',
+      hidden: ({ parent }) => !(parent?.disableInstagram === false),
     },
     {
       name: 'disableButton',
