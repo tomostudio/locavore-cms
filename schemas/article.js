@@ -98,7 +98,6 @@ export default {
       name: 'thumbnail',
       title: 'Thumbnail',
       type: 'image',
-      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: 'Edit Alt Text',
