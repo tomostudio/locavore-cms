@@ -120,6 +120,19 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'disableInfo',
+      title: 'Disable Info Text',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
+      name: 'infoText',
+      title: 'Info Text',
+      type: 'string',
+      inputComponent: inputWithHeight,
+      hidden: ({ parent }) => !(parent?.disableInfo === false),
+    },
+    {
       name: 'mapLink',
       title: 'Map Link',
       type: 'url',
@@ -143,9 +156,15 @@ export default {
     },
     {
       name: 'disableInstagram',
-      title: 'Disable Instagram',
+      title: 'Disable Instagram Embed',
       type: 'boolean',
       initialValue: false,
+    },
+    {
+      title: 'Instagram Embed Code (Elfsight)',
+      name: 'elfsightCode',
+      type: 'string',
+      hidden: ({ parent }) => !(parent?.disableInstagram === false),
     },
     {
       name: 'instagram',
@@ -185,12 +204,6 @@ export default {
           validation: (Rule) => Rule.required(),
         },
       ],
-    },
-    {
-      title: 'Instagram Embed Code (Elfsight)',
-      name: 'elfsightCode',
-      type: 'string',
-      hidden: ({ parent }) => !(parent?.disableInstagram === false),
     },
     {
       name: 'disableButton',

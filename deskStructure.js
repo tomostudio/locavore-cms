@@ -45,8 +45,6 @@ export default () =>
             .title('Editorial')
             .items([
               S.documentTypeListItem('issue').icon(() => <FiBookmark />),
-              S.documentTypeListItem('article').icon(() => <FiFileText />),
-              S.documentTypeListItem('category').icon(() => <FiFlag />),
               S.listItem()
                 .title('Article By Issue')
                 .icon(() => <FiFilter />)
@@ -60,6 +58,8 @@ export default () =>
                         .params({ authorId }),
                     ),
                 ),
+              S.documentTypeListItem('category').icon(() => <FiFlag />),
+              S.documentTypeListItem('article').icon(() => <FiFileText />),
             ]),
         ),
       S.listItem()

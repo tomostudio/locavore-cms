@@ -9,7 +9,6 @@ import blockArticle from './blockArticle'
 import settings from './settings'
 import editorial from './editorial'
 import family from './family'
-// import social from './social'
 import search from './search'
 import family_list from './family_list'
 import category from './category'
@@ -37,7 +36,6 @@ export default createSchema({
     settings,
     editorial,
     family,
-    // social,
     search,
     family_list,
     category,
