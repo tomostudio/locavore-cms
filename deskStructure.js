@@ -11,7 +11,7 @@ import {
   FiFlag,
   FiFilter,
   FiAward,
-  FiUsers, 
+  FiUsers,
   FiSliders,
 
 } from 'react-icons/fi'
@@ -66,13 +66,17 @@ export default () =>
         .title('Family')
         .icon(() => <FiHome />)
         .child(
+          // S.documentList()
+          // .title('Family List')
+          // .filter('_type == "family_list"')
+          // .defaultOrdering([{ field: 'position', direction: 'asc' }])
           S.list()
             .title('Family')
             .items([
               S.documentTypeListItem('family_list')
-              .icon(() => <FiAward />),
+                .icon(() => <FiAward />),
               S.documentTypeListItem('member_list')
-              .icon(() => <FiUsers />),
+                .icon(() => <FiUsers />),
             ]),
         ),
       S.listItem()
