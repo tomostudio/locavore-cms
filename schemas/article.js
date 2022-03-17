@@ -120,7 +120,10 @@ export default {
         ],
       },
       validation: (Rule) => Rule.required(),
-      initialValue: 'blog',
+      initialValue: {
+        _type: 'string',
+        title: 'Blog', value: 'blog'
+      },
     },
     {
       name: 'blog',
@@ -159,12 +162,14 @@ export default {
         list: [
           { title: 'Article Color', value: 'articleColor' },
           {
-            title: 'Overwrite Article Color as Category Color',
+            title: 'Use Category Color',
             value: 'categoryColor',
           },
         ],
+        layout: 'radio'
       },
-      initialValue: 'articleColor',
+      initialValue: 'categoryColor'
+      
     },
     {
       title: 'Set Article Color',
