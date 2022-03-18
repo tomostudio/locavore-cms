@@ -128,8 +128,7 @@ export default {
     {
       name: 'infoText',
       title: 'Info Text',
-      type: 'string',
-      inputComponent: inputWithHeight,
+      type: 'blockCover',
       hidden: ({ parent }) => !(parent?.disableInfo === false),
     },
     {

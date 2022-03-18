@@ -66,10 +66,6 @@ export default () =>
         .title('Family')
         .icon(() => <FiHome />)
         .child(
-          // S.documentList()
-          // .title('Family List')
-          // .filter('_type == "family_list"')
-          // .defaultOrdering([{ field: 'position', direction: 'asc' }])
           S.list()
             .title('Family')
             .items([
