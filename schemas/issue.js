@@ -180,6 +180,7 @@ export default {
           { title: 'Transparent Black', value: 'transparent-black' },
           { title: 'Transparent White', value: 'transparent-white' },
         ],
+        layout: 'radio'
       },
       initialValue: 'black',
     },
@@ -192,6 +193,7 @@ export default {
           { title: 'Black Text', value: 'black-text' },
           { title: 'White Text', value: 'white-text' },
         ],
+        layout: 'radio'
       },
       validation: (Rule) => Rule.required(),
     },

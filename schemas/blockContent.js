@@ -133,6 +133,7 @@ export default {
                     { title: 'Sans', value: 'font-sans' },
                     { title: 'Display', value: 'display' },
                   ],
+                  layout: 'radio'
                 },
                 initialValue: 'font-serif',
               },

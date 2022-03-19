@@ -201,6 +201,7 @@ export default {
                     { title: 'Sans', value: 'font-sans' },
                     { title: 'Display', value: 'display' },
                   ],
+                  layout: 'radio'
                 },
                 initialValue: 'font-serif',
               },
@@ -351,10 +352,10 @@ export default {
               type: 'string',
               options: {
                 list: [
-                  { title: 'Blank', value: 'blank' },
                   { title: 'Block', value: 'block' },
                   { title: 'Image', value: 'image' },
                 ],
+                layout: 'radio'
               },
               validation: (Rule) => Rule.required(),
               initialValue: 'block',
@@ -395,6 +396,7 @@ export default {
                   { title: 'Block', value: 'block' },
                   { title: 'Image', value: 'image' },
                 ],
+                layout: 'radio'
               },
               validation: (Rule) => Rule.required(),
               initialValue: 'block',

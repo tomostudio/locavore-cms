@@ -123,12 +123,10 @@ export default {
           { title: 'Video', value: 'video' },
           { title: 'Gallery', value: 'gallery' },
         ],
+        layout: 'radio'
       },
       validation: (Rule) => Rule.required(),
-      initialValue: {
-        _type: 'string',
-        title: 'Blog', value: 'blog'
-      },
+      initialValue: 'blog',
     },
     {
       name: 'blog',
