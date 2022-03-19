@@ -90,6 +90,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: "Internal Search Keywords",
+      name: "keywords",
+      type: "string"
+    },
+    {
       title: 'Description',
       name: 'description',
       type: 'blockCover',
