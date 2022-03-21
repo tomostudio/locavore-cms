@@ -6,7 +6,7 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Family Name',
+      title: 'Family Connection',
       name: 'family',
       type: 'reference',
       to: [{ type: 'family_list' }],
@@ -35,11 +35,13 @@ export default {
       title: 'Name',
       name: 'name',
       type: 'string',
+      hidden: ({ parent }) => !(parent?.hideNamePosition === true),
     },
     {
       title: 'Position',
       name: 'position',
       type: 'string',
+      hidden: ({ parent }) => !(parent?.hideNamePosition === true),
     },
     {
       name: 'docnum',
