@@ -70,6 +70,7 @@ export default {
     },
     {
       name: 'googleID',
+      description: 'You can place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
       title: 'Google Analytics ID',
       type: 'string',
     },
@@ -80,6 +81,7 @@ export default {
     },
     {
       name: 'mailchimpID',
+      description: 'You can place your Mailchimp account here to receive incoming emails from this website',
       title: 'Mailchimp Embed URL',
       type: 'string',
       validation: (Rule) => Rule.required(),

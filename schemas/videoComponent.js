@@ -27,7 +27,7 @@ export default {
       type: 'url',
       validation: (Rule) =>
         Rule.custom((field, context) => {
-          if (context.document.layout === 'video' || context.document.layout === 'blog') {
+          if (context.document.layout === 'video') {
             return !field ? 'Required' : true
           } else {
             return true

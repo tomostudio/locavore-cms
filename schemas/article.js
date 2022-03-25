@@ -6,6 +6,14 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Issue',
+      description: 'Select an issue where this article belongs to',
+      name: 'issue',
+      type: 'reference',
+      to: [{ type: 'issue' }],
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'articleNumber',
       title: 'Article Number',
       type: 'number',
@@ -13,7 +21,7 @@ export default {
     },
     {
       name: 'title',
-      title: 'Title',
+      title: 'Article Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -43,6 +51,7 @@ export default {
     },
     {
       title: 'SEO',
+      description: 'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -51,11 +60,13 @@ export default {
       fields: [
         {
           name: 'seo_description',
+          description: 'Enter up to 400 characters to describe this article',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
+          description: 'Enter some keywords to describe this article (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
@@ -76,13 +87,6 @@ export default {
       ],
     },
     {
-      title: 'Issue',
-      name: 'issue',
-      type: 'reference',
-      to: [{ type: 'issue' }],
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Category',
       name: 'category',
       type: 'reference',
@@ -91,16 +95,18 @@ export default {
     },
     {
       title: "Internal Search Keywords",
+      description: 'Enter some keywords to help in searching this article in the website (separated by commas)',
       name: "keywords",
       type: "string"
     },
     {
-      title: 'Description',
+      title: 'Article Description',
       name: 'description',
       type: 'blockCover',
     },
     {
       name: 'thumbnail',
+      description: 'A cover image for this article - JPEG/PNG/WEBP (Recommended Dimension # x #)',
       title: 'Thumbnail',
       type: 'image',
       fields: [
@@ -114,12 +120,13 @@ export default {
     },
     {
       name: 'layout',
+      description: 'Choose a layout for this article',
       title: 'Layout',
       type: 'string',
       options: {
         list: [
           { title: 'Blog', value: 'blog' },
-          { title: 'Caroussel', value: 'caroussel' },
+          { title: 'Carousel', value: 'caroussel' },
           { title: 'Video', value: 'video' },
           { title: 'Gallery', value: 'gallery' },
         ],
@@ -132,12 +139,14 @@ export default {
       name: 'blog',
       type: 'blogComponent',
       title: 'Blog Module',
+      description: 'You may addmultiple module to be included in this article',
       hidden: ({ parent }) => !(parent?.layout === 'blog'),
     },
     {
       name: 'caroussel',
+      description: 'You may reorder the components rotated in the carousel',
       type: 'carousselComponent',
-      title: 'Caroussel Component',
+      title: 'Carousel Component',
       hidden: ({ parent }) => !(parent?.layout === 'caroussel'),
     },
     {
@@ -148,6 +157,7 @@ export default {
     },
     {
       name: 'gallery',
+      description: 'You may add multiple components to be included in this article',
       type: 'galleryComponent',
       title: 'Gallery Component',
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
@@ -159,6 +169,7 @@ export default {
     },
     {
       name: 'setColor',
+      description: 'Manually select an article color or let the system match the color based on the category',
       title: 'Set Color',
       type: 'string',
       options: {
@@ -189,7 +200,7 @@ export default {
       hidden: ({ parent }) => !(parent?.setColor === 'categoryColor'),
     },
     {
-      title: 'Date Publish',
+      title: 'Date Published',
       name: 'date',
       type: 'date',
       validation: (Rule) => Rule.required(),

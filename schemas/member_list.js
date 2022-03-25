@@ -19,7 +19,8 @@ export default {
       initialValue: false,
     },
     {
-      title: 'Image',
+      title: 'Member Image',
+      description: 'JPEG/PNG/WEBP (Recommended Dimension # x #)',
       name: 'image',
       type: 'image',
       fields: [

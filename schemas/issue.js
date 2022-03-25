@@ -11,7 +11,7 @@ export default {
     },
     {
       name: 'title',
-      title: 'Title',
+      title: 'Issue Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -41,11 +41,13 @@ export default {
     },
     {
       title: 'Thumbnail',
+      description: 'A cover image for this issue',
       name: 'thumbnail',
       type: 'object',
       fields: [
         {
           title: 'Placeholder',
+          description: 'JPEG/PNG/WEBP (Recommended size # x #)',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -60,6 +62,7 @@ export default {
         },
         {
           title: 'Fallback Color',
+          description: 'If image failed to render, it will use the chosen color as background instead',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -68,11 +71,13 @@ export default {
     },
     {
       title: 'Landing Image 1',
+      description: 'Background image when a reader open this issue',
       name: 'image1',
       type: 'object',
       fields: [
         {
           title: 'Placeholder',
+          description: 'JPEG/PNG/WEBP (Recommended size # x #)',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -87,6 +92,7 @@ export default {
         },
         {
           title: 'Fallback Color',
+          description: 'If image failed to render, it will use the chosen color as background instead',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -95,11 +101,13 @@ export default {
     },
     {
       title: 'Landing Image 2',
+      description: 'Background image when as a reader scrolls down the issue',
       name: 'image2',
       type: 'object',
       fields: [
         {
           title: 'Placeholder',
+          description: 'JPEG/PNG/WEBP (Recommended size # x #)',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -114,6 +122,7 @@ export default {
         },
         {
           title: 'Fallback Color',
+          description: 'If image failed to render, it will use the chosen color as background instead',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -122,6 +131,7 @@ export default {
     },
     {
       title: 'SEO',
+      description: 'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -130,11 +140,13 @@ export default {
       fields: [
         {
           name: 'seo_description',
+          description: 'Enter up to 400 characters to describe this issue',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
+          description: 'Enter some keywords to describe this issue (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
@@ -156,19 +168,19 @@ export default {
     },
     {
       name: 'coverText',
-      title: 'Cover Text',
+      title: 'Issue Cover Text',
       type: 'blockCover',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
-      title: 'Description',
+      title: 'Issue Description',
       type: 'blockIssue',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'headerOption',
-      title: 'Additional Header Menu',
+      title: 'Header Menu Background',
       type: 'string',
       options: {
         list: [
@@ -199,17 +211,19 @@ export default {
     },
     {
       name: 'turnOffArticleNumber',
+      description: 'If enabled, article number will be hidden',
       title: 'Turn Off Article Number',
       type: 'boolean',
       initialValue: false,
     },
     {
       title: 'Coming Soon',
+      description: 'If enabled, this issue will be listed under Coming Soon',
       name: 'comingSoon',
       type: 'boolean',
     },
     {
-      title: 'Date Publish',
+      title: 'Date Published',
       name: 'date',
       type: 'date',
       validation: (Rule) => Rule.required(),

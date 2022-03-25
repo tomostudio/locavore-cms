@@ -31,7 +31,7 @@ export default {
   fields: [
     {
       name: 'title',
-      title: 'Title',
+      title: 'Family Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -61,6 +61,7 @@ export default {
     },
     {
       title: 'SEO',
+      description: 'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -69,11 +70,13 @@ export default {
       fields: [
         {
           name: 'seo_description',
+          description: 'Enter up to 400 characters to describe this family',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
+          description: 'Enter some keywords to describe this family (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
@@ -95,6 +98,7 @@ export default {
     },
     {
       name: 'logo',
+      description: 'PNG/WEBP (Recommended Dimension # x #)',
       title: 'Logo',
       type: 'image',
       fields: [
@@ -108,7 +112,7 @@ export default {
     },
     {
       name: 'description',
-      title: 'Description',
+      title: 'Family Description',
       type: 'blockIssue',
       validation: (Rule) => Rule.required(),
     },
@@ -133,6 +137,7 @@ export default {
     },
     {
       name: 'mapLink',
+      description: 'Please use Google Map to retrieve the link',
       title: 'Map Link',
       type: 'url',
       validation: (Rule) => Rule.required(),
