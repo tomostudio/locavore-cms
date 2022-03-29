@@ -59,6 +59,11 @@ export default {
       ],
     },
     {
+      name: "email",
+      title: "Email",
+      type: "email"
+    },
+    {
       name: 'creditText',
       title: 'Credits Text',
       type: 'string',
