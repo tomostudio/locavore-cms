@@ -40,6 +40,7 @@ export default {
     },
     {
       title: 'Header Options',
+      description: 'Items listed here will be displayed on the website header',
       name: 'headerLink',
       type: 'array',
       of: [

@@ -5,6 +5,7 @@ export default {
   fields: [
     {
       name: 'thumbnail',
+      description: "800 x 450 | JPEG/PNG/WEBP",
       title: 'Video Thumbnail',
       type: 'image',
       fields: [
@@ -23,7 +24,7 @@ export default {
     },
     {
       name: 'link',
-      title: 'Link',
+      title: 'Link to video',
       type: 'url',
       validation: (Rule) =>
         Rule.custom((field, context) => {

@@ -7,7 +7,7 @@ export default {
   fields: [
     {
       title: 'Issue',
-      description: 'Select an issue where this article belongs to',
+      description: 'Select an Issue where this article belongs to',
       name: 'issue',
       type: 'reference',
       to: [{ type: 'issue' }],
@@ -95,18 +95,19 @@ export default {
     },
     {
       title: "Internal Search Keywords",
-      description: 'Enter some keywords to help in searching this article in the website (separated by commas)',
+      description: 'Enter some keywords to help in searching this article within the website (separated by commas)',
       name: "keywords",
       type: "string"
     },
     {
       title: 'Article Description',
+      description: 'Opening words for this article',
       name: 'description',
       type: 'blockCover',
     },
     {
       name: 'thumbnail',
-      description: 'A cover image for this article - JPEG/PNG/WEBP (Recommended Dimension # x #)',
+      description: 'A cover image for this article - Width: 300, Height: Auto Crop | PNG / JPEG / WEBP',
       title: 'Thumbnail',
       type: 'image',
       fields: [
@@ -139,12 +140,12 @@ export default {
       name: 'blog',
       type: 'blogComponent',
       title: 'Blog Module',
-      description: 'You may addmultiple module to be included in this article',
+      description: 'You may add multiple module to be included in this article',
       hidden: ({ parent }) => !(parent?.layout === 'blog'),
     },
     {
       name: 'caroussel',
-      description: 'You may reorder the components rotated in the carousel',
+      description: 'You may reorder the items rotated in the carousel',
       type: 'carousselComponent',
       title: 'Carousel Component',
       hidden: ({ parent }) => !(parent?.layout === 'caroussel'),
@@ -157,7 +158,7 @@ export default {
     },
     {
       name: 'gallery',
-      description: 'You may add multiple components to be included in this article',
+      description: 'You may add multiple items to be included in this article',
       type: 'galleryComponent',
       title: 'Gallery Component',
       hidden: ({ parent }) => !(parent?.layout === 'gallery'),
@@ -169,7 +170,7 @@ export default {
     },
     {
       name: 'setColor',
-      description: 'Manually select an article color or let the system match the color based on the category',
+      description: 'Manually select an article color or let the system match the color based on the Category Color',
       title: 'Set Color',
       type: 'string',
       options: {

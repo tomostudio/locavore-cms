@@ -14,6 +14,7 @@ export default {
     },
     {
       title: 'SEO',
+      description: 'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -22,12 +23,14 @@ export default {
       fields: [
         {
           name: 'seo_description',
+          description: 'Enter up to 400 characters to describe this website',
           type: 'string',
           title: 'Description',
           validation: (Rule) => Rule.required(),
         },
         {
           name: 'seo_keywords',
+          description: 'Enter some keywords to describe this website (separated by commas)',
           type: 'string',
           title: 'Keywords',
           validation: (Rule) => Rule.required(),
@@ -70,7 +73,7 @@ export default {
     },
     {
       name: 'googleID',
-      description: 'You can place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
+      description: 'Place your Google Analytics ID here to link to your Google Analytics to see the website traffic statistic',
       title: 'Google Analytics ID',
       type: 'string',
     },
@@ -81,7 +84,7 @@ export default {
     },
     {
       name: 'mailchimpID',
-      description: 'You can place your Mailchimp account here to receive incoming emails from this website',
+      description: 'Place your Mailchimp URL here to receive incoming emails from this website',
       title: 'Mailchimp Embed URL',
       type: 'string',
       validation: (Rule) => Rule.required(),

@@ -98,7 +98,7 @@ export default {
     },
     {
       name: 'logo',
-      description: 'PNG/WEBP (Recommended Dimension # x #)',
+      description: '450 x 250 | PNG / WEBP | Auto Resize',
       title: 'Logo',
       type: 'image',
       fields: [
@@ -223,7 +223,7 @@ export default {
       fields: [
         {
           name: 'title',
-          title: 'Title',
+          title: 'Button Name',
           type: 'string',
           validation: (Rule) =>
             Rule.custom((field, context) => {
@@ -236,13 +236,14 @@ export default {
         },
         {
           name: 'link',
-          title: 'Link',
+          title: 'Button Link',
           type: 'url',
         },
       ],
     },
     {
-      title: 'Color',
+      title: 'Family Color',
+      description: 'Will apply to label and background',
       name: 'bgColor',
       type: 'color',
       validation: (Rule) => Rule.required(),

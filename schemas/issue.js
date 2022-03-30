@@ -41,13 +41,13 @@ export default {
     },
     {
       title: 'Thumbnail',
-      description: 'A cover image for this issue',
+      description: 'A cover image for this Issue',
       name: 'thumbnail',
       type: 'object',
       fields: [
         {
           title: 'Placeholder',
-          description: 'JPEG/PNG/WEBP (Recommended size # x #)',
+          description: 'Hint: 1920 x 1080 | PNG / JPEG / WEBP',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -71,13 +71,13 @@ export default {
     },
     {
       title: 'Landing Image 1',
-      description: 'Background image when a reader open this issue',
+      description: 'Background image when a reader open this Issue',
       name: 'image1',
       type: 'object',
       fields: [
         {
           title: 'Placeholder',
-          description: 'JPEG/PNG/WEBP (Recommended size # x #)',
+          description: '1920 x 1080 | PNG / JPEG / WEBP | Auto Crop',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -101,13 +101,13 @@ export default {
     },
     {
       title: 'Landing Image 2',
-      description: 'Background image when as a reader scrolls down the issue',
+      description: 'Background image as the reader scrolls down the Issue',
       name: 'image2',
       type: 'object',
       fields: [
         {
           title: 'Placeholder',
-          description: 'JPEG/PNG/WEBP (Recommended size # x #)',
+          description: '1920 x 1080 | PNG / JPEG / WEBP | Auto Crop',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -140,13 +140,13 @@ export default {
       fields: [
         {
           name: 'seo_description',
-          description: 'Enter up to 400 characters to describe this issue',
+          description: 'Enter up to 400 characters to describe this Issue',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
-          description: 'Enter some keywords to describe this issue (separated by commas)',
+          description: 'Enter some keywords to describe this Issue (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
@@ -168,7 +168,7 @@ export default {
     },
     {
       name: 'coverText',
-      title: 'Issue Cover Text',
+      title: 'Issue Opening Text',
       type: 'blockCover',
       validation: (Rule) => Rule.required(),
     },
@@ -180,7 +180,7 @@ export default {
     },
     {
       name: 'headerOption',
-      title: 'Header Menu Background',
+      title: 'Header Style',
       type: 'string',
       options: {
         list: [
@@ -211,7 +211,7 @@ export default {
     },
     {
       name: 'turnOffArticleNumber',
-      description: 'If enabled, article number will be hidden',
+      description: 'If enabled, article number in this Issue will not be shown',
       title: 'Turn Off Article Number',
       type: 'boolean',
       initialValue: false,

@@ -20,7 +20,7 @@ export default {
     },
     {
       title: 'Member Image',
-      description: 'JPEG/PNG/WEBP (Recommended Dimension # x #)',
+      description: '250 x 250 | JPEG/PNG/WEBP | Auto Crop',
       name: 'image',
       type: 'image',
       fields: [
@@ -34,6 +34,7 @@ export default {
     },
     {
       title: 'Name',
+      description: 'If left blank, it will automatically named as follow in the back end - Member + Number (e.g. Member 01).',
       name: 'name',
       type: 'string',
       hidden: ({ parent }) => !(parent?.hideNamePosition === true),

@@ -10,14 +10,14 @@ export default {
     },
     {
       title: "Border",
-      description: 'If enabled, a border will be added to surround this category',
+      description: 'If enabled, a border will be added to surround the article cover in this Issue',
       name: "border",
       type: "boolean",
       initialValue: false
     },
     {
       title: 'Color',
-      description: 'Select a background color for this category',
+      description: 'Select a background color the articles in this Issue',
       name: 'color',
       type: 'color',
       validation: (Rule) => Rule.required(),

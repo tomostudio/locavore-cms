@@ -11,6 +11,7 @@ export default {
     },
     {
       title: "SEO",
+      description: 'Enter up to 400 characters to describe the Homepage ',
       name: "seo",
       type: "object",
       options: {
@@ -19,11 +20,13 @@ export default {
       fields: [
         {
           name: "seo_description",
+          description: 'Enter up to 400 characters to describe the Homepage',
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
+          description: 'Enter some keywords to describe the Homepage (separated by commas)',
           type: "string",
           title: "Keywords",
         },

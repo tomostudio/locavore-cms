@@ -5,6 +5,7 @@ export default {
   fields: [
     {
       title: 'SEO',
+      description: 'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -13,11 +14,13 @@ export default {
       fields: [
         {
           name: 'seo_description',
+          description: 'Enter up to 400 characters to describe the Search page',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
+          description: 'Enter some keywords to describe the Search Page (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
