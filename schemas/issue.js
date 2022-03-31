@@ -47,7 +47,7 @@ export default {
       fields: [
         {
           title: 'Placeholder',
-          description: 'Hint: 1920 x 1080 | PNG / JPEG / WEBP',
+          description: '1920 x 1080 | PNG / JPEG / WEBP | Auto Crop',
           name: 'placeholder',
           type: 'image',
           description: 'JPEG / PNG / WEBP',
@@ -218,7 +218,7 @@ export default {
     },
     {
       title: 'Coming Soon',
-      description: 'If enabled, this issue will be listed under Coming Soon',
+      description: 'If enabled, this Issue will be listed under Coming Soon',
       name: 'comingSoon',
       type: 'boolean',
     },

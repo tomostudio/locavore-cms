@@ -17,7 +17,7 @@ export default {
     },
     {
       title: 'Color',
-      description: 'Select a background color the articles in this Issue',
+      description: 'Select a background color for the articles in this Issue',
       name: 'color',
       type: 'color',
       validation: (Rule) => Rule.required(),

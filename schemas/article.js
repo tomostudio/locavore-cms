@@ -107,7 +107,7 @@ export default {
     },
     {
       name: 'thumbnail',
-      description: 'A cover image for this article - Width: 300, Height: Auto Crop | PNG / JPEG / WEBP',
+      description: 'A cover image for this article | PNG / JPEG / WEBP',
       title: 'Thumbnail',
       type: 'image',
       fields: [
@@ -191,14 +191,6 @@ export default {
       name: 'color',
       type: 'color',
       hidden: ({ parent }) => !(parent?.setColor === 'articleColor'),
-    },
-    {
-      name: 'categoryColor',
-      title: 'Overwrite Article Color as Category Color',
-      type: 'boolean',
-      initialValue: true,
-      readOnly: true,
-      hidden: ({ parent }) => !(parent?.setColor === 'categoryColor'),
     },
     {
       title: 'Date Published',

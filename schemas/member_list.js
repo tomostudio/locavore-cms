@@ -20,7 +20,7 @@ export default {
     },
     {
       title: 'Member Image',
-      description: '250 x 250 | JPEG/PNG/WEBP | Auto Crop',
+      description: 'JPEG / PNG / WEBP',
       name: 'image',
       type: 'image',
       fields: [

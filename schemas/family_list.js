@@ -98,7 +98,7 @@ export default {
     },
     {
       name: 'logo',
-      description: '450 x 250 | PNG / WEBP | Auto Resize',
+      description: 'PNG / WEBP',
       title: 'Logo',
       type: 'image',
       fields: [
@@ -118,7 +118,7 @@ export default {
     },
     {
       name: 'address',
-      title: 'Address',
+      title: 'Family’s Address',
       type: 'string',
       inputComponent: inputWithHeight,
       validation: (Rule) => Rule.required(),

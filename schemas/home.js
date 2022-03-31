@@ -11,7 +11,7 @@ export default {
     },
     {
       title: "SEO",
-      description: 'Enter up to 400 characters to describe the Homepage ',
+      description: 'Search Engine Optimization allows to improve the ranking in search results.',
       name: "seo",
       type: "object",
       options: {

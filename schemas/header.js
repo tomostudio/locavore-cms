@@ -10,6 +10,7 @@ export default {
       fields: [
         {
           name: 'white',
+          description: 'PNG / WEBP',
           title: 'White',
           type: 'image',
           validation: (Rule) => Rule.required(),
@@ -24,6 +25,7 @@ export default {
         },
         {
           name: 'black',
+          description: 'PNG / WEBP',
           title: 'Black',
           type: 'image',
           validation: (Rule) => Rule.required(),
