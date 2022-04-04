@@ -4,10 +4,22 @@ export default {
   type: 'document',
   fields: [
     {
+      title: 'Show Social Media',
+      name: 'show_socmed',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       title: 'Social Media',
       name: 'footerLink',
       type: 'object',
+      hidden: ({ parent }) => !(parent?.show_socmed === true),
       fields: [
+        {
+          name: "email",
+          title: "Email",
+          type: "email"
+        },
         {
           title: 'Instagram',
           name: 'instagram',
@@ -57,11 +69,6 @@ export default {
           ],
         },
       ],
-    },
-    {
-      name: "email",
-      title: "Email",
-      type: "email"
     },
     {
       name: 'creditText',

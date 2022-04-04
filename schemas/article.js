@@ -51,7 +51,8 @@ export default {
     },
     {
       title: 'SEO',
-      description: 'Search Engine Optimization allows to improve the ranking in search results.',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -60,20 +61,23 @@ export default {
       fields: [
         {
           name: 'seo_description',
-          description: 'Enter up to 400 characters to describe this article',
+          description:
+            'Enter up to 400 characters to describe this article. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
-          description: 'Enter some keywords to describe this article (separated by commas)',
+          description:
+            'Enter some keywords to describe this article (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
         {
           name: 'seo_image',
           title: 'Image',
-          description: '800 x 600 | PNG / JPEG / WEBP | max 100kb',
+          description:
+            '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
           type: 'image',
           fields: [
             {
@@ -94,16 +98,24 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Internal Search Keywords",
-      description: 'Enter some keywords to help in searching this article within the website (separated by commas)',
-      name: "keywords",
-      type: "string"
+      title: 'Internal Search Keywords',
+      description:
+        'Enter some keywords to help in searching this article within the website (separated by commas)',
+      name: 'keywords',
+      type: 'string',
+    },
+    {
+      title: 'Show Article',
+      name: 'show_article',
+      type: 'boolean',
+      initialValue: true,
     },
     {
       title: 'Article Description',
       description: 'Opening words for this article',
       name: 'description',
       type: 'blockCover',
+      hidden: ({ parent }) => !(parent?.show_article === true),
     },
     {
       name: 'thumbnail',
@@ -131,7 +143,7 @@ export default {
           { title: 'Video', value: 'video' },
           { title: 'Gallery', value: 'gallery' },
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
       validation: (Rule) => Rule.required(),
       initialValue: 'blog',
@@ -170,7 +182,8 @@ export default {
     },
     {
       name: 'setColor',
-      description: 'Manually select an article color or let the system match the color based on the Category Color',
+      description:
+        'Manually select an article color or let the system match the color based on the Category Color',
       title: 'Set Color',
       type: 'string',
       options: {
@@ -181,10 +194,9 @@ export default {
             value: 'categoryColor',
           },
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
-      initialValue: 'categoryColor'
-      
+      initialValue: 'categoryColor',
     },
     {
       title: 'Set Article Color',

@@ -61,7 +61,8 @@ export default {
     },
     {
       title: 'SEO',
-      description: 'Search Engine Optimization allows to improve the ranking in search results.',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -70,20 +71,23 @@ export default {
       fields: [
         {
           name: 'seo_description',
-          description: 'Enter up to 400 characters to describe this family',
+          description:
+            'Enter up to 400 characters to describe this family. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
-          description: 'Enter some keywords to describe this family (separated by commas)',
+          description:
+            'Enter some keywords to describe this family (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
         {
           name: 'seo_image',
           title: 'Image',
-          description: '800 x 600 | PNG / JPEG / WEBP | max 100kb',
+          description:
+            '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
           type: 'image',
           fields: [
             {
@@ -260,7 +264,7 @@ export default {
       title: 'Order',
       name: 'orderDsc',
       by: [{ field: 'order', direction: 'desc' }],
-    }
+    },
   ],
 
   preview: {

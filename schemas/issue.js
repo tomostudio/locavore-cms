@@ -62,7 +62,8 @@ export default {
         },
         {
           title: 'Fallback Color',
-          description: 'If image failed to render, it will use the chosen color as background instead',
+          description:
+            'If image failed to render, it will use the chosen color as background instead',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -92,7 +93,8 @@ export default {
         },
         {
           title: 'Fallback Color',
-          description: 'If image failed to render, it will use the chosen color as background instead',
+          description:
+            'If image failed to render, it will use the chosen color as background instead',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -122,7 +124,8 @@ export default {
         },
         {
           title: 'Fallback Color',
-          description: 'If image failed to render, it will use the chosen color as background instead',
+          description:
+            'If image failed to render, it will use the chosen color as background instead',
           name: 'color',
           type: 'color',
           validation: (Rule) => Rule.required(),
@@ -131,7 +134,8 @@ export default {
     },
     {
       title: 'SEO',
-      description: 'Search Engine Optimization allows to improve the ranking in search results.',
+      description:
+        'Search Engine Optimization allows to improve the ranking in search results.',
       name: 'seo',
       type: 'object',
       options: {
@@ -140,20 +144,23 @@ export default {
       fields: [
         {
           name: 'seo_description',
-          description: 'Enter up to 400 characters to describe this Issue',
+          description:
+            'Enter up to 400 characters to describe this Issue. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
           type: 'string',
           title: 'Description',
         },
         {
           name: 'seo_keywords',
-          description: 'Enter some keywords to describe this Issue (separated by commas)',
+          description:
+            'Enter some keywords to describe this Issue (separated by commas)',
           type: 'string',
           title: 'Keywords',
         },
         {
           name: 'seo_image',
           title: 'Image',
-          description: '800 x 600 | PNG / JPEG / WEBP | max 100kb',
+          description:
+            '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)',
           type: 'image',
           fields: [
             {
@@ -192,7 +199,7 @@ export default {
           { title: 'Transparent Black', value: 'transparent-black' },
           { title: 'Transparent White', value: 'transparent-white' },
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
       initialValue: 'black',
     },
@@ -205,7 +212,7 @@ export default {
           { title: 'Black Text', value: 'black-text' },
           { title: 'White Text', value: 'white-text' },
         ],
-        layout: 'radio'
+        layout: 'radio',
       },
       validation: (Rule) => Rule.required(),
     },
