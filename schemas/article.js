@@ -105,7 +105,7 @@ export default {
       type: 'string',
     },
     {
-      title: 'Show Article',
+      title: 'Show Article Description',
       name: 'show_article',
       type: 'boolean',
       initialValue: true,

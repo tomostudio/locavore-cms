@@ -35,15 +35,65 @@ export default {
                         data.title &&
                         data.title
                           .toLowerCase()
-                          .replace(/ /g, '-')
-                          .replace(/[-]+/g, '-')
-                          .replace(/[^\w-]+/g, '') ===
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
                           field
                             .toLowerCase()
-                            .replace(/ /g, '-')
-                            .replace(/[-]+/g, '-')
-                            .replace(/[^\w-]+/g, ''),
-                    ).length > 1
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 1 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'imageComponent')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'gallery')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0
                 ) {
                   return 'Title must be unique'
                 } else {
@@ -76,14 +126,230 @@ export default {
     },
     {
       name: 'video',
-      type: 'videoComponent',
+      type: 'object',
       title: 'Video Module',
+      fields: [
+        {
+          name: 'showTitle',
+          title: 'Show Title',
+          type: 'boolean',
+          initialValue: true,
+        },
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) =>
+            Rule.required().custom((field, context) => {
+              if (field) {
+                if (
+                  context.document.blog
+                    .filter((item) => item._type === 'editor')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'imageComponent')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'gallery')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'video')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 1
+                ) {
+                  return 'Title must be unique'
+                } else {
+                  return true
+                }
+              } else {
+                return true
+              }
+            }),
+        },
+        {
+          name: 'video',
+          type: 'videoComponent',
+          title: 'Video Component',
+        },
+      ],
+      preview: {
+        prepare() {
+          return {
+            title: 'Video Module',
+          }
+        },
+      },
     },
     {
       name: 'imageComponent',
       title: 'Image Module',
       type: 'object',
       fields: [
+        {
+          name: 'showTitle',
+          title: 'Show Title',
+          type: 'boolean',
+          initialValue: true,
+        },
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) =>
+            Rule.required().custom((field, context) => {
+              if (field) {
+                if (
+                  context.document.blog
+                    .filter((item) => item._type === 'editor')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'imageComponent')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 1 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'gallery')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0
+                ) {
+                  return 'Title must be unique'
+                } else {
+                  return true
+                }
+              } else {
+                return true
+              }
+            }),
+        },
         {
           name: 'image',
           title: 'Image',
@@ -93,7 +359,7 @@ export default {
               title: 'Edit Alt Text',
               name: 'name',
               type: 'string',
-              initialValue: "Locavore NXT"
+              initialValue: 'Locavore NXT',
             },
           ],
         },
@@ -128,6 +394,96 @@ export default {
       type: 'object',
       fields: [
         {
+          name: 'showTitle',
+          title: 'Show Title',
+          type: 'boolean',
+          initialValue: true,
+        },
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          validation: (Rule) =>
+            Rule.required().custom((field, context) => {
+              if (field) {
+                if (
+                  context.document.blog
+                    .filter((item) => item._type === 'editor')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'imageComponent')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 0 ||
+                  context.document.blog
+                    .filter((item) => item._type === 'gallery')
+                    .filter(
+                      (data) =>
+                        data.title &&
+                        data.title
+                          .toLowerCase()
+                          .replace(/^\s+|\s+$/g, '')
+                          .replace(/[^a-z0-9 -]/g, '')
+                          .replace(/\s+/g, '-')
+                          .replace(/-+/g, '-')
+                          .replace(/^-+/, '')
+                          .replace(/-+$/, '') ===
+                          field
+                            .toLowerCase()
+                            .replace(/^\s+|\s+$/g, '')
+                            .replace(/[^a-z0-9 -]/g, '')
+                            .replace(/\s+/g, '-')
+                            .replace(/-+/g, '-')
+                            .replace(/^-+/, '')
+                            .replace(/-+$/, ''),
+                    ).length > 1
+                ) {
+                  return 'Title must be unique'
+                } else {
+                  return true
+                }
+              } else {
+                return true
+              }
+            }),
+        },
+        {
           name: 'gallery',
           title: 'Gallery Component',
           type: 'array',
@@ -138,9 +494,9 @@ export default {
               type: 'object',
               fields: [
                 {
-                  name: "firstImage",
-                  title: "First Image",
-                  type: "object",
+                  name: 'firstImage',
+                  title: 'First Image',
+                  type: 'object',
                   fields: [
                     {
                       name: 'image',
@@ -151,7 +507,7 @@ export default {
                           title: 'Edit Alt Text',
                           name: 'name',
                           type: 'string',
-                          initialValue: "Locavore NXT"
+                          initialValue: 'Locavore NXT',
                         },
                       ],
                     },
@@ -160,12 +516,12 @@ export default {
                       title: 'Caption',
                       type: 'string',
                     },
-                  ]
+                  ],
                 },
                 {
-                  name: "secondImage",
-                  title: "Second Image",
-                  type: "object",
+                  name: 'secondImage',
+                  title: 'Second Image',
+                  type: 'object',
                   fields: [
                     {
                       name: 'image',
@@ -176,7 +532,7 @@ export default {
                           title: 'Edit Alt Text',
                           name: 'name',
                           type: 'string',
-                          initialValue: "Locavore NXT"
+                          initialValue: 'Locavore NXT',
                         },
                       ],
                     },
@@ -185,7 +541,7 @@ export default {
                       title: 'Caption',
                       type: 'string',
                     },
-                  ]
+                  ],
                 },
               ],
               preview: {
@@ -210,7 +566,7 @@ export default {
                       title: 'Edit Alt Text',
                       name: 'name',
                       type: 'string',
-                      initialValue: "Locavore NXT"
+                      initialValue: 'Locavore NXT',
                     },
                   ],
                 },
