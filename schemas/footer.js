@@ -23,50 +23,22 @@ export default {
         {
           title: 'Instagram',
           name: 'instagram',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
+          type: 'url',
         },
         {
           title: 'Facebook',
           name: 'facebook',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
+          type: 'url',
         },
         {
           title: 'Youtube',
           name: 'youtube',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
+          type: 'url',
         },
         {
           title: 'Linkedin',
           name: 'linkedin',
-          type: 'object',
-          fields: [
-            {
-              title: 'Link',
-              name: 'link',
-              type: 'url',
-            },
-          ],
+          type: 'url',
         },
       ],
     },
