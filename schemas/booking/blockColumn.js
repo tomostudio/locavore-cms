@@ -180,23 +180,6 @@ export default {
       lists: [],
     },
     {
-      title: 'Button',
-      name: 'button',
-      type: 'object',
-      fields: [
-        {
-          title: 'Title',
-          name: 'title',
-          type: 'string',
-        },
-        {
-          title: 'Url',
-          name: 'url',
-          type: 'url',
-        },
-      ],
-    },
-    {
       title: 'Line Divider',
       name: 'lineDivider',
       type: 'object',
