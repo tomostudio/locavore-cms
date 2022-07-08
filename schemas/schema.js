@@ -13,6 +13,8 @@ import search from './search'
 import family_list from './family_list'
 import category from './category'
 import home from './home'
+import homeBooking from './booking/homeBooking'
+import bookingList from './booking/bookingList'
 import blogComponent from './blogComponent'
 import carousselComponent from './carousselComponent'
 import videoComponent from './videoComponent'
@@ -24,6 +26,9 @@ import footer from './footer'
 import blockIssue from './blockIssue'
 import blockQuote from './blockQuote'
 import blockCover from './blockCover'
+import blockColumn from './booking/blockColumn'
+import blockEditor from './booking/blockEditor'
+import blockPopup from './booking/blockPopup'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -40,6 +45,8 @@ export default createSchema({
     family_list,
     category,
     home,
+    homeBooking,
+    bookingList,
     blogComponent,
     carousselComponent,
     videoComponent,
@@ -53,5 +60,8 @@ export default createSchema({
     blockIssue,
     blockQuote,
     blockCover,
+    blockColumn,
+    blockEditor,
+    blockPopup,
   ]),
 })
