@@ -221,5 +221,18 @@ export default {
         },
       },
     },
+    {
+      title: 'Image',
+      name: 'image',
+      type: 'image',
+      fields: [
+        {
+          title: 'Edit Alt Text',
+          name: 'alt',
+          type: 'string',
+          initialValue: 'Locavore NXT',
+        },
+      ],
+    },
   ],
 }
