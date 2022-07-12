@@ -1,7 +1,8 @@
 import React from 'react'
 import { FiExternalLink } from 'react-icons/fi'
-import { AiOutlineWhatsApp } from 'react-icons/ai'
+import { AiOutlineMinus, AiOutlineWhatsApp } from 'react-icons/ai'
 import { BiFont } from 'react-icons/bi'
+import { GoPrimitiveDot } from 'react-icons/go'
 
 const linkRender = (props) => (
   <span>
@@ -200,6 +201,7 @@ export default {
       title: 'Line Divider',
       name: 'lineDivider',
       type: 'object',
+      icon: AiOutlineMinus,
       fields: [
         {
           title: 'Line',
@@ -212,7 +214,7 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Line Divider',
+            title: "Line Divider"
           }
         },
       },
@@ -221,6 +223,7 @@ export default {
       title: 'Dot Divider',
       name: 'dotDivider',
       type: 'object',
+      icon: GoPrimitiveDot,
       fields: [
         {
           title: 'Dot',

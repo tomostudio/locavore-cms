@@ -40,20 +40,6 @@ export default () =>
           ].includes(listItem.getId()),
       ),
       S.listItem()
-        .title('Booking')
-        .icon(() => <FiAward />)
-        .child(
-          S.list()
-            .title('Booking')
-            .items([
-              S.listItem()
-                .title('Home')
-                .icon(() => <FiHome />)
-                .child(S.document().schemaType('homeBooking').documentId('homeBooking')),
-              S.documentTypeListItem('bookingList').icon(() => <FiFileText />),
-            ]),
-        ),
-      S.listItem()
         .title('Editorial')
         .icon(() => <FiBook />)
         .child(
@@ -131,6 +117,20 @@ export default () =>
                 .title('Family Landing')
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType('family').documentId('family')),
+            ]),
+        ),
+      S.listItem()
+        .title('Booking')
+        .icon(() => <FiAward />)
+        .child(
+          S.list()
+            .title('Booking')
+            .items([
+              S.listItem()
+                .title('Locavore Booking')
+                .icon(() => <FiHome />)
+                .child(S.document().schemaType('homeBooking').documentId('homeBooking')),
+              S.documentTypeListItem('bookingList').icon(() => <FiFileText />),
             ]),
         ),
       S.listItem()

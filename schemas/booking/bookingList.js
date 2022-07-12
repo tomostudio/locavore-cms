@@ -1,6 +1,6 @@
 export default {
   name: 'bookingList',
-  title: 'Booking List',
+  title: 'Family Booking',
   type: 'document',
   fields: [
     {
@@ -40,21 +40,9 @@ export default {
         }),
     },
     {
-      title: 'RSVP',
+      title: 'RSVP ID',
       name: 'rsvp',
-      type: 'object',
-      fields: [
-        {
-          title: 'ID',
-          name: 'id',
-          type: 'number',
-        },
-        {
-          title: 'Path',
-          name: 'path',
-          type: 'string',
-        },
-      ],
+      type: 'number',
     },
     {
       title: 'SEO',

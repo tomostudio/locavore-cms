@@ -1,6 +1,6 @@
 export default {
     name: 'homeBooking',
-    title: 'Home Booking',
+    title: 'Locavore Booking',
     type: 'document',
     fields: [
       {
@@ -16,21 +16,9 @@ export default {
         validation: (Rule) => Rule.required(),
       },
       {
-        title: 'RSVP',
+        title: 'RSVP ID',
         name: 'rsvp',
-        type: 'object',
-        fields: [
-          {
-            title: 'ID',
-            name: 'id',
-            type: 'number',
-          },
-          {
-            title: 'Path',
-            name: 'path',
-            type: 'string',
-          },
-        ],
+        type: 'number',
       },
       {
         title: 'SEO',
@@ -129,7 +117,7 @@ export default {
     preview: {
       prepare() {
         return {
-          title: 'Home Booking',
+          title: 'Locavore Booking',
         }
       },
     },
