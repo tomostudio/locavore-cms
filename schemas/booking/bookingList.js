@@ -169,7 +169,7 @@ export default {
   preview: {
     select: {
       title: 'page_title',
-      media: 'cover_image',
+      media: 'cover_image.desktop',
     },
   },
 }
