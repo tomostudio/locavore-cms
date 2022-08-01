@@ -88,14 +88,42 @@ export default {
     {
       title: 'Cover Image',
       name: 'cover_image',
-      type: 'image',
+      type: 'object',
       fields: [
         {
-          title: 'Edit Alt Text',
-          name: 'alt',
-          type: 'string',
-          initialValue: 'Locavore NXT',
+          title: 'Desktop',
+          name: 'desktop',
+          type: 'image',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'alt',
+              type: 'string',
+              initialValue: 'Locavore NXT',
+            },
+          ],
         },
+        {
+          title: 'Mobile',
+          name: 'mobile',
+          type: 'image',
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: 'Edit Alt Text',
+              name: 'alt',
+              type: 'string',
+              initialValue: 'Locavore NXT',
+            },
+          ],
+        },
+        {
+          title: "Cover / Contain",
+          name: "option",
+          type: "boolean",
+          initialValue: false,
+        }
       ],
     },
     {
