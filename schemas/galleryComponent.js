@@ -124,8 +124,28 @@ export default {
         },
         {
           name: 'link',
-          title: 'Link',
+          title: 'Link to video',
           type: 'url',
+        },
+        {
+          name: 'option',
+          title: 'Size',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Normal', value: 'normal' },
+              {
+                title: 'Medium',
+                value: 'medium',
+              },
+              {
+                title: 'Wide',
+                value: 'wide',
+              },
+            ],
+            layout: 'radio',
+          },
+          initialValue: 'medium',
         },
         {
           title: 'White / Black Button',

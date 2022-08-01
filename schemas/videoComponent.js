@@ -36,6 +36,26 @@ export default {
         }),
     },
     {
+      name: 'option',
+      title: 'Size',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Normal', value: 'normal' },
+          {
+            title: 'Medium',
+            value: 'medium',
+          },
+          {
+            title: 'Wide',
+            value: 'wide',
+          },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'medium',
+    },
+    {
       title: 'White / Black Button',
       name: 'dark',
       type: 'boolean',
