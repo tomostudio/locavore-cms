@@ -5,7 +5,7 @@ export default {
   fields: [
     {
       name: 'page_title',
-      title: 'Page Title',
+      title: 'Header Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
@@ -137,12 +137,12 @@ export default {
       type: 'blockEditor',
     },
     {
-      title: 'Popup',
+      title: 'Popup Button',
       name: 'popup',
       type: 'array',
       of: [
         {
-          title: 'Popup',
+          title: 'Popup Button',
           name: 'popup',
           type: 'object',
           fields: [
