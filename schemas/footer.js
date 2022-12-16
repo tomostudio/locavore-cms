@@ -43,6 +43,11 @@ export default {
       ],
     },
     {
+      title: "Subscription Text",
+      name: "subscription",
+      type: "string",
+    },
+    {
       name: 'creditText',
       title: 'Credits Text',
       type: 'string',
