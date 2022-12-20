@@ -285,7 +285,7 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      title: 'Line',
+      title: 'Vertical Line',
       name: 'lineSpacer',
       type: 'object',
       fields: [
@@ -300,7 +300,27 @@ export default {
       preview: {
         prepare() {
           return {
-            title: 'Line',
+            title: 'Vertical Line',
+          }
+        },
+      },
+    },    {
+      title: 'Horizontal Line',
+      name: 'horizontallineSpacer',
+      type: 'object',
+      fields: [
+        {
+          title: 'Spacer',
+          name: 'spacer',
+          type: 'boolean',
+          readOnly: true,
+          initialValue: true,
+        },
+      ],
+      preview: {
+        prepare() {
+          return {
+            title: 'Horizontal Line',
           }
         },
       },
