@@ -8,54 +8,46 @@
  *    type: 'blockContent'
  *  }
  */
-import React from 'react'
-import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
-import { AiOutlineFontSize } from 'react-icons/ai'
-import { BiColorFill } from 'react-icons/bi'
+import React from "react";
+import { RiSubscript2, RiSuperscript2 } from "react-icons/ri";
+import { HiAnnotation } from "react-icons/hi";
 
-const subRender = (props) => <sub>{props.children}</sub>
+const subRender = (props) => <sub>{props.children}</sub>;
 
-const supRender = (props) => <sup>{props.children}</sup>
+const supRender = (props) => <sup>{props.children}</sup>;
 
-const fsizeRender = (props) => (
+const annotationRender = (props) => (
   <span>
-    {props.children}
-    <AiOutlineFontSize />
+    {props.children}&nbsp;
+    <HiAnnotation />
   </span>
-)
-
-const colorRender = (props) => (
-  <span>
-    {props.children}
-    <BiColorFill />
-  </span>
-)
+);
 
 export default {
-  title: 'Block Cover',
-  name: 'blockCover',
-  type: 'array',
+  title: "Block Cover",
+  name: "blockCover",
+  type: "array",
   of: [
     {
-      title: 'Block',
-      type: 'block',
+      title: "Block",
+      type: "block",
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
-          { title: 'Strike', value: 'strike-through' },
-          { title: 'Underline', value: 'underline' },
+          { title: "Strong", value: "strong" },
+          { title: "Emphasis", value: "em" },
+          { title: "Strike", value: "strike-through" },
+          { title: "Underline", value: "underline" },
           {
-            title: 'Subscript',
-            value: 'sub',
+            title: "Subscript",
+            value: "sub",
             blockEditor: {
               icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
           {
-            title: 'Superscript',
-            value: 'sup',
+            title: "Superscript",
+            value: "sup",
             blockEditor: {
               icon: () => <RiSuperscript2 />,
               render: supRender,
@@ -64,34 +56,23 @@ export default {
         ],
         annotations: [
           {
-            title: 'Change Color',
-            name: 'changeColor',
-            type: 'object',
+            title: "Add Annotations",
+            name: "add_ann",
+            type: "object",
             blockEditor: {
-              icon: () => <BiColorFill />,
-              render: colorRender,
+              icon: () => <HiAnnotation />,
+              render: annotationRender,
             },
             fields: [
               {
-                name: 'color',
-                type: 'color',
-                validation: (Rule) => Rule.required(),
+                title: "Text Color",
+                name: "textColor",
+                type: "color",
               },
-            ],
-          },
-          {
-            title: 'Change Font Size',
-            name: 'fontSize',
-            type: 'object',
-            blockEditor: {
-              icon: () => <AiOutlineFontSize />,
-              render: fsizeRender,
-            },
-            fields: [
               {
-                name: 'size',
-                type: 'number',
-                validation: (Rule) => Rule.required(),
+                title: "Font Size",
+                name: "fontSize",
+                type: "number",
               },
             ],
           },
@@ -99,8 +80,8 @@ export default {
       },
       styles: [
         {
-          title: 'Normal',
-          value: 'normal',
+          title: "Normal",
+          value: "normal",
         },
       ],
       lists: [],
@@ -109,4 +90,4 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
   ],
-}
+};

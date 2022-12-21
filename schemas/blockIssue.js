@@ -8,83 +8,58 @@
  *    type: 'blockContent'
  *  }
  */
-import React from 'react'
-import { FiExternalLink } from 'react-icons/fi'
-import { BiColorFill, BiFont } from 'react-icons/bi'
-import { AiOutlineBgColors, AiOutlineFontSize } from 'react-icons/ai'
-import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
+import React from "react";
+import { RiSubscript2, RiSuperscript2 } from "react-icons/ri";
+import { HiAnnotation } from "react-icons/hi";
 
-const subRender = (props) => <sub>{props.children}</sub>
+const subRender = (props) => <sub>{props.children}</sub>;
 
-const supIcon = () => <span style={{ fontWeight: 'bold' }}>Sup</span>
-
-const supRender = (props) => <sup>{props.children}</sup>
+const supRender = (props) => <sup>{props.children}</sup>;
 
 const normalRender = (props) => (
-  <p style={{ textAlign: 'center' }}>{props.children}</p>
-)
+  <p style={{ textAlign: "center" }}>{props.children}</p>
+);
 
 const leftRender = (props) => (
-  <p style={{ textAlign: 'left' }}>{props.children}</p>
-)
+  <p style={{ textAlign: "left" }}>{props.children}</p>
+);
 
 const rightRender = (props) => (
-  <p style={{ textAlign: 'right' }}>{props.children}</p>
-)
+  <p style={{ textAlign: "right" }}>{props.children}</p>
+);
 
-const linkRender = (props) => (
+const annotationRender = (props) => (
   <span>
-    {props.children}
-    <FiExternalLink />
+    {props.children}&nbsp;
+    <HiAnnotation />
   </span>
-)
-
-const fontRender = (props) => (
-  <span>
-    {props.children}
-    <BiFont />
-  </span>
-)
-
-const colorRender = (props) => (
-  <span>
-    {props.children}
-    <BiColorFill />
-  </span>
-)
-
-const fsizeRender = (props) => (
-  <span>
-    {props.children}
-    <AiOutlineFontSize />
-  </span>
-)
+);
 
 export default {
-  title: 'Block Issue',
-  name: 'blockIssue',
-  type: 'array',
+  title: "Block Issue",
+  name: "blockIssue",
+  type: "array",
   of: [
     {
-      title: 'Block',
-      type: 'block',
+      title: "Block",
+      type: "block",
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
-          { title: 'Strike', value: 'strike-through' },
-          { title: 'Underline', value: 'underline' },
+          { title: "Strong", value: "strong" },
+          { title: "Emphasis", value: "em" },
+          { title: "Strike", value: "strike-through" },
+          { title: "Underline", value: "underline" },
           {
-            title: 'Subscript',
-            value: 'sub',
+            title: "Subscript",
+            value: "sub",
             blockEditor: {
               icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
           {
-            title: 'Superscript',
-            value: 'sup',
+            title: "Superscript",
+            value: "sup",
             blockEditor: {
               icon: () => <RiSuperscript2 />,
               render: supRender,
@@ -93,74 +68,42 @@ export default {
         ],
         annotations: [
           {
-            name: 'link',
-            type: 'object',
-            title: 'link',
+            title: "Add Annotations",
+            name: "add_ann",
+            type: "object",
             blockEditor: {
-              icon: () => <FiExternalLink />,
-              render: linkRender,
+              icon: () => <HiAnnotation />,
+              render: annotationRender,
             },
             fields: [
               {
-                name: 'url',
-                type: 'url'
-              }
-            ]
-          },
-          {
-            title: 'Font',
-            name: 'font',
-            type: 'object',
-            blockEditor: {
-              icon: () => <BiFont />,
-              render: fontRender,
-            },
-            fields: [
+                title: "Link",
+                name: "link",
+                type: "url",
+              },
               {
-                name: 'type',
-                type: 'string',
-                validation: (Rule) => Rule.required(),
+                title: "Font",
+                name: "font",
+                type: "string",
                 options: {
                   list: [
-                    { title: 'Serif', value: 'font-serif' },
-                    { title: 'Sans', value: 'font-sans' },
-                    { title: 'Display', value: 'display' },
+                    { title: "Serif", value: "font-serif" },
+                    { title: "Sans", value: "font-sans" },
+                    { title: "Display", value: "display" },
                   ],
-                  layout: 'radio'
+                  layout: "radio",
                 },
-                initialValue: 'font-serif',
+                initialValue: "font-serif",
               },
-            ],
-          },
-          {
-            title: 'Change Color',
-            name: 'changeColor',
-            type: 'object',
-            blockEditor: {
-              icon: () => <BiColorFill />,
-              render: colorRender,
-            },
-            fields: [
               {
-                name: 'color',
-                type: 'color',
-                validation: (Rule) => Rule.required(),
+                title: "Text Color",
+                name: "textColor",
+                type: "color",
               },
-            ],
-          },
-          {
-            title: 'Change Font Size',
-            name: 'fontSize',
-            type: 'object',
-            blockEditor: {
-              icon: () => <AiOutlineFontSize />,
-              render: fsizeRender,
-            },
-            fields: [
               {
-                name: 'size',
-                type: 'number',
-                validation: (Rule) => Rule.required(),
+                title: "Font Size",
+                name: "fontSize",
+                type: "number",
               },
             ],
           },
@@ -168,23 +111,23 @@ export default {
       },
       styles: [
         {
-          title: 'Center',
-          value: 'normal',
+          title: "Center",
+          value: "normal",
           blockEditor: {
             render: normalRender,
           },
         },
         {
-          title: 'Left',
-          value: 'left',
+          title: "Left",
+          value: "left",
           blockEditor: {
             icon: () => "Left",
             render: leftRender,
           },
         },
         {
-          title: 'Right',
-          value: 'right',
+          title: "Right",
+          value: "right",
           blockEditor: {
             icon: () => "Right",
             render: rightRender,
@@ -197,4 +140,4 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
   ],
-}
+};

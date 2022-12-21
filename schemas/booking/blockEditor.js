@@ -1,20 +1,7 @@
 import React from 'react'
-import { FiExternalLink } from 'react-icons/fi'
-import { AiOutlineMinus, AiOutlineWhatsApp } from 'react-icons/ai'
-import { BiFont } from 'react-icons/bi'
+import { AiOutlineMinus } from 'react-icons/ai'
 import { GoPrimitiveDot } from 'react-icons/go'
-
-const linkRender = (props) => (
-  <span>
-    {props.children} <FiExternalLink />
-  </span>
-)
-
-const walinkRender = (props) => (
-  <span>
-    <AiOutlineWhatsApp /> WhatsApp {props.children}
-  </span>
-)
+import {HiAnnotation} from 'react-icons/hi'
 
 const normalRender = (props) => (
   <p style={{ textAlign: 'center' }}>{props.children}</p>
@@ -40,11 +27,12 @@ const h5Render = (props) => (
   <h5 style={{ textAlign: 'center' }}>{props.children}</h5>
 )
 
-const fontRender = (props) => (
+const annotationRender = (props) => (
   <span>
-    {props.children} <BiFont />
+    {props.children}&nbsp;
+    <HiAnnotation />
   </span>
-)
+);
 
 export default {
   title: 'Block Editor',
@@ -63,75 +51,45 @@ export default {
         ],
         annotations: [
           {
-            name: 'link',
-            type: 'object',
-            title: 'Link',
+            title: "Add Annotations",
+            name: "add_ann",
+            type: "object",
             blockEditor: {
-              icon: () => <FiExternalLink />,
-              render: linkRender,
+              icon: () => <HiAnnotation />,
+              render: annotationRender,
             },
             fields: [
               {
-                name: 'url',
-                type: 'url',
+                title: "Link",
+                name: "link",
+                type: "url",
               },
-            ],
-          },
-          {
-            name: 'wa_link',
-            type: 'object',
-            title: 'Wa Link',
-            blockEditor: {
-              icon: () => <AiOutlineWhatsApp />,
-              render: walinkRender,
-            },
-            fields: [
               {
-                name: 'url',
-                type: 'url',
+                title: "WA Link",
+                name: "wa_link",
+                type: "url",
               },
-            ],
-          },
-          {
-            name: 'mail',
-            type: 'object',
-            title: 'Email',
-            blockEditor: {
-              icon: () => <FiExternalLink />,
-              render: linkRender,
-            },
-            fields: [
               {
-                name: 'url',
-                type: 'url',
+                title: "Email",
+                name: "email",
+                type: "url",
               },
-            ],
-          },
-          {
-            title: 'Font',
-            name: 'font',
-            type: 'object',
-            blockEditor: {
-              icon: () => <BiFont />,
-              render: fontRender,
-            },
-            fields: [
               {
-                name: 'type',
-                type: 'string',
-                validation: (Rule) => Rule.required(),
+                title: "Font",
+                name: "font",
+                type: "string",
                 options: {
                   list: [
-                    { title: 'Serif', value: 'font-serif' },
-                    { title: 'Sans', value: 'font-sans' },
-                    { title: 'Default', value: 'font-default' },
+                    { title: "Serif", value: "font-serif" },
+                    { title: "Sans", value: "font-sans" },
+                    { title: "Display", value: "display" },
                   ],
-                  layout: 'radio',
+                  layout: "radio",
                 },
-                initialValue: 'font-default',
+                initialValue: "font-serif",
               },
-            ],
-          },
+            ]
+          }
         ],
       },
       styles: [

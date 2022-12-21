@@ -8,73 +8,59 @@
  *    type: 'blockContent'
  *  }
  */
-import React from 'react'
-import { RiSubscript2, RiSuperscript2 } from 'react-icons/ri'
-import { BiFontSize, BiFont, BiColorFill } from 'react-icons/bi'
-import { AiOutlineFontSize } from 'react-icons/ai'
+import React from "react";
+import { RiSubscript2, RiSuperscript2 } from "react-icons/ri";
+import { BiFontSize } from "react-icons/bi";
+import { HiAnnotation } from "react-icons/hi";
 
-const subRender = (props) => <sub>{props.children}</sub>
+const subRender = (props) => <sub>{props.children}</sub>;
 
-const supRender = (props) => <sup>{props.children}</sup>
+const supRender = (props) => <sup>{props.children}</sup>;
 
 const largeRender = (props) => (
-  <span style={{ fontSize: '1.5em' }}>{props.children}</span>
-)
+  <span style={{ fontSize: "1.5em" }}>{props.children}</span>
+);
 
-const colorRender = (props) => (
+const annotationRender = (props) => (
   <span>
-    {props.children}
-    <BiColorFill />
+    {props.children}&nbsp;
+    <HiAnnotation />
   </span>
-)
-
-const fsizeRender = (props) => (
-  <span>
-    {props.children}
-    <AiOutlineFontSize />
-  </span>
-)
-
-const fontRender = (props) => (
-  <span>
-    {props.children}
-    <BiFont />
-  </span>
-)
+);
 
 export default {
-  title: 'Block Content',
-  name: 'blockContent',
-  type: 'array',
+  title: "Block Content",
+  name: "blockContent",
+  type: "array",
   of: [
     {
-      title: 'Block',
-      type: 'block',
+      title: "Block",
+      type: "block",
       marks: {
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
-          { title: 'Strike', value: 'strike-through' },
-          { title: 'Underline', value: 'underline' },
+          { title: "Strong", value: "strong" },
+          { title: "Emphasis", value: "em" },
+          { title: "Strike", value: "strike-through" },
+          { title: "Underline", value: "underline" },
           {
-            title: 'Subscript',
-            value: 'sub',
+            title: "Subscript",
+            value: "sub",
             blockEditor: {
               icon: () => <RiSubscript2 />,
               render: subRender,
             },
           },
           {
-            title: 'Superscript',
-            value: 'sup',
+            title: "Superscript",
+            value: "sup",
             blockEditor: {
               icon: () => <RiSuperscript2 />,
               render: supRender,
             },
           },
           {
-            title: 'Larger Size',
-            value: 'largerSize',
+            title: "Larger Size",
+            value: "largerSize",
             blockEditor: {
               icon: () => <BiFontSize />,
               render: largeRender,
@@ -83,71 +69,47 @@ export default {
         ],
         annotations: [
           {
-            title: 'Change Color',
-            name: 'changeColor',
-            type: 'object',
+            title: "Add Annotations",
+            name: "add_ann",
+            type: "object",
             blockEditor: {
-              icon: () => <BiColorFill />,
-              render: colorRender,
+              icon: () => <HiAnnotation />,
+              render: annotationRender,
             },
             fields: [
               {
-                name: 'color',
-                type: 'color',
-                validation: (Rule) => Rule.required(),
+                title: "Text Color",
+                name: "textColor",
+                type: "color",
               },
-            ],
-          },
-          {
-            title: 'Change Font Size',
-            name: 'fontSize',
-            type: 'object',
-            blockEditor: {
-              icon: () => <AiOutlineFontSize />,
-              render: fsizeRender,
-            },
-            fields: [
               {
-                name: 'size',
-                type: 'number',
-                validation: (Rule) => Rule.required(),
+                title: "Font Size",
+                name: "fontSize",
+                type: "number",
               },
-            ],
-          },
-          {
-            title: 'Font',
-            name: 'font',
-            type: 'object',
-            blockEditor: {
-              icon: () => <BiFont />,
-              render: fontRender,
-            },
-            fields: [
               {
-                name: 'type',
-                type: 'string',
-                validation: (Rule) => Rule.required(),
+                title: "Font",
+                name: "font",
+                type: "string",
                 options: {
                   list: [
-                    { title: 'Serif', value: 'font-serif' },
-                    { title: 'Sans', value: 'font-sans' },
-                    { title: 'Display', value: 'display' },
+                    { title: "Serif", value: "font-serif" },
+                    { title: "Sans", value: "font-sans" },
+                    { title: "Display", value: "display" },
                   ],
-                  layout: 'radio'
+                  layout: "radio",
                 },
-                initialValue: 'font-serif',
+                initialValue: "font-serif",
               },
             ],
           },
         ],
       },
-      styles: [
-        { title: 'Normal', value: 'normal' },
-      ],
+      styles: [{ title: "Normal", value: "normal" }],
       lists: [],
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
   ],
-}
+};
