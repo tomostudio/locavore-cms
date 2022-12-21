@@ -16,5 +16,5 @@ export default function resolveProductionUrl(article) {
   if (!article.issue) return null;
   const editorSlug = editorMap.get(article.issue._ref);
   if (!editorSlug) return null;
-  return `https://locavore-next-phase1.vercel.app/editorial/preview/${editorSlug}/${article.slug.current}`
+  return `https://locavorenext.com/editorial/preview/${editorSlug}/${article.slug.current}`
 }
