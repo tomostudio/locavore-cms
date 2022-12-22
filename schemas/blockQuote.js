@@ -92,7 +92,7 @@ export default {
                   ],
                   layout: "radio",
                 },
-                initialValue: "font-serif",
+                initialValue: "font-display",
               },
               {
                 title: "Text Color",
