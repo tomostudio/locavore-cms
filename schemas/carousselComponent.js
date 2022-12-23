@@ -16,6 +16,22 @@ export default {
           name: 'name',
           type: 'string',
           initialValue: "Locavore NXT"
+        },    
+        {
+          name: 'objectFit',
+          title: 'Object Fit',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Cover', value: 'cover' },
+              {
+                title: 'Contain',
+                value: 'contain',
+              },
+            ],
+            layout: 'radio',
+          },
+          initialValue: 'cover',
         },
       ],
     },
