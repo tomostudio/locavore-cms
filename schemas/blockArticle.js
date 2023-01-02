@@ -105,6 +105,12 @@ export default {
                 type: "url",
               },
               {
+                title: "Open in new tab",
+                name: "target_blank",
+                type: "boolean",
+                initialValue: true,
+              },
+              {
                 title: "Text Color",
                 name: "textColor",
                 type: "color",

@@ -82,6 +82,12 @@ export default {
                 type: "url",
               },
               {
+                title: "Open in new tab",
+                name: "target_blank",
+                type: "boolean",
+                initialValue: true,
+              },
+              {
                 title: "Font",
                 name: "font",
                 type: "string",
