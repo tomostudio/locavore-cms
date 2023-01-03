@@ -58,6 +58,7 @@ export default {
                 name: "target_blank",
                 type: "boolean",
                 initialValue: true,
+                hidden: ({ parent }) => !(parent?.select_link === "link"),
               },
               {
                 title: "Link",
