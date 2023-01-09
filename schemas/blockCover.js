@@ -19,7 +19,7 @@ const supRender = (props) => <sup>{props.children}</sup>;
 const annotationRender = (props) => (
   <span>
     {props.children}&nbsp;
-    <HiAnnotation />
+    <HiAnnotation />&nbsp;
   </span>
 );
 

@@ -46,7 +46,7 @@ const h5Render = (props) => (
 const annotationRender = (props) => (
   <span>
     {props.children}&nbsp;
-    <HiAnnotation />
+    <HiAnnotation />&nbsp;
   </span>
 );
 

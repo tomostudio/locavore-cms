@@ -10,7 +10,7 @@ const normalRender = (props) => (
 const annotationRender = (props) => (
   <span>
     {props.children}&nbsp;
-    <HiAnnotation />
+    <HiAnnotation />&nbsp;
   </span>
 );
 
