@@ -7,6 +7,7 @@ export default {
       title: 'Issue',
       name: 'issue',
       type: 'reference',
+      hidden: true,
       to: [{ type: 'issue' }],
     },
     {
