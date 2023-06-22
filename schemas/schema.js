@@ -34,7 +34,7 @@ import menu from './nxt/menu'
 import menuComponent from './menuComponent'
 import blockMenu from './blockMenu'
 import facilitiesList from './nxt/facilitiesList'
-import collaboratorList from './nxt/CollaboratorList'
+import collaboratorList from './nxt/collaboratorList'
 import collaborator from './nxt/collaborator'
 import eventList from './nxt/eventList'
 
