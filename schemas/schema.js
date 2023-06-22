@@ -29,6 +29,14 @@ import blockCover from './blockCover'
 import blockColumn from './booking/blockColumn'
 import blockEditor from './booking/blockEditor'
 import blockPopup from './booking/blockPopup'
+import homeNxt from './nxt/homeNxt'
+import menu from './nxt/menu'
+import menuComponent from './menuComponent'
+import blockMenu from './blockMenu'
+import facilitiesList from './nxt/facilitiesList'
+import collaboratorList from './nxt/CollaboratorList'
+import collaborator from './nxt/collaborator'
+import eventList from './nxt/eventList'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -45,9 +53,16 @@ export default createSchema({
     family_list,
     category,
     home,
+    homeNxt,
+    menu,
+    facilitiesList,
+    collaborator,
+    collaboratorList,
+    eventList,
     homeBooking,
     bookingList,
     blogComponent,
+    menuComponent,
     carousselComponent,
     videoComponent,
     galleryComponent,
@@ -57,6 +72,7 @@ export default createSchema({
     footer,
     blockContent,
     blockArticle,
+    blockMenu,
     blockIssue,
     blockQuote,
     blockCover,

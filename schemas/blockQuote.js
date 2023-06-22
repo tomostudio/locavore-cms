@@ -9,6 +9,7 @@
  *  }
  */
 import React from "react";
+import { HiAnnotation } from "react-icons/hi";
 import { RiSubscript2, RiSuperscript2 } from "react-icons/ri";
 
 const subRender = (props) => <sub>{props.children}</sub>;
