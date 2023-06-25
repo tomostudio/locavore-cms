@@ -78,13 +78,33 @@ export default {
         {
           name: "image",
           title: "Image",
-          type: "image",
+          type: "object",
           fields: [
             {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
+              name: "imageDesktop",
+              title: "Image Desktop",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "imageMobile",
+              title: "Image Mobile",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
             },
           ],
         },

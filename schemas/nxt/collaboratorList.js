@@ -1,29 +1,3 @@
-import React from "react";
-
-// Important items to allow form fields to work properly and patch the dataset.
-import { PatchEvent, set } from "part:@sanity/form-builder/patch-event";
-import FormField from "part:@sanity/components/formfields/default";
-
-// Import the TextArea from UI
-import { TextArea } from "@sanity/ui";
-
-const inputWithHeight = React.forwardRef((props, ref) => {
-  const { type, onChange } = props;
-  return (
-    <FormField label={type.title} description={type.description}>
-      <TextArea
-        ref={ref}
-        placeholder={type.placeholder}
-        value={props.value}
-        onChange={(event) => {
-          onChange(PatchEvent.from(set(event.target.value)));
-        }}
-        style={{ height: "120px" }}
-      />
-    </FormField>
-  );
-});
-
 export default {
   name: "collaboratorList",
   title: "Collaborator List",
@@ -34,6 +8,30 @@ export default {
       title: "Title",
       type: "string",
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description:
+        "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+      validation: (Rule) =>
+        Rule.custom((slug) => {
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
+          if (slug) {
+            if (slug.current.match(regex) !== null) {
+              return true
+            } else {
+              return 'Not a valid slug'
+            }
+          } else {
+            return 'Required'
+          }
+        }),
     },
     {
       title: "SEO",

@@ -34,7 +34,9 @@ export default () =>
             "facilitiesList",
             'collaborator',
             "collaboratorList",
+            "event",
             "eventList",
+            "visit",
             "homeBooking",
             "bookingList",
             "issue",
@@ -161,7 +163,15 @@ export default () =>
                 .icon(() => <FiStar />)
                 .child(S.document().schemaType("collaborator").documentId("collaborator")),
               S.documentTypeListItem("collaboratorList").icon(() => <FiStar />),
+              S.listItem()
+                .title("Event")
+                .icon(() => <FiStar />)
+                .child(S.document().schemaType("event").documentId("event")),
               S.documentTypeListItem("eventList").icon(() => <FiStar />),
+              S.listItem()
+                .title("Visit")
+                .icon(() => <FiStar />)
+                .child(S.document().schemaType("visit").documentId("visit")),
             ])
         ),
       S.listItem()
