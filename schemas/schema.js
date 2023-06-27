@@ -34,12 +34,13 @@ import menu from './nxt/menu'
 import menuComponent from './menuComponent'
 import blockMenu from './blockMenu'
 import facilitiesList from './nxt/facilitiesList'
-import collaboratorList from './nxt/collaboratorList'
 import collaborator from './nxt/collaborator'
+import collaboratorList from './nxt/collaboratorList'
 import eventList from './nxt/eventList'
 import event from './nxt/event'
 import visit from './nxt/visit'
 import blockCenter from './blockCenter'
+import blockCoverNxt from './blockCoverNxt'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -82,6 +83,7 @@ export default createSchema({
     blockIssue,
     blockQuote,
     blockCover,
+    blockCoverNxt,
     blockColumn,
     blockEditor,
     blockPopup,

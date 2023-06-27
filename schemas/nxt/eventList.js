@@ -176,7 +176,7 @@ export default {
     {
       title: "Description",
       name: "description",
-      type: "blockCover",
+      type: "blockCoverNxt",
       validation: (Rule) => Rule.required(),
     },
     {
