@@ -123,6 +123,25 @@ export default {
       ],
     },
     {
+      title: "Booking",
+      name: "booking",
+      type: "object",
+      fields: [
+        {
+          title: "Title",
+          name: "title",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Link",
+          name: "link",
+          type: "url",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
       title: "Description",
       name: "description",
       type: "blockCenter",
