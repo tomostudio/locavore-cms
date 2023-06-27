@@ -123,39 +123,6 @@ export default {
       ],
     },
     {
-      title: "Map",
-      name: "map",
-      type: "object",
-      fields: [
-        {
-          name: "mapDesktop",
-          title: "Map Desktop",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-        {
-          name: "mapMobile",
-          title: "Map Mobile",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-      ],
-    },
-    {
       title: "Description",
       name: "description",
       type: "blockCenter",
