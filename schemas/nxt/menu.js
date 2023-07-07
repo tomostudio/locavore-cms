@@ -129,9 +129,7 @@ export default {
       name: "article",
       type: "menuComponent",
       title: "Article Module",
-      description: "You may add multiple module to be included in this article",
-      // hidden: ({ parent }) => !(parent?.layout === "blog"),
-    },
+      description: "You may add multiple module to be included in this article",    },
   ],
   preview: {
     prepare() {

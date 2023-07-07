@@ -46,7 +46,8 @@ const h5Render = (props) => (
 const annotationRender = (props) => (
   <span>
     {props.children}&nbsp;
-    <HiAnnotation />&nbsp;
+    <HiAnnotation />
+    &nbsp;
   </span>
 );
 
@@ -140,7 +141,7 @@ export default {
                 initialValue: "font-display",
               },
             ],
-          }
+          },
         ],
       },
       styles: [
@@ -271,6 +272,19 @@ export default {
           name: "option",
           type: "boolean",
           initialValue: false,
+        },
+      ],
+    },
+    {
+      title: "Leaf Image",
+      name: "leafImg",
+      type: "image",
+      fields: [
+        {
+          title: "Edit Alt Text",
+          name: "name",
+          type: "string",
+          initialValue: "Locavore NXT",
         },
       ],
     },

@@ -113,6 +113,19 @@ export default {
       lists: [],
     },
     {
+      title: "Leaf Image",
+      name: "leafImg",
+      type: "image",
+      fields: [
+        {
+          title: "Edit Alt Text",
+          name: "name",
+          type: "string",
+          initialValue: "Locavore NXT",
+        },
+      ],
+    },
+    {
       title: "Button Link",
       name: "buttonLink",
       type: "object",

@@ -1,31 +1,20 @@
+/**
+ * This is the schema definition for the rich text fields used for
+ * for this blog studio. When you import it in schemas.js it can be
+ * reused in other parts of the studio with:
+ *  {
+ *    name: 'someName',
+ *    title: 'Some title',
+ *    type: 'blockContent'
+ *  }
+ */
 import React from "react";
-import { AiOutlineMinus } from "react-icons/ai";
-import { GoPrimitiveDot } from "react-icons/go";
+import { RiSubscript2, RiSuperscript2 } from "react-icons/ri";
 import { HiAnnotation } from "react-icons/hi";
 
-const normalRender = (props) => (
-  <p style={{ textAlign: "center" }}>{props.children}</p>
-);
+const subRender = (props) => <sub>{props.children}</sub>;
 
-const h1Render = (props) => (
-  <h1 style={{ textAlign: "center" }}>{props.children}</h1>
-);
-
-const h2Render = (props) => (
-  <h2 style={{ textAlign: "center" }}>{props.children}</h2>
-);
-
-const h3Render = (props) => (
-  <h3 style={{ textAlign: "center" }}>{props.children}</h3>
-);
-
-const h4Render = (props) => (
-  <h4 style={{ textAlign: "center" }}>{props.children}</h4>
-);
-
-const h5Render = (props) => (
-  <h5 style={{ textAlign: "center" }}>{props.children}</h5>
-);
+const supRender = (props) => <sup>{props.children}</sup>;
 
 const annotationRender = (props) => (
   <span>
@@ -36,8 +25,8 @@ const annotationRender = (props) => (
 );
 
 export default {
-  title: "Block Center",
-  name: "blockCenter",
+  title: "Block Visit Content",
+  name: "blockVisitContent",
   type: "array",
   of: [
     {
@@ -49,6 +38,22 @@ export default {
           { title: "Emphasis", value: "em" },
           { title: "Strike", value: "strike-through" },
           { title: "Underline", value: "underline" },
+          {
+            title: "Subscript",
+            value: "sub",
+            blockEditor: {
+              icon: () => <RiSubscript2 />,
+              render: subRender,
+            },
+          },
+          {
+            title: "Superscript",
+            value: "sup",
+            blockEditor: {
+              icon: () => <RiSuperscript2 />,
+              render: supRender,
+            },
+          },
         ],
         annotations: [
           {
@@ -101,62 +106,11 @@ export default {
       },
       styles: [
         {
-          title: "Center",
+          title: "Normal",
           value: "normal",
-          blockEditor: {
-            render: normalRender,
-          },
-        },
-        {
-          title: "H1",
-          value: "h1",
-          blockEditor: {
-            render: h1Render,
-          },
-        },
-        {
-          title: "H2",
-          value: "h2",
-          blockEditor: {
-            render: h2Render,
-          },
-        },
-        {
-          title: "H3",
-          value: "h3",
-          blockEditor: {
-            render: h3Render,
-          },
-        },
-        {
-          title: "H4",
-          value: "h4",
-          blockEditor: {
-            render: h4Render,
-          },
-        },
-        {
-          title: "H5",
-          value: "h5",
-          blockEditor: {
-            render: h5Render,
-          },
         },
       ],
       lists: [],
-    },
-    {
-      title: "Leaf Image",
-      name: "leafImg",
-      type: "image",
-      fields: [
-        {
-          title: "Edit Alt Text",
-          name: "name",
-          type: "string",
-          initialValue: "Locavore NXT",
-        },
-      ],
     },
     {
       title: "Button Link",

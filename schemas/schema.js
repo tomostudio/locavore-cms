@@ -41,6 +41,7 @@ import event from './nxt/event'
 import visit from './nxt/visit'
 import blockCenter from './blockCenter'
 import blockCoverNxt from './blockCoverNxt'
+import blockVisitContent from './blockVisitContent'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -84,6 +85,7 @@ export default createSchema({
     blockQuote,
     blockCover,
     blockCoverNxt,
+    blockVisitContent,
     blockColumn,
     blockEditor,
     blockPopup,
