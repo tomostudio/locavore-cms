@@ -72,7 +72,7 @@ export default {
     },
     {
       name: "section1",
-      title: "Section 1",
+      title: "First Section",
       type: "object",
       options: {
         collapsible: true,
@@ -134,7 +134,7 @@ export default {
     },
     {
       name: "section2",
-      title: "Section 2",
+      title: "Menu Section",
       type: "object",
       options: {
         collapsible: true,
@@ -195,46 +195,6 @@ export default {
         },
       ],
     },
-    // {
-    //   name: "section4",
-    //   title: "Section 4",
-    //   type: "array",
-    //   of: [
-    //     {
-    //       title: "Image",
-    //       name: "image",
-    //       type: "image",
-    //       fields: [
-    //         {
-    //           title: "Edit Alt Text",
-    //           name: "alt",
-    //           type: "string",
-    //           initialValue: "Locavore NXT",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
-    // {
-    //   name: "section5",
-    //   title: "Section 5",
-    //   type: "array",
-    //   of: [
-    //     {
-    //       title: "Image",
-    //       name: "image",
-    //       type: "image",
-    //       fields: [
-    //         {
-    //           title: "Edit Alt Text",
-    //           name: "alt",
-    //           type: "string",
-    //           initialValue: "Locavore NXT",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
   ],
   preview: {
     prepare() {
