@@ -146,17 +146,31 @@ export default {
       lists: [],
     },
     {
-      title: "Leaf Image",
+      title: "Small Image",
       name: "leafImg",
-      type: "image",
+      type: "object",
       fields: [
         {
-          title: "Edit Alt Text",
-          name: "name",
-          type: "string",
-          initialValue: "Locavore NXT",
+          title: "Image",
+          name: "image",
+          type: "image",
+          fields: [
+            {
+              title: "Edit Alt Text",
+              name: "name",
+              type: "string",
+              initialValue: "Locavore NXT",
+            },
+          ],
         },
       ],
+      preview: {
+        prepare() {
+          return {
+            title: "Small Image",
+          };
+        },
+      },
     },
     {
       title: "Button Link",
