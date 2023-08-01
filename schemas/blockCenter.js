@@ -147,7 +147,7 @@ export default {
     },
     {
       title: "Small Image",
-      name: "leafImg",
+      name: "smallImage",
       type: "object",
       fields: [
         {
@@ -165,9 +165,14 @@ export default {
         },
       ],
       preview: {
-        prepare() {
+        select: {
+          media: 'image',
+        },
+        prepare(selection) {
+          const { media } = selection
           return {
             title: "Small Image",
+            media: media
           };
         },
       },
