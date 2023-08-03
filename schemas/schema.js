@@ -42,6 +42,7 @@ import visit from './nxt/visit'
 import blockCenter from './blockCenter'
 import blockCoverNxt from './blockCoverNxt'
 import blockVisitContent from './blockVisitContent'
+import facilities from './nxt/facilities'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -60,6 +61,7 @@ export default createSchema({
     home,
     homeNxt,
     menu,
+    facilities,
     facilitiesList,
     collaborator,
     collaboratorList,

@@ -1,12 +1,13 @@
 export default {
   name: "collaboratorList",
-  title: "Collaborator List",
+  title: "Our Collaborators (Database)",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Collaborators Name",
       type: "string",
+      description: "Will also be used on Browser Tab Title",
       validation: (Rule) => Rule.required(),
     },
     {
@@ -46,14 +47,14 @@ export default {
         {
           name: "seo_description",
           description:
-            "Enter up to 400 characters to describe the Homepage. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
+            "Enter up to 400 characters to describe the Collaborator. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
           description:
-            "Enter some keywords to describe the Homepage (separated by commas)",
+            "Enter some keywords to describe the Collaborator (separated by commas)",
           type: "string",
           title: "Keywords",
         },
@@ -83,6 +84,7 @@ export default {
           name: "imageColor",
           title: "Image Color",
           type: "image",
+          description: "Image Size: 300 x 250 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -96,6 +98,7 @@ export default {
           name: "imageBnw",
           title: "Image Black & White",
           type: "image",
+          description: "Image Size: 300 x 250 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -109,8 +112,9 @@ export default {
     },
     {
       name: "image",
-      title: "Image Page",
+      title: "Image",
       type: "image",
+      description: "Image Size: 590 x 720 px",
       fields: [
         {
           title: "Edit Alt Text",
@@ -133,8 +137,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Description",
-      name: "description",
+      title: "Content",
+      name: "content",
       type: "blockCoverNxt",
       validation: (Rule) => Rule.required(),
     }

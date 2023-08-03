@@ -26,7 +26,7 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "homeNxt",
-  title: "Home NXT",
+  title: "Home",
   type: "document",
   fields: [
     {
@@ -42,14 +42,14 @@ export default {
         {
           name: "seo_description",
           description:
-            "Enter up to 400 characters to describe the Homepage. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
+            "Enter up to 400 characters to describe the Home. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
           description:
-            "Enter some keywords to describe the Homepage (separated by commas)",
+            "Enter some keywords to describe the Home (separated by commas)",
           type: "string",
           title: "Keywords",
         },
@@ -72,42 +72,37 @@ export default {
     },
     {
       name: "section1",
-      title: "First Section",
+      title: "Landing Section",
       type: "object",
       options: {
         collapsible: true,
       },
       fields: [
         {
-          title: "Image",
-          name: "image",
-          type: "object",
+          name: "imageDesktop",
+          title: "Image Desktop",
+          type: "image",
+          description: "Input Desktop Homepage Hero Image: 1440 x 900 px",
           fields: [
             {
-              name: "imageDesktop",
-              title: "Image Desktop",
-              type: "image",
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "alt",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
+              title: "Edit Alt Text",
+              name: "alt",
+              type: "string",
+              initialValue: "Locavore NXT",
             },
+          ],
+        },
+        {
+          name: "imageMobile",
+          title: "Image Mobile",
+          type: "image",
+          description: "Input Desktop Homepage Hero Image: 1440 x 900 px",
+          fields: [
             {
-              name: "imageMobile",
-              title: "Image Mobile",
-              type: "image",
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "alt",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
+              title: "Edit Alt Text",
+              name: "alt",
+              type: "string",
+              initialValue: "Locavore NXT",
             },
           ],
         },
@@ -115,6 +110,8 @@ export default {
           title: "Description",
           name: "description",
           type: "string",
+          description:
+            "Short description about the new Locavore (1-2 sentences or 15-20 words)",
           inputComponent: inputWithHeight,
           validation: (Rule) => Rule.required(),
         },
@@ -122,12 +119,14 @@ export default {
           title: "Text Left",
           name: "textLeft",
           type: "string",
+          description: "Input keywords (max 2 words)",
           validation: (Rule) => Rule.required(),
         },
         {
           title: "Text Right",
           name: "textRight",
           type: "string",
+          description: "Input keywords (max 2 words)",
           validation: (Rule) => Rule.required(),
         },
       ],
@@ -141,46 +140,8 @@ export default {
       },
       fields: [
         {
-          title: "Image Wide (Option 1)",
-          name: "imageWide",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-        {
-          title: "Image Normal (Option 2 & 3)",
-          name: "imageNormal",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-        {
-          title: "Title",
-          name: "title",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Description",
-          name: "description",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
           name: "option",
-          title: "Option",
+          title: "Layout Options",
           type: "string",
           options: {
             list: [
@@ -193,13 +154,186 @@ export default {
           validation: (Rule) => Rule.required(),
           initialValue: "option1",
         },
+        {
+          title: "Image Set (For Option 1)",
+          name: "imageOption1",
+          type: "object",
+          fields: [
+            {
+              title: "Image Desktop",
+              name: "imageDesktop",
+              type: "image",
+              description:
+                "Desktop Homepage Menu Image Layout Option 1: 1440 x 900 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              title: "Image Mobile",
+              name: "imageMobile",
+              type: "image",
+              description:
+                "Mobile Homepage Menu Image Layout Option 1: 375 x 872 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Image (For Option 2)",
+          name: "imageOption2",
+          type: "image",
+          description:
+            "Desktop Homepage Menu Image Layout Option 2: 800 x 435 px",
+          fields: [
+            {
+              title: "Edit Alt Text",
+              name: "alt",
+              type: "string",
+              initialValue: "Locavore NXT",
+            },
+          ],
+        },
+        {
+          title: "Image Set (For Option 3)",
+          name: "imageOption3",
+          type: "object",
+          fields: [
+            {
+              title: "Image Left",
+              name: "imageLeft",
+              type: "image",
+              description:
+                "Desktop Homepage Menu Image Layout Option 2: 384 x 210 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              title: "Image Right",
+              name: "imageRight",
+              type: "image",
+              description:
+                "Desktop Homepage Menu Image Layout Option 2: 384 x 210 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Heading",
+          name: "heading",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Menu Title",
+          name: "menuTitle",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Button Text",
+          name: "button",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: "facilitiesSection",
+      title: "Our Facilities Section",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          title: "Heading",
+          name: "heading",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Button Text",
+          name: "button",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: "collaboratorSection",
+      title: "Our Collaborators Section",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          title: "Heading",
+          name: "heading",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Button Text",
+          name: "button",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      name: "eventSection",
+      title: "Our Events & Programs Section",
+      type: "object",
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          title: "Heading",
+          name: "heading",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Button Text",
+          name: "button",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
       ],
     },
   ],
   preview: {
     prepare() {
       return {
-        title: "Home NXT",
+        title: "Home",
       };
     },
   },

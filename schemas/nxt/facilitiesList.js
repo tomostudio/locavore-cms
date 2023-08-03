@@ -26,36 +26,37 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "facilitiesList",
-  title: "Facilities List",
+  title: "Our Facilities (Database)",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Facility Title",
       type: "string",
+      description: "Will also be used on Browser Tab Title",
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
           if (slug) {
             if (slug.current.match(regex) !== null) {
-              return true
+              return true;
             } else {
-              return 'Not a valid slug'
+              return "Not a valid slug";
             }
           } else {
-            return 'Required'
+            return "Required";
           }
         }),
     },
@@ -72,14 +73,14 @@ export default {
         {
           name: "seo_description",
           description:
-            "Enter up to 400 characters to describe the Homepage. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
+            "Enter up to 400 characters to describe the Facilities. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
           description:
-            "Enter some keywords to describe the Homepage (separated by commas)",
+            "Enter some keywords to describe the Facilities (separated by commas)",
           type: "string",
           title: "Keywords",
         },
@@ -106,32 +107,6 @@ export default {
       type: "object",
       fields: [
         {
-          name: "imageColor",
-          title: "Image Color",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-        {
-          name: "imageBnw",
-          title: "Image Black & White",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "alt",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-        {
           name: "size",
           title: "Size",
           type: "string",
@@ -146,25 +121,159 @@ export default {
           initialValue: "normal",
         },
         {
-          name: "position",
-          title: "Position",
-          type: "string",
-          options: {
-            list: [
-              { title: "Top", value: "top" },
-              { title: "Bottom", value: "bottom" },
-              { title: "Center", value: "center" },
-            ],
-            layout: "radio",
-          },
-          initialValue: "top",
-          hidden: ({ parent }) => (parent?.size === "normal"),
+          title: "Image Small",
+          name: "imageSmall",
+          type: "object",
+          hidden: ({ parent }) => !(parent.size === "normal"),
+          fields: [
+            {
+              name: "imageColor",
+              title: "Image Color",
+              type: "image",
+              description: "Image Size: 250 x 250 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "imageBnw",
+              title: "Image Black & White",
+              type: "image",
+              description: "Image Size: 250 x 250 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "imageFit",
+              title: "Image Fit",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Contain", value: "contain" },
+                  { title: "Cover", value: "cover" },
+                ],
+                layout: "radio",
+              },
+              initialValue: "contain",
+            },
+          ],
+        },
+        {
+          title: "Image Medium",
+          name: "imageMedium",
+          type: "object",
+          hidden: ({ parent }) => !(parent.size === "120"),
+          fields: [
+            {
+              name: "imageColor",
+              title: "Image Color",
+              type: "image",
+              description: "Image Size: 250 x 375 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "imageBnw",
+              title: "Image Black & White",
+              type: "image",
+              description: "Image Size: 250 x 375 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "position",
+              title: "Position",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Top", value: "top" },
+                  { title: "Center", value: "center" },
+                  { title: "Bottom", value: "bottom" },
+                ],
+                layout: "radio",
+              },
+              initialValue: "contain",
+            },
+          ],
+        },
+        {
+          title: "Image Large",
+          name: "imageLarge",
+          type: "object",
+          hidden: ({ parent }) => !(parent.size === "150"),
+          fields: [
+            {
+              name: "imageColor",
+              title: "Image Color",
+              type: "image",
+              description: "Image Size: 350 x 525 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "imageBnw",
+              title: "Image Black & White",
+              type: "image",
+              description: "Image Size: 350 x 525 px",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "alt",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              name: "position",
+              title: "Position",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Top", value: "top" },
+                  { title: "Center", value: "center" },
+                  { title: "Bottom", value: "bottom" },
+                ],
+                layout: "radio",
+              },
+              initialValue: "contain",
+            },
+          ],
         },
       ],
     },
     {
-      title: "Description",
-      name: "description",
+      title: "Content",
+      name: "content",
       type: "blockCenter",
       validation: (Rule) => Rule.required(),
     },
@@ -172,6 +281,7 @@ export default {
       title: "Images",
       name: "images",
       type: "array",
+      description: "Image Size: 720 x 1080 px",
       of: [
         {
           name: "image",
@@ -191,8 +301,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      media: 'thumbnail.imageColor',
-    }
+      title: "title",
+    },
   },
 };

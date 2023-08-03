@@ -26,36 +26,37 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "eventList",
-  title: "Event List",
+  title: "Our Events & Programs (Database)",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Event Title",
       type: "string",
+      description: "Will also be used on Browser Tab Title",
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
           if (slug) {
             if (slug.current.match(regex) !== null) {
-              return true
+              return true;
             } else {
-              return 'Not a valid slug'
+              return "Not a valid slug";
             }
           } else {
-            return 'Required'
+            return "Required";
           }
         }),
     },
@@ -72,14 +73,14 @@ export default {
         {
           name: "seo_description",
           description:
-            "Enter up to 400 characters to describe the Homepage. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
+            "Enter up to 400 characters to describe the Event. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
           description:
-            "Enter some keywords to describe the Homepage (separated by commas)",
+            "Enter some keywords to describe the Event (separated by commas)",
           type: "string",
           title: "Keywords",
         },
@@ -109,6 +110,7 @@ export default {
           name: "imageColor",
           title: "Image Color",
           type: "image",
+          description: "Image Size: 280 x 280 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -122,6 +124,7 @@ export default {
           name: "imageBnw",
           title: "Image Black & White",
           type: "image",
+          description: "Image Size: 280 x 280 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -132,9 +135,10 @@ export default {
           ],
         },
         {
-          title: "Description",
-          name: "description",
+          title: "Short Description",
+          name: "shortDescription",
           type: "string",
+          description: "Input short description about the event/program (1-2 sentence or 12-15 words max)",
           inputComponent: inputWithHeight,
           validation: (Rule) => Rule.required(),
         },
@@ -149,6 +153,7 @@ export default {
           name: "imageDesktop",
           title: "Image Desktop",
           type: "image",
+          description: "Image Size: 1200 x 450 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -162,6 +167,7 @@ export default {
           name: "imageMobile",
           title: "Image Mobile",
           type: "image",
+          description: "Image Size: 345 x 422 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -174,44 +180,51 @@ export default {
       ],
     },
     {
-      title: "Description",
-      name: "description",
+      title: "Content",
+      name: "content",
       type: "blockCoverNxt",
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Venue",
-      name: "venue",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "Date",
-      name: "date",
-      type: "date",
-      options: {
-        dateFormat: 'YYYY-MM-DD',
-        calendarTodayLabel: 'Today'
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "Location",
-      name: "location",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "Time",
-      name: "time",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "Register Link",
-      name: "registerLink",
-      type: "url",
-      validation: (Rule) => Rule.required(),
+      title: "Side Bar Information",
+      name: "sidebar",
+      type: "object",
+      fields: [
+        {
+          title: "Venue",
+          name: "venue",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Date",
+          name: "date",
+          type: "date",
+          options: {
+            dateFormat: "YYYY-MM-DD",
+            calendarTodayLabel: "Today",
+          },
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Location",
+          name: "location",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Time",
+          name: "time",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Register Link",
+          name: "registerLink",
+          type: "url",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     },
   ],
   preview: {

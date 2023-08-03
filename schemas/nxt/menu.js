@@ -42,14 +42,14 @@ export default {
         {
           name: "seo_description",
           description:
-            "Enter up to 400 characters to describe the Homepage. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
+            "Enter up to 400 characters to describe the Menu. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
           description:
-            "Enter some keywords to describe the Homepage (separated by commas)",
+            "Enter some keywords to describe the Menu (separated by commas)",
           type: "string",
           title: "Keywords",
         },
@@ -71,70 +71,69 @@ export default {
       ],
     },
     {
-      title: "Hero",
+      title: "Hero Image",
       name: "hero",
       type: "object",
       fields: [
         {
-          name: "image",
-          title: "Image",
-          type: "object",
+          name: "imageDesktop",
+          title: "Image Desktop",
+          type: "image",
+          description: "Input Desktop Menu Hero Image: 1140 x 500 px",
           fields: [
             {
-              name: "imageDesktop",
-              title: "Image Desktop",
-              type: "image",
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "alt",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
-            },
-            {
-              name: "imageMobile",
-              title: "Image Mobile",
-              type: "image",
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "alt",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
+              title: "Edit Alt Text",
+              name: "alt",
+              type: "string",
+              initialValue: "Locavore NXT",
             },
           ],
         },
         {
-          title: "Title",
-          name: "title",
-          type: "string",
+          name: "imageMobile",
+          title: "Image Mobile",
+          type: "image",
+          description: "Mobile Menu Hero Image: 375 x 500 px",
+          fields: [
+            {
+              title: "Edit Alt Text",
+              name: "alt",
+              type: "string",
+              initialValue: "Locavore NXT",
+            },
+          ],
         },
         {
-          title: "Description",
-          name: "description",
+          title: "Heading on Hero Image",
+          name: "heading",
           type: "string",
+          description: "Will also be used on Browser Tab Title"
+        },
+        {
+          title: "Sub-heading",
+          name: "subheading",
+          type: "string",
+          description: "Input short description about the menu (4-6 words)"
         },
       ],
     },
     {
-      title: "Title",
-      name: "title",
+      title: "Menu Title",
+      name: "menuTitle",
       type: "string",
+      description: "Input the name of the menu"
     },
     {
       name: "article",
       type: "menuComponent",
       title: "Article Module",
-      description: "You may add multiple module to be included in this article",    },
+      description: "You may add multiple module to be included in this article",
+    },
   ],
   preview: {
     prepare() {
       return {
-        title: "Home NXT",
+        title: "Menu",
       };
     },
   },

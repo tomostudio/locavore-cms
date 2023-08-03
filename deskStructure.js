@@ -1,6 +1,15 @@
 import S from "@sanity/desk-tool/structure-builder";
 import React from "react";
 import {
+  BiBookOpen,
+  BiCalendarAlt,
+  BiCategoryAlt,
+  BiHive,
+  BiHome,
+  BiMap,
+  BiMenu,
+} from "react-icons/bi";
+import {
   FiSettings,
   FiBook,
   FiFile,
@@ -31,8 +40,9 @@ export default () =>
             "home",
             "homeNxt",
             "menu",
+            "facilities",
             "facilitiesList",
-            'collaborator',
+            "collaborator",
             "collaboratorList",
             "event",
             "eventList",
@@ -145,33 +155,58 @@ export default () =>
         .icon(() => <FiFile />)
         .child(
           S.list()
-            .title("NXT")
+            .title("NXT - WIP")
             .items([
               S.listItem()
                 .title("Home")
-                .icon(() => <FiStar />)
+                .icon(() => <BiHome />)
                 .child(
                   S.document().schemaType("homeNxt").documentId("homeNxt")
                 ),
               S.listItem()
                 .title("Menu")
-                .icon(() => <FiStar />)
+                .icon(() => <BiMenu />)
                 .child(S.document().schemaType("menu").documentId("menu")),
-              S.documentTypeListItem("facilitiesList").icon(() => <FiStar />),
-              S.listItem()
-                .title("Collaborator")
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType("collaborator").documentId("collaborator")),
-              S.documentTypeListItem("collaboratorList").icon(() => <FiStar />),
-              S.listItem()
-                .title("Event")
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType("event").documentId("event")),
-              S.documentTypeListItem("eventList").icon(() => <FiStar />),
+              S.documentTypeListItem("facilitiesList").icon(() => (
+                <BiCategoryAlt />
+              )),
+              S.documentTypeListItem("collaboratorList").icon(() => <BiHive />),
+              S.documentTypeListItem("eventList").icon(() => <BiCalendarAlt />),
               S.listItem()
                 .title("Visit")
-                .icon(() => <FiStar />)
+                .icon(() => <BiMap />)
                 .child(S.document().schemaType("visit").documentId("visit")),
+              S.listItem()
+                .title("Pages")
+                .icon(() => <BiBookOpen />)
+                .child(
+                  S.list()
+                    .title("Pages")
+                    .items([
+                      S.listItem()
+                        .title("Our Facilities")
+                        .icon(() => <BiCategoryAlt />)
+                        .child(
+                          S.document()
+                            .schemaType("facilities")
+                            .documentId("facilities")
+                        ),
+                      S.listItem()
+                        .title("Our Collaborators")
+                        .icon(() => <BiHive />)
+                        .child(
+                          S.document()
+                            .schemaType("collaborator")
+                            .documentId("collaborator")
+                        ),
+                      S.listItem()
+                        .title("Our Events & Programs")
+                        .icon(() => <BiCalendarAlt />)
+                        .child(
+                          S.document().schemaType("event").documentId("event")
+                        ),
+                    ])
+                ),
             ])
         ),
       S.listItem()

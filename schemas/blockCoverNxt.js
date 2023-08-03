@@ -66,15 +66,46 @@ export default {
             },
             fields: [
               {
-                title: "Link",
-                name: "link",
-                type: "url",
+                title: "Select Link",
+                name: "select_link",
+                type: "string",
+                options: {
+                  list: [
+                    { title: "Default Link", value: "default" },
+                    { title: "Whatsapp Link", value: "wa_link" },
+                    { title: "Email", value: "email" },
+                  ],
+                  layout: "radio",
+                },
+                initialValue: "default",
               },
               {
                 title: "Open in new tab",
                 name: "target_blank",
                 type: "boolean",
                 initialValue: true,
+                hidden: ({ parent }) => !(parent?.select_link === "default"),
+              },
+              {
+                title: "Link",
+                name: "link",
+                type: "url",
+                hidden: ({ parent }) => !(parent?.select_link === "default"),
+              },
+              {
+                title: "WA Link",
+                name: "wa_link",
+                type: "url",
+                hidden: ({ parent }) => !(parent?.select_link === "wa_link"),
+              },
+              {
+                title: "Email",
+                name: "email",
+                type: "url",
+                validation: Rule => Rule.uri({
+                  scheme: ['mailto']
+                }),
+                hidden: ({ parent }) => !(parent?.select_link === "email"),
               },
               {
                 title: "Font",
@@ -116,6 +147,7 @@ export default {
       title: "Small Image",
       name: "smallImage",
       type: "object",
+      description: "Input Doodle asset in PNG: 220 x 220 px",
       fields: [
         {
           title: "Image",
