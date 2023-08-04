@@ -158,6 +158,7 @@ export default {
           title: "Image Set (For Option 1)",
           name: "imageOption1",
           type: "object",
+          hidden: ({ parent }) => !(parent?.option === "option1"),
           fields: [
             {
               title: "Image Desktop",
@@ -195,6 +196,7 @@ export default {
           title: "Image (For Option 2)",
           name: "imageOption2",
           type: "image",
+          hidden: ({ parent }) => !(parent?.option === "option2"),
           description:
             "Desktop Homepage Menu Image Layout Option 2: 800 x 435 px",
           fields: [
@@ -210,6 +212,7 @@ export default {
           title: "Image Set (For Option 3)",
           name: "imageOption3",
           type: "object",
+          hidden: ({ parent }) => !(parent?.option === "option3"),
           fields: [
             {
               title: "Image Left",
