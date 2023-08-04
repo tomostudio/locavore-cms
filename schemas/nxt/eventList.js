@@ -138,7 +138,8 @@ export default {
           title: "Short Description",
           name: "shortDescription",
           type: "string",
-          description: "Input short description about the event/program (1-2 sentence or 12-15 words max)",
+          description:
+            "Input short description about the event/program (1-2 sentence or 12-15 words max)",
           inputComponent: inputWithHeight,
           validation: (Rule) => Rule.required(),
         },
@@ -219,10 +220,23 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
-          title: "Register Link",
-          name: "registerLink",
-          type: "url",
-          validation: (Rule) => Rule.required(),
+          title: "Call to Action Button",
+          name: "ctaButton",
+          type: "object",
+          fields: [
+            {
+              title: "Button Text",
+              name: "buttonText",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: "Button Link",
+              name: "buttonLink",
+              type: "url",
+              validation: (Rule) => Rule.required(),
+            },
+          ],
         },
       ],
     },

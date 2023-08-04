@@ -126,7 +126,7 @@ export default {
     {
       name: "article",
       type: "menuComponent",
-      title: "Article Module",
+      title: "Content Module",
       description: "You may add multiple module to be included in this article",
     },
   ],
