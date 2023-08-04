@@ -131,7 +131,7 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
-          title: "Link",
+          title: "Button Link",
           name: "link",
           type: "url",
           validation: (Rule) => Rule.required(),
