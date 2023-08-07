@@ -85,6 +85,7 @@ export default {
           title: "Image Color",
           type: "image",
           description: "Image Size: 300 x 250 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -99,6 +100,7 @@ export default {
           title: "Image Black & White",
           type: "image",
           description: "Image Size: 300 x 250 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -115,6 +117,7 @@ export default {
       title: "Image",
       type: "image",
       description: "Image Size: 590 x 720 px",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: "Edit Alt Text",

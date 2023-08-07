@@ -80,6 +80,7 @@ export default {
           title: "Image Desktop",
           type: "image",
           description: "Input Desktop Menu Hero Image: 1140 x 500 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -94,6 +95,7 @@ export default {
           title: "Image Mobile",
           type: "image",
           description: "Mobile Menu Hero Image: 375 x 500 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -107,13 +109,15 @@ export default {
           title: "Heading on Hero Image",
           name: "heading",
           type: "string",
-          description: "Will also be used on Browser Tab Title"
+          description: "Will also be used on Browser Tab Title",
+          validation: (Rule) => Rule.required(),
         },
         {
           title: "Sub-heading",
           name: "subheading",
           type: "string",
-          description: "Input short description about the menu (4-6 words)"
+          description: "Input short description about the menu (4-6 words)",
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
@@ -121,7 +125,8 @@ export default {
       title: "Menu Title",
       name: "menuTitle",
       type: "string",
-      description: "Input the name of the menu"
+      description: "Input the name of the menu",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "article",

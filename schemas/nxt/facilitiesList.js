@@ -287,6 +287,7 @@ export default {
           name: "image",
           title: "Image",
           type: "image",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",

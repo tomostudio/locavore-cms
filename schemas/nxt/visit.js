@@ -79,6 +79,8 @@ export default {
           name: "imageDesktop",
           title: "Image Desktop",
           type: "image",
+          description: "Hero Image Size: 1440 x 350 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -92,6 +94,8 @@ export default {
           name: "imageMobile",
           title: "Image Mobile",
           type: "image",
+          description: "Hero Image Size: 375 x 350 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -107,11 +111,15 @@ export default {
       title: "Heading on Hero Image",
       name: "heading",
       type: "string",
+      description: "Will also be used on Browser Tab Title",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Sub-heading Top",
       name: "subheadingTop",
       type: "string",
+      description: "Input 1-2 sentences (8-12 words max)",
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Content",
@@ -160,6 +168,7 @@ export default {
               title: "Image Desktop",
               type: "image",
               description: "Image Size: 750 x 500 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -174,6 +183,7 @@ export default {
               title: "Image Mobile",
               type: "image",
               description: "Image Size: 320 x 230 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -223,6 +233,8 @@ export default {
       title: "Sub-heading Bottom",
       name: "subheadingBottom",
       type: "string",
+      description: "Input 1-2 sentences (8-12 words max)",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

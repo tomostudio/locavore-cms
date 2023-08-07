@@ -83,6 +83,7 @@ export default {
           title: "Image Desktop",
           type: "image",
           description: "Input Desktop Homepage Hero Image: 1440 x 900 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -97,6 +98,7 @@ export default {
           title: "Image Mobile",
           type: "image",
           description: "Input Desktop Homepage Hero Image: 1440 x 900 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
