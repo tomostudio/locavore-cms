@@ -26,7 +26,7 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "eventList",
-  title: "Our Events & Programs (Database)",
+  title: "Our Events & Programs",
   type: "document",
   fields: [
     {

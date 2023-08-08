@@ -1,6 +1,6 @@
 export default {
   name: "collaboratorList",
-  title: "Our Collaborators (Database)",
+  title: "Our Collaborators",
   type: "document",
   fields: [
     {

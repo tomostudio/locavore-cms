@@ -26,7 +26,7 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "facilitiesList",
-  title: "Our Facilities (Database)",
+  title: "Our Facilities",
   type: "document",
   fields: [
     {
@@ -112,9 +112,9 @@ export default {
           type: "string",
           options: {
             list: [
-              { title: "Normal", value: "normal" },
-              { title: "120%", value: "120" },
-              { title: "150%", value: "150" },
+              { title: "Small", value: "normal" },
+              { title: "Medium", value: "120" },
+              { title: "Large", value: "150" },
             ],
             layout: "radio",
           },

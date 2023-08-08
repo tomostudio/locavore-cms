@@ -53,6 +53,7 @@ export default {
           name: "imageDesktop",
           title: "Image Desktop",
           type: "image",
+          description: "Hero Image Size: 1440 x 350 px",
           fields: [
             {
               title: "Edit Alt Text",
@@ -66,6 +67,7 @@ export default {
           name: "imageMobile",
           title: "Image Mobile",
           type: "image",
+          description: "Hero Image Size: 375 x 350 px",
           fields: [
             {
               title: "Edit Alt Text",

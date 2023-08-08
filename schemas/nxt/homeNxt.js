@@ -97,7 +97,7 @@ export default {
           name: "imageMobile",
           title: "Image Mobile",
           type: "image",
-          description: "Input Desktop Homepage Hero Image: 1440 x 900 px",
+          description: "Input Mobile Homepage Hero Image: 375 x 870 px",
           validation: (Rule) => Rule.required(),
           fields: [
             {
