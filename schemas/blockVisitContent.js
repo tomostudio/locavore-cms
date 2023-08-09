@@ -87,6 +87,13 @@ export default {
                 hidden: ({ parent }) => !(parent?.select_link === "default"),
               },
               {
+                name: "arrow",
+                title: "Arrow",
+                type: "boolean",
+                initialValue: false,
+                hidden: ({ parent }) => !(parent?.select_link === "default"),
+              },
+              {
                 title: "Link",
                 name: "link",
                 type: "url",
@@ -120,7 +127,7 @@ export default {
                   ],
                   layout: "radio",
                 },
-                initialValue: "font-display",
+                initialValue: "display",
               },
               {
                 title: "Text Color",

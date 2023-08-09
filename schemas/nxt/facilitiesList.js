@@ -125,12 +125,25 @@ export default {
           name: "imageSmall",
           type: "object",
           hidden: ({ parent }) => !(parent.size === "normal"),
+          validation: (Rule) =>
+            Rule.custom((field, context) => {
+              if (context.document.thumbnail.size === "normal") {
+                if(field.imageColor.asset && field.imageBnw.asset) {
+                  return true
+                } else {
+                  return "Required Image Small"
+                }
+              } else {
+                return true
+              }
+            }),
           fields: [
             {
               name: "imageColor",
               title: "Image Color",
               type: "image",
               description: "Image Size: 250 x 250 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -145,6 +158,7 @@ export default {
               title: "Image Black & White",
               type: "image",
               description: "Image Size: 250 x 250 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -174,12 +188,25 @@ export default {
           name: "imageMedium",
           type: "object",
           hidden: ({ parent }) => !(parent.size === "120"),
+          validation: (Rule) =>
+            Rule.custom((field, context) => {
+              if (context.document.thumbnail.size === "120") {
+                if(field.imageColor.asset && field.imageBnw.asset) {
+                  return true
+                } else {
+                  return "Required Image Medium"
+                }
+              } else {
+                return true
+              }
+            }),
           fields: [
             {
               name: "imageColor",
               title: "Image Color",
               type: "image",
               description: "Image Size: 250 x 375 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -194,6 +221,7 @@ export default {
               title: "Image Black & White",
               type: "image",
               description: "Image Size: 250 x 375 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -207,6 +235,7 @@ export default {
               name: "position",
               title: "Position",
               type: "string",
+              validation: (Rule) => Rule.required(),
               options: {
                 list: [
                   { title: "Top", value: "top" },
@@ -215,7 +244,7 @@ export default {
                 ],
                 layout: "radio",
               },
-              initialValue: "contain",
+              initialValue: "top",
             },
           ],
         },
@@ -224,12 +253,25 @@ export default {
           name: "imageLarge",
           type: "object",
           hidden: ({ parent }) => !(parent.size === "150"),
+          validation: (Rule) =>
+            Rule.custom((field, context) => {
+              if (context.document.thumbnail.size === "150") {
+                if(field.imageColor.asset && field.imageBnw.asset) {
+                  return true
+                } else {
+                  return "Required Image Large"
+                }
+              } else {
+                return true
+              }
+            }),
           fields: [
             {
               name: "imageColor",
               title: "Image Color",
               type: "image",
               description: "Image Size: 350 x 525 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -244,6 +286,7 @@ export default {
               title: "Image Black & White",
               type: "image",
               description: "Image Size: 350 x 525 px",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -257,6 +300,7 @@ export default {
               name: "position",
               title: "Position",
               type: "string",
+              validation: (Rule) => Rule.required(),
               options: {
                 list: [
                   { title: "Top", value: "top" },
@@ -265,11 +309,25 @@ export default {
                 ],
                 layout: "radio",
               },
-              initialValue: "contain",
+              initialValue: "top",
             },
           ],
         },
       ],
+    },
+    {
+      title: "Image Icon",
+      name: "imageIcon",
+      type: "image",
+      description: "Input Doodle asset in PNG: 220 x 220 px",
+      fields: [
+        {
+          title: "Edit Alt Text",
+          name: "name",
+          type: "string",
+          initialValue: "Locavore NXT",
+        },
+      ]
     },
     {
       title: "Content",
@@ -282,6 +340,7 @@ export default {
       name: "images",
       type: "array",
       description: "Image Size: 720 x 1080 px",
+      validation: (Rule) => Rule.required(),
       of: [
         {
           name: "image",

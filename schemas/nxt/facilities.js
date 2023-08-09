@@ -1,6 +1,6 @@
 export default {
   name: "facilities",
-  title: "Our Facilities",
+  title: "Our Facilities (List)",
   type: "document",
   fields: [
     {
@@ -49,12 +49,13 @@ export default {
       title: "Heading",
       type: "string",
       description: "Will also be used on Browser Tab Title",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     prepare() {
       return {
-        title: "Our Facilities",
+        title: "Our Facilities (List)",
       };
     },
   },

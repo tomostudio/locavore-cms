@@ -82,6 +82,13 @@ export default {
                 hidden: ({ parent }) => !(parent?.select_link === "default"),
               },
               {
+                name: "arrow",
+                title: "Arrow",
+                type: "boolean",
+                initialValue: false,
+                hidden: ({ parent }) => !(parent?.select_link === "default"),
+              },
+              {
                 title: "Link",
                 name: "link",
                 type: "url",
@@ -115,7 +122,7 @@ export default {
                   ],
                   layout: "radio",
                 },
-                initialValue: "font-display",
+                initialValue: "display",
               },
               {
                 title: "Text Color",
@@ -176,39 +183,6 @@ export default {
         },
       ],
       lists: [],
-    },
-    {
-      title: "Small Image",
-      name: "smallImage",
-      type: "object",
-      description: "Input Doodle asset in PNG: 220 x 220 px",
-      fields: [
-        {
-          title: "Image",
-          name: "image",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "name",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-      ],
-      preview: {
-        select: {
-          media: "image",
-        },
-        prepare(selection) {
-          const { media } = selection;
-          return {
-            title: "Small Image",
-            media: media,
-          };
-        },
-      },
     },
     {
       title: "Button Link",

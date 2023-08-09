@@ -124,7 +124,7 @@ export default {
     {
       title: "Content",
       name: "content",
-      type: "blockCenter",
+      type: "blockVisit",
       validation: (Rule) => Rule.required(),
     },
     {
@@ -140,63 +140,6 @@ export default {
         },
         {
           title: "Button Link",
-          name: "link",
-          type: "url",
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
-      title: "Location",
-      name: "location",
-      type: "object",
-      description: "Input complete address of the new Locavore",
-      fields: [
-        {
-          title: "Entry",
-          name: "entry",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Map Image",
-          name: "mapImage",
-          type: "object",
-          fields: [
-            {
-              name: "imageDesktop",
-              title: "Image Desktop",
-              type: "image",
-              description: "Image Size: 750 x 500 px",
-              validation: (Rule) => Rule.required(),
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "alt",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
-            },
-            {
-              name: "imageMobile",
-              title: "Image Mobile",
-              type: "image",
-              description: "Image Size: 320 x 230 px",
-              validation: (Rule) => Rule.required(),
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "alt",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          title: "Link",
           name: "link",
           type: "url",
           validation: (Rule) => Rule.required(),

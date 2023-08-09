@@ -117,7 +117,6 @@ export default {
           name: "subheading",
           type: "string",
           description: "Input short description about the menu (4-6 words)",
-          validation: (Rule) => Rule.required(),
         },
       ],
     },

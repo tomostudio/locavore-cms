@@ -1,6 +1,6 @@
 export default {
   name: "event",
-  title: "Our Events & Programs",
+  title: "Our Events & Programs (List)",
   type: "document",
   fields: [
     {
@@ -48,12 +48,14 @@ export default {
       title: "Hero Image",
       name: "hero",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: "imageDesktop",
           title: "Image Desktop",
           type: "image",
           description: "Hero Image Size: 1440 x 350 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -68,6 +70,7 @@ export default {
           title: "Image Mobile",
           type: "image",
           description: "Hero Image Size: 375 x 350 px",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Edit Alt Text",
@@ -84,12 +87,13 @@ export default {
       title: "Heading on Hero Image",
       type: "string",
       description: "Will also be used on Browser Tab Title",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     prepare() {
       return {
-        title: "Our Events & Programs",
+        title: "Our Events & Programs (List)",
       };
     },
   },

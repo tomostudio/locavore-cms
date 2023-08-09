@@ -1,6 +1,6 @@
 export default {
   name: "collaborator",
-  title: "Our Collaborators",
+  title: "Our Collaborators (List)",
   type: "document",
   fields: [
     {
@@ -84,12 +84,13 @@ export default {
       title: "Heading on Hero Image",
       type: "string",
       description: "Will also be used on Browser Tab Title",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     prepare() {
       return {
-        title: "Our Collaborators",
+        title: "Our Collaborators (List)",
       };
     },
   },

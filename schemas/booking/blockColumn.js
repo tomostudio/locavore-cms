@@ -112,7 +112,7 @@ export default {
                   ],
                   layout: "radio",
                 },
-                initialValue: "font-display",
+                initialValue: "display",
               },
             ],
           },

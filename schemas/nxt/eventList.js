@@ -192,53 +192,68 @@ export default {
     },
     {
       title: "Side Bar Information",
-      name: "sidebar",
-      type: "object",
-      fields: [
+      name: "sidebars",
+      type: "array",
+      of: [
         {
-          title: "Venue",
-          name: "venue",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Date",
-          name: "date",
-          type: "date",
-          options: {
-            dateFormat: "YYYY-MM-DD",
-            calendarTodayLabel: "Today",
-          },
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Location",
-          name: "location",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Time",
-          name: "time",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Call to Action Button",
-          name: "ctaButton",
+          title: "Side Bar Information",
+          name: "sidebar",
           type: "object",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
-              title: "Button Text",
-              name: "buttonText",
-              type: "string",
+              name: 'type',
+              title: 'Type',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Link', value: 'link' },
+                  { title: 'Text', value: 'text' },
+                ],
+                layout: 'radio',
+              },
               validation: (Rule) => Rule.required(),
+              initialValue: 'text',
             },
             {
-              title: "Button Link",
-              name: "buttonLink",
-              type: "url",
-              validation: (Rule) => Rule.required(),
+              title: "Text",
+              name: "text",
+              type: "object",
+              hidden: ({ parent }) => !(parent.type === "text"),
+              fields: [
+                {
+                  title: "Information Title",
+                  name: "infoTitle",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  title: "Information Details",
+                  name: "infoDetail",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                }
+              ]
+            },
+            {
+              title: "Button",
+              name: "button",
+              type: "object",
+              hidden: ({ parent }) => !(parent.type === "link"),
+              fields: [
+                {
+                  title: "Button Text",
+                  name: "buttonText",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  title: "Button Link",
+                  name: "buttonLink",
+                  type: "url",
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
             },
           ],
         },

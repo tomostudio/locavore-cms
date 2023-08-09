@@ -1,26 +1,10 @@
 import React from "react";
-import { BiFontSize } from "react-icons/bi";
-import { RiSubscript2, RiSuperscript2 } from "react-icons/ri";
+import { AiOutlineMinus } from "react-icons/ai";
+import { GoPrimitiveDot } from "react-icons/go";
 import { HiAnnotation } from "react-icons/hi";
 
-const subRender = (props) => <sub>{props.children}</sub>;
-
-const supRender = (props) => <sup>{props.children}</sup>;
-
-const largeRender = (props) => (
-  <span style={{ fontSize: "1.5em" }}>{props.children}</span>
-);
-
-const centerRender = (props) => (
+const normalRender = (props) => (
   <p style={{ textAlign: "center" }}>{props.children}</p>
-);
-
-const leftRender = (props) => (
-  <p style={{ textAlign: "left" }}>{props.children}</p>
-);
-
-const rightRender = (props) => (
-  <p style={{ textAlign: "right" }}>{props.children}</p>
 );
 
 const h1Render = (props) => (
@@ -52,8 +36,8 @@ const annotationRender = (props) => (
 );
 
 export default {
-  title: "Block Content Menu",
-  name: "blockMenu",
+  title: "Block Visit",
+  name: "blockVisit",
   type: "array",
   of: [
     {
@@ -65,30 +49,6 @@ export default {
           { title: "Emphasis", value: "em" },
           { title: "Strike", value: "strike-through" },
           { title: "Underline", value: "underline" },
-          {
-            title: "Subscript",
-            value: "sub",
-            blockEditor: {
-              icon: () => <RiSubscript2 />,
-              render: subRender,
-            },
-          },
-          {
-            title: "Superscript",
-            value: "sup",
-            blockEditor: {
-              icon: () => <RiSuperscript2 />,
-              render: supRender,
-            },
-          },
-          {
-            title: "Larger Size",
-            value: "largerSize",
-            blockEditor: {
-              icon: () => <BiFontSize />,
-              render: largeRender,
-            },
-          },
         ],
         annotations: [
           {
@@ -119,6 +79,13 @@ export default {
                 name: "target_blank",
                 type: "boolean",
                 initialValue: true,
+                hidden: ({ parent }) => !(parent?.select_link === "default"),
+              },
+              {
+                name: "arrow",
+                title: "Arrow",
+                type: "boolean",
+                initialValue: false,
                 hidden: ({ parent }) => !(parent?.select_link === "default"),
               },
               {
@@ -173,172 +140,139 @@ export default {
       },
       styles: [
         {
-          title: "Paragraph Left",
+          title: "Center",
           value: "normal",
           blockEditor: {
-            render: leftRender,
+            render: normalRender,
           },
         },
         {
-          title: "Paragraph Center",
-          value: "center",
-          blockEditor: {
-            render: centerRender,
-          },
-        },
-        {
-          title: "Paragraph Right",
-          value: "right",
-          blockEditor: {
-            render: rightRender,
-          },
-        },
-        { title: "H1", value: "h1" },
-        { title: "H2", value: "h2" },
-        { title: "H3", value: "h3" },
-        { title: "H4", value: "h4" },
-        { title: "H5", value: "h5" },
-        {
-          title: "H1 - Center",
-          value: "h1Center",
+          title: "H1",
+          value: "h1",
           blockEditor: {
             render: h1Render,
           },
         },
         {
-          title: "H2 - Center",
-          value: "h2Center",
+          title: "H2",
+          value: "h2",
           blockEditor: {
             render: h2Render,
           },
         },
         {
-          title: "H3 - Center",
-          value: "h3Center",
+          title: "H3",
+          value: "h3",
           blockEditor: {
             render: h3Render,
           },
         },
         {
-          title: "H4 - Center",
-          value: "h4Center",
+          title: "H4",
+          value: "h4",
           blockEditor: {
             render: h4Render,
           },
         },
         {
-          title: "H5 - Center",
-          value: "h5Center",
+          title: "H5",
+          value: "h5",
           blockEditor: {
             render: h5Render,
           },
         },
       ],
-      lists: [{ title: "Numbered", value: "number" }],
+      lists: [],
     },
     {
-      title: "Code",
-      type: "code",
-      options: {
-        language: "html",
-      },
-    },
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
-    {
-      name: "quote",
-      title: "Quote",
+      title: "Map Image",
+      name: "mapImage",
       type: "object",
       fields: [
         {
-          name: "option",
-          title: "1 / 2",
-          type: "boolean",
-          initialValue: false,
+          title: "Image Desktop",
+          name: "imageDesktop",
+          type: "object",
+          description: "Image Size: 750 x 500 px",
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: "Image",
+              name: "image",
+              type: "image",
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+          ],
         },
         {
-          name: "content",
-          title: "Content",
-          type: "blockQuote",
+          title: "Image Mobile",
+          name: "imageMobile",
+          type: "object",
+          description: "Image Size: 320 x 230 px",
+          validation: (Rule) => Rule.required(),
+          fields: [
+            {
+              title: "Image",
+              name: "image",
+              type: "image",
+              validation: (Rule) => Rule.required(),
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+          ],
         },
+        {
+          title: "Link",
+          name: "link",
+          type: "url",
+          validation: (Rule) => Rule.required(),
+        }
       ],
       preview: {
         prepare() {
           return {
-            title: "Quote",
+            title: "Map Image",
           };
         },
       },
     },
     {
-      title: "Image",
-      name: "img",
+      title: "Button Link",
+      name: "buttonLink",
       type: "object",
       fields: [
         {
-          title: "Image",
-          name: "image",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "name",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-        {
-          title: "Caption",
-          name: "name",
+          title: "Title",
+          name: "title",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
-          title: "Normal / Wide",
-          name: "option",
-          type: "boolean",
-          initialValue: false,
-        },
-      ],
-    },
-    {
-      title: "Small Image",
-      name: "smallImage",
-      type: "object",
-      description: "Input Doodle asset in PNG: 220 x 220 px",
-      fields: [
-        {
-          title: "Image",
-          name: "image",
-          type: "image",
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "name",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
+          title: "Link",
+          name: "link",
+          type: "url",
+          validation: (Rule) => Rule.required(),
         },
       ],
       preview: {
         select: {
-          media: "image",
-        },
-        prepare(selection) {
-          const { media } = selection;
-          return {
-            title: "Small Image",
-            media: media,
-          };
+          title: "title",
         },
       },
-    },
-    {
-      name: "video",
-      type: "videoComponent",
-      title: "Video Module",
     },
   ],
 };

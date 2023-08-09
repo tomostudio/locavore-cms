@@ -8,6 +8,10 @@ import {
   BiHome,
   BiMap,
   BiMenu,
+  BiLeaf,
+  BiGridAlt,
+  BiBowlRice,
+  BiGroup,
 } from "react-icons/bi";
 import {
   FiSettings,
@@ -151,26 +155,26 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title("NXT - WIP")
-        .icon(() => <FiFile />)
+        .title("NXT - Preview")
+        .icon(() => <BiLeaf />)
         .child(
           S.list()
-            .title("NXT - WIP")
+            .title("NXT - Preview")
             .items([
               S.listItem()
                 .title("Home")
-                .icon(() => <BiHome />)
+                .icon(() => <BiGridAlt />)
                 .child(
                   S.document().schemaType("homeNxt").documentId("homeNxt")
                 ),
               S.listItem()
                 .title("Menu")
-                .icon(() => <BiMenu />)
+                .icon(() => <BiBowlRice />)
                 .child(S.document().schemaType("menu").documentId("menu")),
               S.documentTypeListItem("facilitiesList").icon(() => (
-                <BiCategoryAlt />
+                <BiHive />
               )),
-              S.documentTypeListItem("collaboratorList").icon(() => <BiHive />),
+              S.documentTypeListItem("collaboratorList").icon(() => <BiGroup />),
               S.documentTypeListItem("eventList").icon(() => <BiCalendarAlt />),
               S.listItem()
                 .title("Visit")
