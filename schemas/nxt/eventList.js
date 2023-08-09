@@ -145,6 +145,16 @@ export default {
           inputComponent: inputWithHeight,
           validation: (Rule) => Rule.required(),
         },
+        {
+          title: "Date",
+          name: "date",
+          type: "date",
+          options: {
+            dateFormat: "YYYY-MM-DD",
+            calendarTodayLabel: "Today",
+          },
+          validation: (Rule) => Rule.required(),
+        },
       ],
     },
     {
