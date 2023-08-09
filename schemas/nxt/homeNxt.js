@@ -164,6 +164,14 @@ export default {
               title: "Image Desktop",
               name: "imageDesktop",
               type: "image",
+              validation: (Rule) =>
+                Rule.custom((field, context) => {
+                  if (context.document.section2.option === "option1") {
+                    return field ? true : "Required";
+                  } else {
+                    return true;
+                  }
+                }),
               description:
                 "Desktop Homepage Menu Image Layout Option 1: 1440 x 900 px",
               fields: [
@@ -179,6 +187,14 @@ export default {
               title: "Image Mobile",
               name: "imageMobile",
               type: "image",
+              validation: (Rule) =>
+                Rule.custom((field, context) => {
+                  if (context.document.section2.option === "option1") {
+                    return field ? true : "Required";
+                  } else {
+                    return true;
+                  }
+                }),
               description:
                 "Mobile Homepage Menu Image Layout Option 1: 375 x 872 px",
               fields: [
@@ -197,6 +213,14 @@ export default {
           name: "imageOption2",
           type: "image",
           hidden: ({ parent }) => !(parent?.option === "option2"),
+          validation: (Rule) =>
+            Rule.custom((field, context) => {
+              if (context.document.section2.option === "option2") {
+                return field ? true : "Required";
+              } else {
+                return true;
+              }
+            }),
           description:
             "Desktop Homepage Menu Image Layout Option 2: 800 x 435 px",
           fields: [
@@ -218,6 +242,14 @@ export default {
               title: "Image Left",
               name: "imageLeft",
               type: "image",
+              validation: (Rule) =>
+                Rule.custom((field, context) => {
+                  if (context.document.section2.option === "option3") {
+                    return field ? true : "Required";
+                  } else {
+                    return true;
+                  }
+                }),
               description:
                 "Desktop Homepage Menu Image Layout Option 2: 384 x 210 px",
               fields: [
@@ -233,6 +265,15 @@ export default {
               title: "Image Right",
               name: "imageRight",
               type: "image",
+              validation: (Rule) =>
+                Rule.custom((field, context) => {
+                  if (context.document.section2.option === "option3") {
+                    console.log(field)
+                    return field ? true : "Required";
+                  } else {
+                    return true;
+                  }
+                }),
               description:
                 "Desktop Homepage Menu Image Layout Option 2: 384 x 210 px",
               fields: [
