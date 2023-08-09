@@ -192,46 +192,30 @@ export default {
         {
           title: "Image Desktop",
           name: "imageDesktop",
-          type: "object",
+          type: "image",
           description: "Image Size: 750 x 500 px",
           validation: (Rule) => Rule.required(),
           fields: [
             {
-              title: "Image",
-              name: "image",
-              type: "image",
-              validation: (Rule) => Rule.required(),
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "name",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
+              title: "Edit Alt Text",
+              name: "name",
+              type: "string",
+              initialValue: "Locavore NXT",
             },
           ],
         },
         {
           title: "Image Mobile",
           name: "imageMobile",
-          type: "object",
+          type: "image",
           description: "Image Size: 320 x 230 px",
           validation: (Rule) => Rule.required(),
           fields: [
             {
-              title: "Image",
-              name: "image",
-              type: "image",
-              validation: (Rule) => Rule.required(),
-              fields: [
-                {
-                  title: "Edit Alt Text",
-                  name: "name",
-                  type: "string",
-                  initialValue: "Locavore NXT",
-                },
-              ],
+              title: "Edit Alt Text",
+              name: "name",
+              type: "string",
+              initialValue: "Locavore NXT",
             },
           ],
         },
