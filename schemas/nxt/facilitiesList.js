@@ -73,14 +73,14 @@ export default {
         {
           name: "seo_description",
           description:
-            "Enter up to 400 characters to describe the Facilities. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
+            "Enter up to 400 characters to describe the page. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
           type: "string",
           title: "Description",
         },
         {
           name: "seo_keywords",
           description:
-            "Enter some keywords to describe the Facilities (separated by commas)",
+            "Enter some keywords to describe the page (separated by commas)",
           type: "string",
           title: "Keywords",
         },
@@ -128,7 +128,7 @@ export default {
           validation: (Rule) =>
             Rule.custom((field, context) => {
               if (context.document.thumbnail.size === "normal") {
-                if(field.imageColor.asset && field.imageBnw.asset) {
+                if(field?.imageColor?.asset && field?.imageBnw?.asset) {
                   return true
                 } else {
                   return "Required Image Small"
@@ -172,6 +172,7 @@ export default {
               name: "imageFit",
               title: "Image Fit",
               type: "string",
+              validation: (Rule) => Rule.required(),
               options: {
                 list: [
                   { title: "Contain", value: "contain" },
@@ -191,7 +192,7 @@ export default {
           validation: (Rule) =>
             Rule.custom((field, context) => {
               if (context.document.thumbnail.size === "120") {
-                if(field.imageColor.asset && field.imageBnw.asset) {
+                if(field?.imageColor?.asset && field?.imageBnw?.asset) {
                   return true
                 } else {
                   return "Required Image Medium"
@@ -256,7 +257,7 @@ export default {
           validation: (Rule) =>
             Rule.custom((field, context) => {
               if (context.document.thumbnail.size === "150") {
-                if(field.imageColor.asset && field.imageBnw.asset) {
+                if(field?.imageColor?.asset && field?.imageBnw?.asset) {
                   return true
                 } else {
                   return "Required Image Large"

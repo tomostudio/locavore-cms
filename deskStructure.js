@@ -174,12 +174,6 @@ export default () =>
               S.documentTypeListItem("facilitiesList").icon(() => (
                 <BiHive />
               )),
-              S.documentTypeListItem("collaboratorList").icon(() => <BiGroup />),
-              S.documentTypeListItem("eventList").icon(() => <BiCalendarAlt />),
-              S.listItem()
-                .title("Visit")
-                .icon(() => <BiMap />)
-                .child(S.document().schemaType("visit").documentId("visit")),
               S.listItem()
                 .title("Pages")
                 .icon(() => <BiBookOpen />)
@@ -188,7 +182,7 @@ export default () =>
                     .title("Pages")
                     .items([
                       S.listItem()
-                        .title("Our Facilities")
+                        .title("Our Facilities (List)")
                         .icon(() => <BiCategoryAlt />)
                         .child(
                           S.document()
@@ -196,7 +190,7 @@ export default () =>
                             .documentId("facilities")
                         ),
                       S.listItem()
-                        .title("Our Collaborators")
+                        .title("Our Collaborators (List)")
                         .icon(() => <BiHive />)
                         .child(
                           S.document()
@@ -204,13 +198,19 @@ export default () =>
                             .documentId("collaborator")
                         ),
                       S.listItem()
-                        .title("Our Events & Programs")
+                        .title("Our Events & Programs (List)")
                         .icon(() => <BiCalendarAlt />)
                         .child(
                           S.document().schemaType("event").documentId("event")
                         ),
                     ])
                 ),
+              S.documentTypeListItem("collaboratorList").icon(() => <BiGroup />),
+              S.documentTypeListItem("eventList").icon(() => <BiCalendarAlt />),
+              S.listItem()
+                .title("Visit")
+                .icon(() => <BiMap />)
+                .child(S.document().schemaType("visit").documentId("visit")),
             ])
         ),
       S.listItem()
