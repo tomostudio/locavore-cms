@@ -132,6 +132,7 @@ export default {
       type: "menuComponent",
       title: "Content Module",
       description: "You may add multiple module to be included in this article",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
