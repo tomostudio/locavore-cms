@@ -94,7 +94,10 @@ export default {
           title: 'Desktop',
           name: 'desktop',
           type: 'image',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -108,7 +111,10 @@ export default {
           title: 'Mobile',
           name: 'mobile',
           type: 'image',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: 'Edit Alt Text',

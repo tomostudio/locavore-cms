@@ -80,7 +80,10 @@ export default {
           title: "Image Desktop",
           type: "image",
           description: "Input Desktop Menu Hero Image: 1140 x 500 px",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
@@ -95,7 +98,10 @@ export default {
           title: "Image Mobile",
           type: "image",
           description: "Mobile Menu Hero Image: 375 x 500 px",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",

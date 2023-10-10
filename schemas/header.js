@@ -13,7 +13,10 @@ export default {
           description: 'PNG / WEBP',
           title: 'White',
           type: 'image',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: 'Edit Alt Text',
@@ -28,7 +31,10 @@ export default {
           description: 'PNG / WEBP',
           title: 'Black',
           type: 'image',
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: 'Edit Alt Text',
