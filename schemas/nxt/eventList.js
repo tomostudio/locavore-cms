@@ -111,7 +111,10 @@ export default {
           title: "Image Color",
           type: "image",
           description: "Image Size: 280 x 280 px",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
@@ -126,7 +129,10 @@ export default {
           title: "Image Black & White",
           type: "image",
           description: "Image Size: 280 x 280 px",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
@@ -167,7 +173,10 @@ export default {
           title: "Image Desktop",
           type: "image",
           description: "Image Size: 1200 x 450 px",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
@@ -182,7 +191,10 @@ export default {
           title: "Image Mobile",
           type: "image",
           description: "Image Size: 345 x 422 px",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
@@ -231,6 +243,7 @@ export default {
       title: "CTA Button",
       name: "ctaButton",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: "Button Text",
