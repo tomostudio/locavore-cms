@@ -72,10 +72,9 @@ export default {
     },
     {
       title: 'Page Title',
-      name: 'Page Title',
+      name: 'pagetitle',
       type: 'string',
-      description:
-        'Title for Page Browser',
+      description: 'Title for Page Browser',
     },
     {
       name: 'section1',
