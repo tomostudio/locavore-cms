@@ -54,6 +54,10 @@ export default {
           title: "Image Desktop",
           type: "image",
           description: "Hero Image Size: 1440 x 350 px",
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
@@ -68,6 +72,10 @@ export default {
           title: "Image Mobile",
           type: "image",
           description: "Hero Image Size: 375 x 350 px",
+          validation: (Rule) =>
+            Rule.custom(({ asset }) => {
+              return asset ? true : "Required";
+            }),
           fields: [
             {
               title: "Edit Alt Text",
