@@ -112,8 +112,8 @@ export default {
           type: "image",
           description: "Image Size: 280 x 280 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {
@@ -130,8 +130,8 @@ export default {
           type: "image",
           description: "Image Size: 280 x 280 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {
@@ -174,8 +174,8 @@ export default {
           type: "image",
           description: "Image Size: 1200 x 450 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {
@@ -192,8 +192,8 @@ export default {
           type: "image",
           description: "Image Size: 345 x 422 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {

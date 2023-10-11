@@ -86,8 +86,8 @@ export default {
           type: "image",
           description: "Image Size: 300 x 250 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {
@@ -104,8 +104,8 @@ export default {
           type: "image",
           description: "Image Size: 300 x 250 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {

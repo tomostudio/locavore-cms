@@ -84,8 +84,8 @@ export default {
           type: "image",
           description: "Input Desktop Homepage Hero Image: 1440 x 900 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {
@@ -102,8 +102,8 @@ export default {
           type: "image",
           description: "Input Mobile Homepage Hero Image: 375 x 870 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {

@@ -81,8 +81,8 @@ export default {
           type: "image",
           description: "Input Desktop Menu Hero Image: 1140 x 500 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {
@@ -99,8 +99,8 @@ export default {
           type: "image",
           description: "Mobile Menu Hero Image: 375 x 500 px",
           validation: (Rule) =>
-            Rule.custom(({ asset }) => {
-              return asset ? true : "Required";
+            Rule.custom((field, _) => {
+              return field?.asset ? true : "Required";
             }),
           fields: [
             {

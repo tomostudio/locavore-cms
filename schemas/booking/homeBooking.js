@@ -71,8 +71,8 @@ export default {
             name: 'desktop',
             type: 'image',
             validation: (Rule) =>
-              Rule.custom(({ asset }) => {
-                return asset ? true : "Required";
+              Rule.custom((field, _) => {
+                return field?.asset ? true : "Required";
               }),
             fields: [
               {
@@ -88,8 +88,8 @@ export default {
             name: 'mobile',
             type: 'image',
             validation: (Rule) =>
-              Rule.custom(({ asset }) => {
-                return asset ? true : "Required";
+              Rule.custom((field, _) => {
+                return field?.asset ? true : "Required";
               }),
             fields: [
               {
