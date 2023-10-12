@@ -74,6 +74,7 @@ export default {
       title: "Hero Image",
       name: "hero",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: "imageDesktop",
@@ -136,6 +137,7 @@ export default {
       title: "Call to Action Button",
       name: "ctaButton",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           title: "Button Text",
@@ -160,6 +162,7 @@ export default {
           title: "Content",
           name: "content",
           type: "object",
+          validation: (Rule) => Rule.required(),
           fields: [
             {
               title: "Title",

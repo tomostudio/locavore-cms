@@ -79,6 +79,7 @@ export default {
       name: "thumbnail",
       title: "Thumbnail",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: "imageColor",

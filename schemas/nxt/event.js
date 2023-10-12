@@ -48,6 +48,7 @@ export default {
       title: "Hero Image",
       name: "hero",
       type: "object",
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: "imageDesktop",
