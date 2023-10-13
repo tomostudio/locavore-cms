@@ -1,6 +1,6 @@
 export default {
   name: "collaboratorList",
-  title: "Our Collaborators",
+  title: "NXT - Our Collaborators",
   type: "document",
   fields: [
     {
