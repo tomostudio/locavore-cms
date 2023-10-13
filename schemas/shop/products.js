@@ -3,7 +3,7 @@ import React, { forwardRef, useState } from 'react'
 
 export default {
   name: 'shopifyProducts',
-  title: 'Shopify Products',
+  title: 'Products',
   type: 'document',
   __experimental_actions: ['update', 'publish'], // disable for initial publish
   fieldsets: [

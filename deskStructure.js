@@ -52,7 +52,7 @@ export default () =>
             "event",
             "eventList",
             "visit",
-            'shopifyProducts',
+            "shopifyProducts",
             "homeBooking",
             "bookingList",
             "issue",
@@ -219,7 +219,13 @@ export default () =>
         .title("Shop - Preview")
         .icon(() => <BiShoppingBag />)
         .child(
-          S.documentTypeListItem("shopifyProducts").icon(() => <FiFileText />)
+          S.list()
+            .title("Shop - Preview")
+            .items([
+              S.documentTypeListItem("shopifyProducts").icon(() => (
+                <FiFileText />
+              )),
+            ])
         ),
       S.listItem()
         .title("Settings")
