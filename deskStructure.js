@@ -12,6 +12,7 @@ import {
   BiGridAlt,
   BiBowlRice,
   BiGroup,
+  BiShoppingBag,
 } from "react-icons/bi";
 import {
   FiSettings,
@@ -171,9 +172,7 @@ export default () =>
                 .title("Menu")
                 .icon(() => <BiBowlRice />)
                 .child(S.document().schemaType("menu").documentId("menu")),
-              S.documentTypeListItem("facilitiesList").icon(() => (
-                <BiHive />
-              )),
+              S.documentTypeListItem("facilitiesList").icon(() => <BiHive />),
               S.listItem()
                 .title("Pages")
                 .icon(() => <BiBookOpen />)
@@ -205,7 +204,9 @@ export default () =>
                         ),
                     ])
                 ),
-              S.documentTypeListItem("collaboratorList").icon(() => <BiGroup />),
+              S.documentTypeListItem("collaboratorList").icon(() => (
+                <BiGroup />
+              )),
               S.documentTypeListItem("eventList").icon(() => <BiCalendarAlt />),
               S.listItem()
                 .title("Visit")
@@ -213,6 +214,10 @@ export default () =>
                 .child(S.document().schemaType("visit").documentId("visit")),
             ])
         ),
+      S.listItem()
+        .title("Shop - Preview")
+        .icon(() => <BiShoppingBag />)
+        .child(),
       S.listItem()
         .title("Settings")
         .icon(() => <FiSettings />)

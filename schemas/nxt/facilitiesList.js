@@ -377,6 +377,19 @@ export default {
         },
       ],
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
+  ],
+  orderings: [
+    {
+      title: "Order",
+      name: "orderDsc",
+      by: [{ field: "order", direction: "desc" }],
+    },
   ],
   preview: {
     select: {

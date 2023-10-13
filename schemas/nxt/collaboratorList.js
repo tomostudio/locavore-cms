@@ -11,26 +11,26 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
       description:
         "Slug is generated from Title, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: 'title',
+        source: "title",
         maxLength: 96,
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
           if (slug) {
             if (slug.current.match(regex) !== null) {
-              return true
+              return true;
             } else {
-              return 'Not a valid slug'
+              return "Not a valid slug";
             }
           } else {
-            return 'Required'
+            return "Required";
           }
         }),
     },
@@ -151,12 +151,25 @@ export default {
       name: "content",
       type: "blockCoverNxt",
       validation: (Rule) => Rule.required(),
-    }
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
+  ],
+  orderings: [
+    {
+      title: "Order",
+      name: "orderDsc",
+      by: [{ field: "order", direction: "desc" }],
+    },
   ],
   preview: {
     select: {
-      title: 'title',
-      media: 'thumbnail.imageColor',
-    }
+      title: "title",
+      media: "thumbnail.imageColor",
+    },
   },
 };
