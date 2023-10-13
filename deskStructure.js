@@ -53,6 +53,7 @@ export default () =>
             "eventList",
             "visit",
             "shopifyProducts",
+            'productCategory',
             "homeBooking",
             "bookingList",
             "issue",
@@ -222,6 +223,9 @@ export default () =>
           S.list()
             .title("Shop - Preview")
             .items([
+              S.documentTypeListItem("productCategory").icon(() => (
+                <FiFlag />
+              )),
               S.documentTypeListItem("shopifyProducts").icon(() => (
                 <FiFileText />
               )),
