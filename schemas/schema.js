@@ -44,6 +44,7 @@ import blockCoverNxt from './blockCoverNxt'
 import blockVisitContent from './blockVisitContent'
 import facilities from './nxt/facilities'
 import blockVisit from './blockVisit'
+import shopifyProducts from './shop/products'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -68,6 +69,7 @@ export default createSchema({
     collaboratorList,
     event,
     eventList,
+    shopifyProducts,
     visit,
     homeBooking,
     bookingList,
