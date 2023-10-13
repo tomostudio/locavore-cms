@@ -162,8 +162,8 @@ export default {
   orderings: [
     {
       title: "Order",
-      name: "orderDsc",
-      by: [{ field: "order", direction: "desc" }],
+      name: "orderAsc",
+      by: [{ field: "order", direction: "asc" }],
     },
   ],
   preview: {
