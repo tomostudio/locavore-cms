@@ -246,6 +246,31 @@ export default {
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
+
+    {
+      title: "Button Link",
+      name: "buttonLink",
+      type: "object",
+      fields: [
+        {
+          title: "Title",
+          name: "title",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Link",
+          name: "link",
+          type: "url",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+      preview: {
+        select: {
+          title: "title",
+        },
+      },
+    },
     {
       name: "quote",
       title: "Quote",

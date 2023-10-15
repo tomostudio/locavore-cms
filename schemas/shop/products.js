@@ -27,7 +27,7 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "shopifyProducts",
-  title: "Products",
+  title: "Product List",
   type: "document",
   __experimental_actions: ["update", "publish"], // disable for initial publish
   fieldsets: [
