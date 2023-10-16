@@ -158,11 +158,11 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title("NXT - Preview")
+        .title("NXT")
         .icon(() => <BiLeaf />)
         .child(
           S.list()
-            .title("NXT - Preview")
+            .title("NXT")
             .items([
               S.listItem()
                 .title("Home")
