@@ -309,8 +309,15 @@ export default {
       ],
     },
     {
-      title: "Description",
-      name: "description",
+      title: "Description Cover",
+      name: "descriptionCover",
+      type: "string",
+      inputComponent: inputWithHeight,
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Description Detail",
+      name: "descriptionDetail",
       type: "string",
       inputComponent: inputWithHeight,
       validation: (Rule) => Rule.required(),
