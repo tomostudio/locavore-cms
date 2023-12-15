@@ -257,7 +257,10 @@ export default {
           title: "Button Link",
           name: "buttonLink",
           type: "url",
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ["http", "https", "mailto"],
+            }).required(),
         },
       ],
     },
