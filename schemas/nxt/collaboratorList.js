@@ -22,7 +22,7 @@ export default {
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
+          const regex = /^[a-z0-9](?:[a-z0-9]|-(?=[a-z0-9])){2,}$/i;
           if (slug) {
             if (slug.current.match(regex) !== null) {
               return true;
