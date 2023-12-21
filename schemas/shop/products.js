@@ -7,6 +7,7 @@ import FormField from "part:@sanity/components/formfields/default";
 
 // Import the TextArea from UI
 import { TextArea } from "@sanity/ui";
+import { FiImage } from "react-icons/fi";
 
 const inputWithHeight = React.forwardRef((props, ref) => {
   const { type, onChange } = props;
@@ -195,6 +196,9 @@ export default {
           name: "images",
           title: "Images",
           type: "array",
+          options: {
+            layout: "grid",
+          },
           of: [
             {
               title: "Image",
@@ -209,9 +213,39 @@ export default {
                 },
               ],
               preview: {
-                prepare() {
+                select: {
+                  media: "src",
+                },
+                prepare({ media }) {
                   return {
-                    title: "Image",
+                    media: media ? (
+                      <div
+                        style={{
+                          alignItems: "center",
+                          borderRadius: "inherit",
+                          display: "flex",
+                          height: "100%",
+                          justifyContent: "center",
+                          overflow: "hidden",
+                          width: "100%",
+                        }}
+                      >
+                        <img
+                          src={`${media}&width=400`}
+                          style={{
+                            height: "100%",
+                            left: 0,
+                            objectFit: "cover",
+                            position: "absolute",
+                            top: 0,
+                            width: "100%",
+                          }}
+                          alt={`Image preview`}
+                        />
+                      </div>
+                    ) : (
+                      <FiImage />
+                    ),
                   };
                 },
               },
@@ -375,7 +409,42 @@ export default {
   preview: {
     select: {
       title: "shopifyProduct.title",
-      media: "thumbnail",
+      media: "shopifyProduct.images[0].src",
+    },
+    prepare(selection) {
+      const { title, media } = selection;
+
+      return {
+        title: title,
+        media: media ? (
+          <div
+            style={{
+              alignItems: "center",
+              borderRadius: "inherit",
+              display: "flex",
+              height: "100%",
+              justifyContent: "center",
+              overflow: "hidden",
+              width: "100%",
+            }}
+          >
+            <img
+              src={`${media}&width=400`}
+              style={{
+                height: "100%",
+                left: 0,
+                objectFit: "cover",
+                position: "absolute",
+                top: 0,
+                width: "100%",
+              }}
+              alt={`${title} preview`}
+            />
+          </div>
+        ) : (
+          <FiImage />
+        ),
+      };
     },
   },
 };
