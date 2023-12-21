@@ -191,7 +191,34 @@ export default {
             },
           ],
         },
-        // Options
+        {
+          name: "images",
+          title: "Images",
+          type: "array",
+          of: [
+            {
+              title: "Image",
+              name: "img",
+              type: "object",
+              readOnly: true,
+              fields: [
+                {
+                  title: "Source",
+                  name: "src",
+                  type: "string",
+                },
+              ],
+              preview: {
+                prepare() {
+                  return {
+                    title: "Image",
+                  };
+                },
+              },
+            },
+          ],
+        },
+        // Variants
         {
           name: "variants",
           title: "Variants",
@@ -281,10 +308,10 @@ export default {
       ],
     },
     {
-      title: 'Category',
-      name: 'category',
-      type: 'reference',
-      to: [{ type: 'productCategory' }],
+      title: "Category",
+      name: "category",
+      type: "reference",
+      to: [{ type: "productCategory" }],
       validation: (Rule) => Rule.required(),
     },
     {
@@ -309,15 +336,8 @@ export default {
       ],
     },
     {
-      title: "Description Cover",
-      name: "descriptionCover",
-      type: "string",
-      inputComponent: inputWithHeight,
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "Description Detail",
-      name: "descriptionDetail",
+      title: "Description",
+      name: "description",
       type: "string",
       inputComponent: inputWithHeight,
       validation: (Rule) => Rule.required(),
