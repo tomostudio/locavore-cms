@@ -327,49 +327,6 @@ export default {
         }),
     },
     {
-      name: "thumbnail",
-      description: "A cover image for this product | PNG / JPEG / WEBP",
-      title: "Thumbnail",
-      type: "image",
-      validation: (Rule) => Rule.required(),
-      fields: [
-        {
-          title: "Edit Alt Text",
-          name: "name",
-          type: "string",
-          initialValue: "Locavore NXT",
-        },
-      ],
-    },
-    {
-      title: "Category",
-      name: "category",
-      type: "reference",
-      to: [{ type: "productCategory" }],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "images",
-      title: "Images",
-      type: "array",
-      of: [
-        {
-          title: "Image",
-          name: "image",
-          type: "image",
-          validation: (Rule) => Rule.required(),
-          fields: [
-            {
-              title: "Edit Alt Text",
-              name: "name",
-              type: "string",
-              initialValue: "Locavore NXT",
-            },
-          ],
-        },
-      ],
-    },
-    {
       title: "Description",
       name: "description",
       type: "string",
