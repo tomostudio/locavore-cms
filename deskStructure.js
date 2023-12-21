@@ -53,7 +53,6 @@ export default () =>
             "eventList",
             "visit",
             "shopifyProducts",
-            'productCategory',
             "homeBooking",
             "bookingList",
             "issue",
@@ -216,21 +215,9 @@ export default () =>
                 .child(S.document().schemaType("visit").documentId("visit")),
             ])
         ),
-      S.listItem()
+      S.documentTypeListItem("shopifyProducts")
         .title("Shop - Preview")
-        .icon(() => <BiShoppingBag />)
-        .child(
-          S.list()
-            .title("Shop - Preview")
-            .items([
-              S.documentTypeListItem("productCategory").icon(() => (
-                <FiFlag />
-              )),
-              S.documentTypeListItem("shopifyProducts").icon(() => (
-                <FiFileText />
-              )),
-            ])
-        ),
+        .icon(() => <BiShoppingBag />),
       S.listItem()
         .title("Settings")
         .icon(() => <FiSettings />)
