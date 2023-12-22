@@ -45,6 +45,8 @@ import blockVisitContent from './blockVisitContent'
 import facilities from './nxt/facilities'
 import blockVisit from './blockVisit'
 import shopifyProducts from './shop/products'
+import footerShop from './shop/footerShop'
+import settingsShop from './shop/settingsShop'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -55,6 +57,7 @@ export default createSchema({
   types: schemaTypes.concat([
     issue,
     settings,
+    settingsShop,
     editorial,
     family,
     search,
@@ -82,6 +85,7 @@ export default createSchema({
     member_list,
     header,
     footer,
+    footerShop,
     blockContent,
     blockCenter,
     blockArticle,

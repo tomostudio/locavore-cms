@@ -37,6 +37,7 @@ export default () =>
         (listItem) =>
           ![
             "settings",
+            "settingsShop",
             "editorial",
             "family",
             "search",
@@ -60,6 +61,7 @@ export default () =>
             "member_list",
             "header",
             "footer",
+            "footerShop"
           ].includes(listItem.getId())
       ),
       S.listItem()
@@ -215,9 +217,37 @@ export default () =>
                 .child(S.document().schemaType("visit").documentId("visit")),
             ])
         ),
-      S.documentTypeListItem("shopifyProducts")
+      S.listItem()
         .title("Shop - Preview")
-        .icon(() => <BiShoppingBag />),
+        .icon(() => <BiShoppingBag />)
+        .child(
+          S.list()
+            .title("Shop - Preview")
+            .items([
+              S.documentTypeListItem("shopifyProducts").icon(() => (
+                <FiFileText />
+              )),
+              S.listItem()
+                .title("Settings")
+                .icon(() => <FiSettings />)
+                .child(
+                  S.list()
+                    .title("Settings")
+                    .items([
+                      S.listItem()
+                        .title("General")
+                        .icon(() => <FiSliders />)
+                        .child(
+                          S.document().schemaType("settingsShop").documentId("settingsShop")
+                        ),
+                      S.listItem()
+                        .title("Footer")
+                        .icon(() => <FiSliders />)
+                        .child(S.document().schemaType("footerShop").documentId("footerShop")),
+                    ])
+                ),
+            ])
+        ),
       S.listItem()
         .title("Settings")
         .icon(() => <FiSettings />)
