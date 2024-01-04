@@ -47,6 +47,7 @@ import blockVisit from './blockVisit'
 import shopifyProducts from './shop/products'
 import footerShop from './shop/footerShop'
 import settingsShop from './shop/settingsShop'
+import blockShop from './shop/block/blockShop'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -99,5 +100,6 @@ export default createSchema({
     blockColumn,
     blockEditor,
     blockPopup,
+    blockShop,
   ]),
 })
