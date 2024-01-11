@@ -48,6 +48,7 @@ import shopifyProducts from './shop/products'
 import footerShop from './shop/footerShop'
 import settingsShop from './shop/settingsShop'
 import blockShop from './shop/block/blockShop'
+import blockBanner from './shop/block/blockBanner'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -101,5 +102,6 @@ export default createSchema({
     blockEditor,
     blockPopup,
     blockShop,
+    blockBanner
   ]),
 })

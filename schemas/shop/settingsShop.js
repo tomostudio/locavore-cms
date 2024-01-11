@@ -68,36 +68,138 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
-          name: "image",
-          title: "Image",
-          type: "image",
+          title: "Image Option 1",
+          name: "imageOption1",
+          type: "object",
+          hidden: ({ parent }) => parent?.option === "option-2",
+          validation: (Rule) =>
+            Rule.custom((field, context) =>
+              context.parent.option === "option-1" &&
+              !context.parent.imageOption1?.imageDesktop?.asset &&
+              !context.parent.imageOption1?.imageMobile?.asset
+                ? "Required"
+                : true
+            ),
           fields: [
             {
-              title: "Edit Alt Text",
-              name: "name",
-              type: "string",
-              initialValue: "Locavore NXT",
+              title: "Image Desktop",
+              name: "imageDesktop",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              title: "Image Mobile",
+              name: "imageMobile",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          title: "Image Option 2",
+          name: "imageOption2",
+          type: "object",
+          hidden: ({ parent }) => parent?.option === "option-1",
+          validation: (Rule) =>
+            Rule.custom((field, context) =>
+              context.parent.option === "option-2" &&
+              !context.parent.imageOption1?.imageDesktop?.asset &&
+              !context.parent.imageOption1?.imageMobile?.asset
+                ? "Required"
+                : true
+            ),
+          fields: [
+            {
+              title: "Image Desktop",
+              name: "imageDesktop",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+            {
+              title: "Image Mobile",
+              name: "imageMobile",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
             },
           ],
         },
         {
           title: "Text Top",
           name: "textTop",
-          type: "string"
+          type: "string",
+          hidden: ({ parent }) => parent?.option === "option-1",
+          validation: (Rule) =>
+            Rule.custom((field, context) =>
+              context.parent.option === "option-2" && !field ? "Required" : true
+            ),
         },
         {
           title: "Text Bottom",
           name: "textBottom",
-          type: "string"
+          type: "string",
+          hidden: ({ parent }) => parent?.option === "option-1",
+          validation: (Rule) =>
+            Rule.custom((field, context) =>
+              context.parent.option === "option-2" && !field ? "Required" : true
+            ),
         },
         {
           title: "Description",
           name: "description",
-          type: "string",
-          validation: (Rule) => Rule.required().custom((field, context) => {
-            console.log(field)
-            return true;
-          }),
+          type: "blockBanner",
+          hidden: ({ parent }) => parent?.option === "option-2",
+          validation: (Rule) =>
+            Rule.custom((field, context) =>
+              context.parent.option === "option-1" && !field ? "Required" : true
+            ),
+        },
+        {
+          title: "CTA Button",
+          name: "ctaButton",
+          type: "object",
+          hidden: ({ parent }) => parent?.option === "option-2",
+          fields: [
+            {
+              title: "Name",
+              name: "name",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              title: "Link",
+              name: "link",
+              type: "url",
+              validation: (Rule) => Rule.required(),
+            },
+          ],
         },
         {
           title: "Option",
@@ -108,8 +210,8 @@ export default {
             list: [
               { title: "Option 1", value: "option-1" },
               { title: "Option 2", value: "option-2" },
-            ], // <-- predefined values
-            layout: "radio", // <-- defaults to 'dropdown'
+            ],
+            layout: "radio",
           },
         },
       ],
