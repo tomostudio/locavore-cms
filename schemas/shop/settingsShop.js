@@ -62,29 +62,52 @@ export default {
       type: "object",
       fields: [
         {
+          title: "Option",
+          name: "option",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+          options: {
+            list: [
+              { title: "Option 1", value: "option-1" },
+              { title: "Option 2", value: "option-2" },
+            ],
+            layout: "radio",
+          },
+        },
+        {
+          title: "Close Button Color",
+          name: "closeColor",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+          options: {
+            list: [
+              { title: "Black", value: "black" },
+              { title: "White", value: "white" },
+            ],
+            layout: "radio",
+          },
+        },
+        {
           title: "Title",
           name: "title",
           type: "string",
-          validation: (Rule) => Rule.required(),
+          hidden: ({ parent }) => parent?.option === "option-2",
+          validation: (Rule) =>
+            Rule.custom((field, context) =>
+              context.parent.option === "option-1" && !field ? "Required" : true
+            ),
         },
         {
           title: "Image Option 1",
           name: "imageOption1",
           type: "object",
           hidden: ({ parent }) => parent?.option === "option-2",
-          validation: (Rule) =>
-            Rule.custom((field, context) =>
-              context.parent.option === "option-1" &&
-              !context.parent.imageOption1?.imageDesktop?.asset &&
-              !context.parent.imageOption1?.imageMobile?.asset
-                ? "Required"
-                : true
-            ),
           fields: [
             {
               title: "Image Desktop",
               name: "imageDesktop",
               type: "image",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -98,6 +121,7 @@ export default {
               title: "Image Mobile",
               name: "imageMobile",
               type: "image",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -117,8 +141,8 @@ export default {
           validation: (Rule) =>
             Rule.custom((field, context) =>
               context.parent.option === "option-2" &&
-              !context.parent.imageOption1?.imageDesktop?.asset &&
-              !context.parent.imageOption1?.imageMobile?.asset
+              !context.parent.imageOption2?.imageDesktop?.asset &&
+              !context.parent.imageOption2?.imageMobile?.asset
                 ? "Required"
                 : true
             ),
@@ -127,6 +151,7 @@ export default {
               title: "Image Desktop",
               name: "imageDesktop",
               type: "image",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -140,6 +165,7 @@ export default {
               title: "Image Mobile",
               name: "imageMobile",
               type: "image",
+              validation: (Rule) => Rule.required(),
               fields: [
                 {
                   title: "Edit Alt Text",
@@ -150,26 +176,6 @@ export default {
               ],
             },
           ],
-        },
-        {
-          title: "Text Top",
-          name: "textTop",
-          type: "string",
-          hidden: ({ parent }) => parent?.option === "option-1",
-          validation: (Rule) =>
-            Rule.custom((field, context) =>
-              context.parent.option === "option-2" && !field ? "Required" : true
-            ),
-        },
-        {
-          title: "Text Bottom",
-          name: "textBottom",
-          type: "string",
-          hidden: ({ parent }) => parent?.option === "option-1",
-          validation: (Rule) =>
-            Rule.custom((field, context) =>
-              context.parent.option === "option-2" && !field ? "Required" : true
-            ),
         },
         {
           title: "Description",
@@ -200,19 +206,6 @@ export default {
               validation: (Rule) => Rule.required(),
             },
           ],
-        },
-        {
-          title: "Option",
-          name: "option",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-          options: {
-            list: [
-              { title: "Option 1", value: "option-1" },
-              { title: "Option 2", value: "option-2" },
-            ],
-            layout: "radio",
-          },
         },
       ],
     },
