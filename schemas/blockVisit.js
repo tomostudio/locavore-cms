@@ -93,6 +93,10 @@ export default {
                 name: "link",
                 type: "url",
                 hidden: ({ parent }) => !(parent?.select_link === "default"),
+                validation: (Rule) =>
+                  Rule.uri({
+                    scheme: ["http", "https", "mailto"],
+                  }),
               },
               {
                 title: "WA Link",
