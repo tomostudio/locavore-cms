@@ -440,41 +440,14 @@ export default {
   preview: {
     select: {
       title: "shopifyProduct.title",
-      media: "shopifyProduct.images[0].src",
+      media: "thumbnail",
     },
     prepare(selection) {
       const { title, media } = selection;
 
       return {
         title: title,
-        media: media ? (
-          <div
-            style={{
-              alignItems: "center",
-              borderRadius: "inherit",
-              display: "flex",
-              height: "100%",
-              justifyContent: "center",
-              overflow: "hidden",
-              width: "100%",
-            }}
-          >
-            <img
-              src={`${media}&width=400`}
-              style={{
-                height: "100%",
-                left: 0,
-                objectFit: "cover",
-                position: "absolute",
-                top: 0,
-                width: "100%",
-              }}
-              alt={`${title} preview`}
-            />
-          </div>
-        ) : (
-          <FiImage />
-        ),
+        media: media
       };
     },
   },
