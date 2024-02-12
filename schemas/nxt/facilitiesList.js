@@ -367,7 +367,7 @@ export default {
           type: "image",
           validation: (Rule) =>
             Rule.custom((field, _) => {
-              return field?.asset ? true : "Required";
+              return field?.asset ? true : "Image Required";
             }),
           fields: [
             {
