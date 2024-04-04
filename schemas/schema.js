@@ -52,6 +52,7 @@ import blockBanner from './shop/block/blockBanner'
 import privacyPolicy from './shop/privacyPolicy'
 import termsConditions from './shop/termsConditions'
 import faq from './shop/faq'
+import homeShop from './shop/homeShop'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -78,6 +79,7 @@ export default createSchema({
     event,
     eventList,
     shopifyProducts,
+    homeShop,
     privacyPolicy,
     termsConditions,
     faq,

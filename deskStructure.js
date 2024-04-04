@@ -53,6 +53,7 @@ export default () =>
             "event",
             "eventList",
             "visit",
+            "homeShop",
             "shopifyProducts",
             "privacyPolicy",
             "termsConditions",
@@ -237,6 +238,12 @@ export default () =>
                   S.list()
                     .title("Pages")
                     .items([
+                      S.listItem()
+                        .title("Home")
+                        .icon(() => <FiStar />)
+                        .child(
+                          S.document().schemaType("homeShop").documentId("homeShop")
+                        ),
                       S.listItem()
                         .title("Privacy Policy")
                         .icon(() => <FiStar />)

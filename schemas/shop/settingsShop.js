@@ -279,20 +279,6 @@ export default {
         },
       ],
     },
-    {
-      title: "Product Highlight",
-      name: "productHighlight",
-      type: "array",
-      of: [
-        {
-          title: "Product",
-          name: "product",
-          type: 'reference',
-          to: [{ type: 'shopifyProducts' }],
-          validation: (Rule) => Rule.required(),
-        }
-      ]
-    }
   ],
   preview: {
     prepare() {
