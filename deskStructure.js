@@ -55,6 +55,8 @@ export default () =>
             "visit",
             "shopifyProducts",
             "privacyPolicy",
+            "termsConditions",
+            "faq",
             "homeBooking",
             "bookingList",
             "issue",
@@ -240,6 +242,18 @@ export default () =>
                         .icon(() => <FiStar />)
                         .child(
                           S.document().schemaType("privacyPolicy").documentId("privacyPolicy")
+                        ),
+                      S.listItem()
+                        .title("Terms & Conditions")
+                        .icon(() => <FiStar />)
+                        .child(
+                          S.document().schemaType("termsConditions").documentId("termsConditions")
+                        ),
+                      S.listItem()
+                        .title("FAQ")
+                        .icon(() => <FiStar />)
+                        .child(
+                          S.document().schemaType("faq").documentId("faq")
                         ),
                     ])
                 ),
