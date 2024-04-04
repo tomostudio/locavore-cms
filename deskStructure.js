@@ -54,6 +54,7 @@ export default () =>
             "eventList",
             "visit",
             "shopifyProducts",
+            "privacyPolicy",
             "homeBooking",
             "bookingList",
             "issue",
@@ -227,6 +228,21 @@ export default () =>
               S.documentTypeListItem("shopifyProducts").icon(() => (
                 <FiFileText />
               )),
+              S.listItem()
+                .title("Pages")
+                .icon(() => <FiFile />)
+                .child(
+                  S.list()
+                    .title("Pages")
+                    .items([
+                      S.listItem()
+                        .title("Privacy Policy")
+                        .icon(() => <FiStar />)
+                        .child(
+                          S.document().schemaType("privacyPolicy").documentId("privacyPolicy")
+                        ),
+                    ])
+                ),
               S.listItem()
                 .title("Settings")
                 .icon(() => <FiSettings />)
