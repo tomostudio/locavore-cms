@@ -435,6 +435,21 @@ export default {
         },
       ],
     },
+    {
+      title: "Similar Products",
+      name: "similarProducts",
+      type: "array",
+      validation: (Rule) => Rule.max(4),
+      of: [
+        {
+          title: "Product",
+          name: "product",
+          type: 'reference',
+          to: [{ type: 'shopifyProducts' }],
+          validation: (Rule) => Rule.required(),
+        }
+      ]
+    }
   ],
 
   preview: {
