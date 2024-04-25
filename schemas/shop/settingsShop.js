@@ -279,6 +279,32 @@ export default {
         },
       ],
     },
+    {
+      title: "Notification Text",
+      name: "notificationText",
+      type: "object",
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: "Add to Cart",
+          name: "addToCart",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Delete Product",
+          name: "deleteProduct",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Product Change on Cart",
+          name: "productChange",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        }
+      ]
+    }
   ],
   preview: {
     prepare() {
