@@ -62,9 +62,15 @@ export default {
       type: "object",
       fields: [
         {
+          title: "Enable",
+          name: "enablePopup",
+          type: "boolean",
+        },
+        {
           title: "Option",
           name: "option",
           type: "string",
+          hidden: ({ parent }) => !(parent?.enablePopup === true),
           validation: (Rule) => Rule.required(),
           options: {
             list: [
@@ -80,6 +86,7 @@ export default {
           name: "closeColor",
           type: "string",
           validation: (Rule) => Rule.required(),
+          hidden: ({ parent }) => !(parent?.enablePopup === true),
           options: {
             list: [
               { title: "Black", value: "black" },
@@ -93,10 +100,10 @@ export default {
           name: "option1",
           type: "object",
           hidden: ({ parent }) =>
-            parent?.option === "option-2" || parent?.option === "option-3",
+            !parent?.enablePopup ? true : parent?.option === "option-2" || parent?.option === "option-3",
           validation: (Rule) =>
             Rule.custom((field, context) =>
-              context.parent.option === "option-1" && !field ? "Option 1 Required" : true
+              !context.parent?.enablePopup ? true :  context.parent.option === "option-1" && !field ? "Option 1 Required" : true
             ),
           fields: [
             {
@@ -147,10 +154,10 @@ export default {
           name: "option2",
           type: "object",
           hidden: ({ parent }) =>
-            parent?.option === "option-1" || parent?.option === "option-3",
+            !parent?.enablePopup ? true : parent?.option === "option-1" || parent?.option === "option-3",
           validation: (Rule) =>
             Rule.custom((field, context) =>
-              context.parent.option === "option-2" && !field ? "Option 2 Required" : true
+              !context.parent?.enablePopup ? true : context.parent.option === "option-2" && !field ? "Option 2 Required" : true
             ),
           fields: [
             {
@@ -235,10 +242,10 @@ export default {
           name: "option3",
           type: "object",
           hidden: ({ parent }) =>
-            parent?.option === "option-1" || parent?.option === "option-2",
+            !parent?.enablePopup ? true : parent?.option === "option-1" || parent?.option === "option-2",
           validation: (Rule) =>
             Rule.custom((field, context) =>
-              context.parent.option === "option-3" && !field ? "Option 3 Required" : true
+              !context.parent?.enablePopup ? true : context.parent.option === "option-3" && !field ? "Option 3 Required" : true
             ),
           fields: [
             {
