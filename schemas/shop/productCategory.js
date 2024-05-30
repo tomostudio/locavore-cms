@@ -3,6 +3,7 @@ export default {
   name: 'productCategory',
   title: 'Product Category',
   type: 'document',
+  __experimental_actions: [],
   fields: [
     {
       name: 'title',
@@ -13,7 +14,7 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     },
   ],
