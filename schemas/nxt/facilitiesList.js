@@ -26,12 +26,12 @@ const inputWithHeight = React.forwardRef((props, ref) => {
 
 export default {
   name: "facilitiesList",
-  title: "NXT - Our Facilities",
+  title: "NXT - Our Features",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Facility Title",
+      title: "Feature Title",
       type: "string",
       description: "Will also be used on Browser Tab Title",
       validation: (Rule) => Rule.required(),
