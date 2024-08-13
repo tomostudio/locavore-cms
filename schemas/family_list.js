@@ -117,7 +117,7 @@ export default {
     {
       name: 'description',
       title: 'Family Description',
-      type: 'blockIssue',
+      type: 'blockFamily',
       validation: (Rule) => Rule.required(),
     },
     {

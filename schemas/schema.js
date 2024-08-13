@@ -53,6 +53,7 @@ import privacyPolicy from './shop/privacyPolicy'
 import termsConditions from './shop/termsConditions'
 import faq from './shop/faq'
 import homeShop from './shop/homeShop'
+import blockFamily from './blockFamily'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -110,6 +111,7 @@ export default createSchema({
     blockEditor,
     blockPopup,
     blockShop,
-    blockBanner
+    blockBanner,
+    blockFamily
   ]),
 })
