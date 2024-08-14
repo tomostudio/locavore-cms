@@ -1,6 +1,6 @@
 export default {
   name: "facilities",
-  title: "Our Features (List)",
+  title: "Our Facilities (List)",
   type: "document",
   fields: [
     {
@@ -55,7 +55,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: "Our Features (List)",
+        title: "Our Facilities (List)",
       };
     },
   },

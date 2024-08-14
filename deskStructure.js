@@ -188,7 +188,7 @@ export default () =>
                     .title("Pages")
                     .items([
                       S.listItem()
-                        .title("Our Features (List)")
+                        .title("Our Facilities (List)")
                         .icon(() => <BiCategoryAlt />)
                         .child(
                           S.document()
