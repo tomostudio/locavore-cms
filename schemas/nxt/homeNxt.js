@@ -320,28 +320,6 @@ export default {
       ],
     },
     {
-      name: 'facilitiesSection',
-      title: 'Our Features Section',
-      type: 'object',
-      options: {
-        collapsible: true,
-      },
-      fields: [
-        {
-          title: 'Heading',
-          name: 'heading',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: 'Button Text',
-          name: 'button',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
-    },
-    {
       name: 'collaboratorSection',
       title: 'Our Collaborators Section',
       type: 'object',
