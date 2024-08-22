@@ -321,7 +321,7 @@ export default {
     },
     {
       name: 'facilitiesSection',
-      title: 'Our Facilities Section',
+      title: 'Our Features Section',
       type: 'object',
       options: {
         collapsible: true,
