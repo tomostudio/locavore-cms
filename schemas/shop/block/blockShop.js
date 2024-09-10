@@ -40,7 +40,7 @@ export default {
                 type: "url",
                 validation: (Rule) =>
                   Rule.uri({
-                    scheme: ["http", "https"],
+                    scheme: ["http", "https", "mailto"],
                   }).required(),
               },
             ],
