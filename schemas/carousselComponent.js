@@ -30,7 +30,7 @@ export default {
               },
             ],
             layout: 'radio',
-          },
+          }, 
           initialValue: 'cover',
           validation: (Rule) => Rule.required(),
         },
