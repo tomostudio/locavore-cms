@@ -212,5 +212,49 @@ export default {
         }
       },
     },
+    {
+      title: "Image Gallery",
+      name: "imageGallery",
+      type: "object",
+      description:
+        "Upload multiple images and they auto-arrange into a collage on the site. No need to combine them in Photoshop.",
+      fields: [
+        {
+          title: "Images",
+          name: "images",
+          type: "array",
+          description:
+            "2 images = side by side · 3 = one large + two stacked · 4 = 2×2 grid · 5–6 = grid. Use the crop tool on each image to set its focus point.",
+          of: [
+            {
+              type: "image",
+              options: { hotspot: true },
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  initialValue: "Locavore NXT",
+                },
+              ],
+            },
+          ],
+          validation: (Rule) => Rule.min(2).max(6),
+        },
+      ],
+      preview: {
+        select: {
+          images: "images",
+        },
+        prepare({ images }) {
+          const count = images ? images.length : 0;
+          return {
+            title: "Image Gallery",
+            subtitle: `${count} image${count === 1 ? "" : "s"}`,
+            media: images && images[0],
+          };
+        },
+      },
+    },
   ],
 };
