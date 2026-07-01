@@ -16,6 +16,9 @@
   "keywords": [
     "sanity"
   ],
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@sanity/base": "^2.36.2",
     "@sanity/code-input": "^2.36.0",
